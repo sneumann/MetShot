@@ -1,10 +1,21 @@
 Package: MetShot
 Type: Package
-Title: What the package does (short line)
-Version: 1.0
+Title: High throughput prioritized acquisition and processing of tandem mass spectra
+Version: 0.1.0
 Date: 2011-07-19
-Author: Who wrote it
-Maintainer: Who to complain to <yourfault@somewhere.net>
-Description: More about what it does (maybe more than one line)
-License: What license is it under?
+Author: Steffen Neumann <sneumann@ipb-halle.de>
+Maintainer: Steffen Neumann <sneumann@ipb-halle.de>,
+            Andrea Thum <andrea.thum@informatik.uni-halle.de>
+Description: MetShot will provides functions to schedule the high-throughput acquisition 
+of targeted tandem mass spectrometry. Targets can be prioritized by biological relevance, 
+e.g. determined by XCMS's diffreports, or user-provided priority lists. 
+Supported target formats for instrument control are the PSI
+traML, Bruker micrOTOF control methods and Agilent something. 
+After the measurements, MetShot uses CAMERA functions to create tandem mass peak
+list, to avoid background signals. Finally, MetShot can create batch query
+files for identification against MassBank or MetFrag.
+License: GPL Version 2 or later
 LazyLoad: yes
+Depends: CAMERA, XML 
+Suggests: msdata, RUnit, faahKO
+biocViews: Infrastructure, Bioinformatics, DataImport, Proteomics, Metabolomics, MassSpectrometry
