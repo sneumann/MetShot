@@ -2,52 +2,58 @@
 \alias{xcms2method}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-%%  ~~function to do ... ~~
+Convenience method to go from XCMS peak tables or diffreports
+straight to Bruker micrOTOF control method files
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+  This convenience method will create (a set of) Bruker method files
+  from a template, filling it with tandem mass spectrometry target
+  segments for the "interesting" peaks in the peak list  
 }
 \usage{
 xcms2method(peaklist, method = "", MSmode = c("positive", "negative"), template = "test.method", gradientStart = NULL, gradientEnd = NULL, widthFactor = 1, minWidth = 1, MSMSManual_ListCollisionEnergy = 15, MSMSManual_ListIsolationWidth = 8)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{peaklist}{
-%%     ~~Describe \code{peaklist} here~~
+  \item{peaklist}{Eith a peak list with columns rtmin/rt/rtmax and
+    mzmin/mz/mzmax or a diffreport.
 }
   \item{method}{
-%%     ~~Describe \code{method} here~~
+    Outfile prefix for the created method(s)
 }
   \item{MSmode}{
-%%     ~~Describe \code{MSmode} here~~
+    Polarity of the requested tandem MS measurement
 }
   \item{template}{
-%%     ~~Describe \code{template} here~~
+    A Bruker *.m template file
 }
   \item{gradientStart}{
-%%     ~~Describe \code{gradientStart} here~~
+    if present, only use peaks later than this minimum retention time
+    (in seconds)
 }
   \item{gradientEnd}{
-%%     ~~Describe \code{gradientEnd} here~~
+    if present, only use peaks before this maximum retention time
+    (in seconds)
 }
   \item{widthFactor}{
-%%     ~~Describe \code{widthFactor} here~~
+    enlarge the precursor peaks by this factor for the target windows
 }
   \item{minWidth}{
-%%     ~~Describe \code{minWidth} here~~
+    Ensure a minimum retention time window for the target windows
 }
   \item{MSMSManual_ListCollisionEnergy}{
-%%     ~~Describe \code{MSMSManual_ListCollisionEnergy} here~~
+    Specify one or more collision energies to use
 }
   \item{MSMSManual_ListIsolationWidth}{
-%%     ~~Describe \code{MSMSManual_ListIsolationWidth} here~~
+    Specify one or more isolation widths to use
 }
 }
 \details{
-%%  ~~ If necessary, more details than the description above ~~
+  Prioritizes by what ?
 }
 \value{
-%%  ~Describe the value returned
+  
+  %%  ~Describe the value returned
 %%  If it is a LIST, use
 %%  \item{comp1 }{Description of 'comp1'}
 %%  \item{comp2 }{Description of 'comp2'}
@@ -57,16 +63,16 @@ xcms2method(peaklist, method = "", MSmode = c("positive", "negative"), template 
 %% ~put references to the literature/web site here ~
 }
 \author{
-%%  ~~who you are~~
-}
-\note{
-%%  ~~further notes~~
+  Steffen Neumann 
 }
 
-%% ~Make other sections like Warning with \section{Warning }{....} ~
+\section{Warning }{
+  The created Bruker control files are not guaranteed to work on your
+  setup, and incorrect control files could damage equipment.   
+}
 
 \seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
+\code{\link{peaklist2picklist}}, \code{\link{picklist2method}}, 
 }
 \examples{
 ##---- Should be DIRECTLY executable !! ----
