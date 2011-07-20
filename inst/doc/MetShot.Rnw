@@ -46,6 +46,132 @@
 
 \section{Introduction}
 
+\cite{Smith06XCMSProcessingmass}
+
+\section{Example}
+
+<<LibraryPreload, echo = FALSE, results = hide>>=
+library(xcms)
+library(CAMERA)
+library(MetShot)
+library(faahKO)
+library(multtest)
+@
+
+<<open the file>>=
+
+##
+## finish the faahKO data
+##
+
+faahko <- group(faahko)
+faahko <- fillPeaks(faahko)
+
+##
+## Create the annotation for putative [M+H]+
+##
+xa_pos <- xsAnnotate(faahko)
+xa_pos <- groupFWHM(xa_pos)
+
+xa_pos <- findIsotopes(xa_pos)
+xa_pos <- groupCorr(xa_pos)
+xa_pos <- findAdducts(xa_pos, polarity="positive")
+
+
+p <- getPeaklist(xa_pos)
+
+
+## Find Interesting peaks
+dr <- diffreport(faahko, sortpval=FALSE)
+
+
+## Interesting groups have to be
+## 1) potential [M+H]
+## 2) differental
+## 3) upregulated in one class (optional)
+## 4) with a minimum intensity
+
+targetgroups <- which ( grepl("[M+H]", p[,"adduct"], fixed=TRUE)
+                       & dr[,"ko15"] >1000 )
+
+if (length(targetgroups) == 0) {
+    message("Sorry, nothing of interest left :-(")
+}
+
+priorities <- order(dr[targetgroups, "fold"])
+
+##
+reporttab <- groups(faahko)[priorities,]
+
+## Fix column names
+## Need to fix code later ;-) 
+
+colnames(reporttab) <- sub("^rt$", "rtmed", colnames(reporttab))
+colnames(reporttab) <- sub("^mz$", "mzmed", colnames(reporttab))
+
+##
+## The exclusion peakID list is for iterative
+## method generation
+##
+
+templateFile <- system.file("20minKalibpos_Startermethod_MSMS.m", package = "MetShot")
+
+collisionEnergies <- c(20)
+
+picklists <- list()
+i <- 1;
+reporttab.tmp <- reporttab
+reporttabTargetRun <- rep(NA, nrow(reporttab))
+
+while (nrow(reporttab.tmp) > 0.15*nrow(reporttab)) {
+
+    ## write bruker method
+    for (j in seq(length = length(collisionEnergies))) {
+        methodname <- paste("/tmp/MSMS-E320-",i,"-",
+                            collisionEnergies[j], "eV.m", sep="")
+
+        picklist <- xcms2method(reporttab.tmp, method=methodname,
+                                widthFactor=1.5, minWidth=4,
+                                template=templateFile,
+                                MSMSManual_ListCollisionEnergy=collisionEnergies[j],
+                                MSmode="positive")
+
+        message(paste("Created ", methodname,
+                      "with", nrow(picklist), "MS2 regions"))
+
+    }
+
+    if (is.null(picklist)) {
+        message("Finished, nothing left to do")
+        break;
+    }
+
+    picklists[[i]] <- picklist
+
+    # plot overview
+    plotMS2windows(reporttab, picklist,
+                   peaks=ifelse(i==1, TRUE, FALSE),
+                   col=i)
+
+    # Remember where they went
+    mplushidx <- as.numeric(rownames(picklist))
+
+    # Save picklist
+    tmp <- picklist
+
+    filename <- paste(methodname, "picklistE320.csv", sep="/")
+    write.csv(tmp, file=filename)
+
+    excludePeakIdx <- match(rownames(picklist), rownames(reporttab.tmp))
+
+    reporttab.tmp <- reporttab.tmp[-excludePeakIdx,,drop=FALSE]
+
+    reporttabTargetRun[match(rownames(picklist), names(reporttabTargetRun))] <- i
+
+    i <- i+1
+}
+@ 
+
 
 \section{Session information}\label{sec:sessionInfo} 
 
