@@ -2,23 +2,14 @@
 \alias{MetShot-package}
 \alias{MetShot}
 \docType{package}
-\title{
-What the package does (short line)
-~~ package title ~~
+\title{High throughput acquisition and processing of tandem mass spectra
 }
 \description{
 More about what it does (maybe more than one line)
 ~~ A concise (1-5 lines) description of the package ~~
 }
 \details{
-\tabular{ll}{
-Package: \tab MetShot\cr
-Type: \tab Package\cr
-Version: \tab 1.0\cr
-Date: \tab 2011-07-19\cr
-License: \tab What license is it under?\cr
-LazyLoad: \tab yes\cr
-}
+	see vignette
 ~~ An overview of how to use the package, including the most important ~~
 ~~ functions ~~
 }
@@ -31,8 +22,6 @@ Maintainer: Who to complain to <yourfault@somewhere.net>
 \references{
 ~~ Literature or other references for background information ~~
 }
-~~ Optionally other standard keywords, one per line, from file KEYWORDS in ~~
-~~ the R documentation directory ~~
 \keyword{ package }
 \seealso{
 ~~ Optional links to other man pages, e.g. ~~
