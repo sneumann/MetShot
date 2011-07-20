@@ -1,1 +1,10 @@
-exportPattern("^[[:alpha:]]+")
+export(
+	peaklist2picklist,  
+	picklist2method,  
+	plotMS2windows,
+	xcms2method,
+	beginTraml,
+	addTargetSegment,
+	endTraml
+)
+

@@ -1,6 +1,7 @@
 \name{xcms2method}
 \alias{xcms2method}
-%- Also NEED an '\alias' for EACH other topic documented here.
+\alias{picklist2method}
+\alias{peaklist2picklist}
 \title{
 Convenience method to go from XCMS peak tables or diffreports
 straight to Bruker micrOTOF control method files
@@ -12,11 +13,26 @@ straight to Bruker micrOTOF control method files
 }
 \usage{
 xcms2method(peaklist, method = "", MSmode = c("positive", "negative"), template = "test.method", gradientStart = NULL, gradientEnd = NULL, widthFactor = 1, minWidth = 1, MSMSManual_ListCollisionEnergy = 15, MSMSManual_ListIsolationWidth = 8)
+
+picklist2method(pickList, method = "", MSmode = c("positive",
+"negative"), template = "test.method", MSMSManual_ListCollisionEnergy =
+15, MSMSManual_ListIsolationWidth = 8)
+
+peaklist2picklist(anyPeaklist, gradientStart = NULL, gradientEnd = NULL,
+widthFactor = 1, minWidth = 1)
+
+
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{peaklist}{Eith a peak list with columns rtmin/rt/rtmax and
     mzmin/mz/mzmax or a diffreport.
+}
+  \item{anyPeaklist}{Eith a peak list with columns rtmin/rt/rtmax and
+    mzmin/mz/mzmax or a diffreport.
+}
+  \item{pickList}{
+    A picklist is XXX.
 }
   \item{method}{
     Outfile prefix for the created method(s)
@@ -71,40 +87,13 @@ xcms2method(peaklist, method = "", MSmode = c("positive", "negative"), template 
   setup, and incorrect control files could damage equipment.   
 }
 
-\seealso{
-\code{\link{peaklist2picklist}}, \code{\link{picklist2method}}, 
+\seealso{  
+  \code{\link{plotMS2windows}}
 }
 \examples{
 ##---- Should be DIRECTLY executable !! ----
 ##-- ==>  Define data, use random,
 ##--	or do  help(data=index)  for the standard data sets.
-
-## The function is currently defined as
-function(peaklist, method="", MSmode=c("positive","negative"),
-                        template="test.method",
-                        gradientStart=NULL, gradientEnd=NULL,
-                        widthFactor=1, minWidth=1,
-                        MSMSManual_ListCollisionEnergy=15,
-                        MSMSManual_ListIsolationWidth=8)
-{
-
-
-    pickList <- peaklist2picklist(peaklist,
-                                  gradientStart=gradientStart, gradientEnd=gradientEnd,
-                                  widthFactor=widthFactor,
-                                  minWidth=minWidth)
-
-    if (is.null(pickList)) {
-        warning("No suitable peaks found, returning empty picklist")
-        return(NULL)
-    }
-
-    picklist2method(pickList, method, MSmode, template,
-                    MSMSManual_ListCollisionEnergy=MSMSManual_ListCollisionEnergy,
-                    MSMSManual_ListIsolationWidth=MSMSManual_ListIsolationWidth)    
-  }
 }
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory.
 \keyword{ ~kwd1 }
 \keyword{ ~kwd2 }% __ONLY ONE__ keyword per line

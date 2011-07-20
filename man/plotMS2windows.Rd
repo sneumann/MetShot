@@ -1,28 +1,29 @@
 \name{plotMS2windows}
 \alias{plotMS2windows}
-%- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-%%  ~~function to do ... ~~
+	Overlay plot of peak list and generated picklist(s)
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+
+	Visualisation of the generated picklists. Because the peak
+	lists are superimposed, one can easily see how much instrument
+	time is "unused".
 }
 \usage{
 plotMS2windows(anyPeaklist, pickList, peaks = TRUE, col = NULL)
 }
-%- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{anyPeaklist}{
-%%     ~~Describe \code{anyPeaklist} here~~
+  \item{anyPeaklist}{Eith a peak list with columns rtmin/rt/rtmax and
+    mzmin/mz/mzmax or a diffreport.
 }
   \item{pickList}{
-%%     ~~Describe \code{pickList} here~~
+    A picklist is XXX.
 }
   \item{peaks}{
-%%     ~~Describe \code{peaks} here~~
+  Boolean, whether peaks shall be plotted atop the picklist windows
 }
   \item{col}{
-%%     ~~Describe \code{col} here~~
+  Color for the picklists
 }
 }
 \details{
@@ -48,7 +49,8 @@ plotMS2windows(anyPeaklist, pickList, peaks = TRUE, col = NULL)
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
+  \code{\link{xcms2method}},
+  \code{\link{peaklist2picklist}}
 }
 \examples{
 ##---- Should be DIRECTLY executable !! ----
