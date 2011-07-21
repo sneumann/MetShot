@@ -55,7 +55,6 @@ library(xcms)
 library(CAMERA)
 library(MetShot)
 library(faahKO)
-library(multtest)
 @
 
 <<open the file>>=
@@ -75,8 +74,9 @@ xa_pos <- groupFWHM(xa_pos)
 
 xa_pos <- findIsotopes(xa_pos)
 xa_pos <- groupCorr(xa_pos)
-xa_pos <- findAdducts(xa_pos, polarity="positive")
-
+xa_pos <- findAdducts(xa_pos, 
+                      ppm=100, mzabs=0.1, 
+                      polarity="positive")
 
 p <- getPeaklist(xa_pos)
 
@@ -84,15 +84,14 @@ p <- getPeaklist(xa_pos)
 ## Find Interesting peaks
 dr <- diffreport(faahko, sortpval=FALSE)
 
-
 ## Interesting groups have to be
 ## 1) potential [M+H]
 ## 2) differental
-## 3) upregulated in one class (optional)
-## 4) with a minimum intensity
+## 3) with a minimum intensity
 
 targetgroups <- which ( grepl("[M+H]", p[,"adduct"], fixed=TRUE)
-                       & dr[,"ko15"] >1000 )
+                       & dr[,"fold"] > 1
+                       & dr[,"wt15"] > 1000 )
 
 if (length(targetgroups) == 0) {
     message("Sorry, nothing of interest left :-(")
@@ -114,62 +113,90 @@ colnames(reporttab) <- sub("^mz$", "mzmed", colnames(reporttab))
 ## method generation
 ##
 
-templateFile <- system.file("20minKalibpos_Startermethod_MSMS.m", package = "MetShot")
+templateFile <- system.file("20minKalibpos_Startermethod_MSMS.m", 
+                            package = "MetShot")
 
-collisionEnergies <- c(20)
+collisionEnergy <- c(20)
+
+methodname <- paste(tempdir(), "/MSMS-faahKO-20eV.m", sep="")
+
+picklist <- xcms2method(reporttab, method=methodname,
+                        widthFactor=1.5, minWidth=4,
+                        template=templateFile,
+                        MSMSManual_ListCollisionEnergy=collisionEnergy,
+                        MSmode="positive")
+
+message(paste("Created ", methodname,
+              "with", nrow(picklist), "MS2 regions"))
+
+@ 
+
+The picklist 
+
+<<picklist>>=
+picklist
+@ 
+
+Plot peaks and target windows superimposed.
+
+<<plotCoverage, fig = TRUE, eps = FALSE>>=
+## plot overview
+plotMS2windows(reporttab, picklist)
+@ 
+
+It is also possible to create manymany MSMS methods:
+
+<<the leftovers>>=
 
 picklists <- list()
 i <- 1;
+
+if (is.null(rownames(reporttab))) {
+  rownames(reporttab) <- 1:nrow(reporttab)
+}
 reporttab.tmp <- reporttab
+
 reporttabTargetRun <- rep(NA, nrow(reporttab))
 
 while (nrow(reporttab.tmp) > 0.15*nrow(reporttab)) {
 
-    ## write bruker method
-    for (j in seq(length = length(collisionEnergies))) {
-        methodname <- paste("/tmp/MSMS-E320-",i,"-",
-                            collisionEnergies[j], "eV.m", sep="")
+  methodname <- paste(tempdir(), "/MSMS-faahKO-" ,i,
+                      "-20eV.m", sep="")
 
-        picklist <- xcms2method(reporttab.tmp, method=methodname,
-                                widthFactor=1.5, minWidth=4,
-                                template=templateFile,
-                                MSMSManual_ListCollisionEnergy=collisionEnergies[j],
-                                MSmode="positive")
+  picklist <- xcms2method(reporttab.tmp, method=methodname,
+                          widthFactor=1.5, minWidth=4,
+                          template=templateFile,
+                          MSMSManual_ListCollisionEnergy=collisionEnergies[j],
+                          MSmode="positive")
+  
 
-        message(paste("Created ", methodname,
-                      "with", nrow(picklist), "MS2 regions"))
+  if (!is.null(picklist)) {
+    message(paste("Created ", methodname,
+                  "with", nrow(picklist), "MS2 regions"))
+  } else {
+    message("Finished, nothing left to do")
+    break;
+  }
 
-    }
+  picklists[[i]] <- picklist
 
-    if (is.null(picklist)) {
-        message("Finished, nothing left to do")
-        break;
-    }
+  ## Remember where they went
+  mplushidx <- as.numeric(rownames(picklist))
 
-    picklists[[i]] <- picklist
+  ## Save picklist
+  filename <- paste(paste(tempdir(), "/MSMS-faahKO-" ,i,
+                          ".csv", sep=""))
+  write.csv(picklist, file=filename)
 
-    # plot overview
-    plotMS2windows(reporttab, picklist,
-                   peaks=ifelse(i==1, TRUE, FALSE),
-                   col=i)
+  excludePeakIdx <- match(rownames(picklist), rownames(reporttab.tmp))
+  reporttab.tmp <- reporttab.tmp[-excludePeakIdx,,drop=FALSE]
 
-    # Remember where they went
-    mplushidx <- as.numeric(rownames(picklist))
+  reporttabTargetRun[as.integer(rownames(picklist))] <- i
 
-    # Save picklist
-    tmp <- picklist
-
-    filename <- paste(methodname, "picklistE320.csv", sep="/")
-    write.csv(tmp, file=filename)
-
-    excludePeakIdx <- match(rownames(picklist), rownames(reporttab.tmp))
-
-    reporttab.tmp <- reporttab.tmp[-excludePeakIdx,,drop=FALSE]
-
-    reporttabTargetRun[match(rownames(picklist), names(reporttabTargetRun))] <- i
-
-    i <- i+1
+  i <- i+1
 }
+
+
 @ 
 
 
