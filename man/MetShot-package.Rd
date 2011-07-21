@@ -16,7 +16,7 @@ More about what it does (maybe more than one line)
 \author{
 Who wrote it
 
-Maintainer: Who to complain to <yourfault@somewhere.net>
+Maintainer: Who to complain to <sneumann@ipb-halle.de>
 ~~ The author and/or maintainer of the package ~~
 }
 \references{
@@ -24,9 +24,8 @@ Maintainer: Who to complain to <yourfault@somewhere.net>
 }
 \keyword{ package }
 \seealso{
-~~ Optional links to other man pages, e.g. ~~
-~~ \code{\link[<pkg>:<pkg>-package]{<pkg>}} ~~
+\code{\link[xcms:xcmsSet]{xcms}}
 }
 \examples{
-~~ simple examples of the most important functions ~~
+# ~~ simple examples of the most important functions ~~
 }
