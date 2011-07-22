@@ -48,7 +48,7 @@
 
 \cite{Smith06XCMSProcessingmass}
 
-\section{Example}
+\section{Acquisition}
 
 <<LibraryPreload, echo = FALSE, results = hide>>=
 library(xcms)
@@ -166,7 +166,7 @@ while (nrow(reporttab.tmp) > 0.15*nrow(reporttab)) {
   picklist <- xcms2method(reporttab.tmp, method=methodname,
                           widthFactor=1.5, minWidth=4,
                           template=templateFile,
-                          MSMSManual_ListCollisionEnergy=collisionEnergies[j],
+                          MSMSManual_ListCollisionEnergy=collisionEnergy,
                           MSmode="positive")
   
 
@@ -191,11 +191,125 @@ while (nrow(reporttab.tmp) > 0.15*nrow(reporttab)) {
   excludePeakIdx <- match(rownames(picklist), rownames(reporttab.tmp))
   reporttab.tmp <- reporttab.tmp[-excludePeakIdx,,drop=FALSE]
 
+  cat (rownames(picklist), "\n")
   reporttabTargetRun[as.integer(rownames(picklist))] <- i
 
   i <- i+1
 }
 
+@ 
+
+
+\section{Processing}
+
+Now a file was measured, we need to extract the MS2 spectra.
+Instead if ``just'' taking a spectrum, we do peak picking 
+and CAMERA grouping.
+
+<<<Processing>>=
+
+#######################################
+##
+## Parameters common to MS1 and MS2 picking
+##
+
+peakwidth=c(6,15)
+ppm=25
+snthresh=2
+prefilter=c(2,20)
+
+
+#######################################
+##
+## Read MS1 peaks
+##
+
+ms1peaks <- faahko
+
+#######################################
+##
+## Read MS2 peaks
+## Obtain MS2 peaks (ab)using normal peak picker
+##
+
+snthresh=2
+
+
+## Create a pseudo-MS1 xraw
+filename <- system.file("microtof/MM48_MSMSpos_MH1_15ev_1-A,2_01_9310.mzXML", 
+                        package = "MetShot")
+
+xraw <- msn2xcms(xcmsRaw(filename, includeMSn=TRUE))
+
+ms2peaks <- findPeaks(msn2xcms(xraw), method="centWave",
+                      snthresh=snthresh, prefilter=prefilter,
+                      peakwidth=peakwidth, ppm=ppm, verbose.columns=T)
+
+
+## for each peak
+ms2precursor <- cbind(rt=xraw@msnRt, mz=xraw@msnPrecursorMz)
+
+
+##
+## CAMERA annotation of spectra
+##
+
+xs <- new("xcmsSet")
+peaks(xs) <- ms2peaks
+filepaths(xs) <- c(filename)
+sampnames(xs) <- c("MM48_MSMSpos")
+xs@peaks <- cbind(xs@peaks, sample=1)
+
+xa <- xsAnnotate(xs)
+xa <- groupFWHM(xa)
+
+@ 
+
+You can plot the raw MS2 data, and superimpose the precursor
+
+<<plotMS2raw, fig = TRUE, eps = FALSE>>=
+
+plotGroups(xraw, 
+           precursor=ms2precursor,
+           xa=xa,
+           ms1peaks=ms1peaks,
+           precursorcol=1)
+
+@ 
+
+You can plot the overlaid MS2 raw data and the picked and grouped peaks:
+<<<plotRawMS2peaks, fig = TRUE, eps = FALSE>>=
+
+plotGroups(xraw, ms2precursor, xa)
+
+## segments(ms1pre[,"rt"], ms1pre[,"mz"],
+##          psppre[,"rt"], psppre[,"mz"],
+##          col="blue")
+
+## library(class)
+## ms1pre <- peaks(ms1peaks)[knn(ms1, psppre, 1:nrow(ms1)),c("rt","mz", "into")]
+## points(ms1pre, col="darkred", pch=".", cex=3)
+
+@ 
+
+
+
+You can plot the individual retrieved MS2 Spectrum:
+
+<<<plotMS2peaks, fig = TRUE, eps = FALSE>>=
+
+pspec <- 12
+
+rt <- median(getpspectra(xa, pspec)[,"rt"])
+
+mz <- ms2precursor[which(ms2precursor[,"rt"] == rt), "mz"]
+sp <- getpspectra(xa, grp=pspec)[,c("mz", "maxo")]
+
+plotPsSpectrum(xa, pspec=pspec,
+          maxlabel=5, log=FALSE, sleep=0,
+          title=paste("Spec:", pspec, "RT:", as.integer(rt), "m/z:", mz))
+
+}
 
 @ 
 

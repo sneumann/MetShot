@@ -33,4 +33,3 @@ vignette:
 clean:
 	rm -f $(LATEXFILES)
 	rm -f *~
-

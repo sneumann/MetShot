@@ -5,6 +5,8 @@ export(
 	xcms2method,
 	beginTraml,
 	addTargetSegment,
-	endTraml
+	endTraml,
+	msn2xcms,
+	plotGroups
 )
 
