@@ -4,7 +4,7 @@ function (xa,xraw=NULL,cor_eic_th=0.75) {
     maxscans <- length(xraw@scantime)
     scantimes<-list();
     scantimes[[1]] <- xraw@scantime
-    pdata <- xa@peaks
+    pdata <- peaks(xa@xcmsSet)
 
     EIC <- array(integer(0),c(nrow(pdata),maxscans,1))
     EIC[,,1] <- CAMERA:::getEICs(xraw,pdata,maxscans)
@@ -34,8 +34,8 @@ function (xa,xraw=NULL,cor_eic_th=0.75) {
                         ##end debug
                         eicx <-  EIC[xi,,1]
                         eicy <-  EIC[yi,,1]
-                        px <- xa@peaks[xi,]
-                        py <- xa@peaks[yi,]
+                        px <- peaks(xa@xcmsSet)[xi,]
+                        py <- peaks(xa@xcmsSet)[yi,]
                         crt <- range(px["rtmin"],px["rtmax"],py["rtmin"],py["rtmax"])
                         rti <- which(scantimes[[1]] >= crt[1] & scantimes[[1]] <= crt[2])
                         if (length(rti)>1){

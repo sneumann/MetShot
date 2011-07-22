@@ -137,13 +137,6 @@ The picklist
 picklist
 @ 
 
-Plot peaks and target windows superimposed.
-
-<<plotCoverage, fig = TRUE, eps = FALSE>>=
-## plot overview
-plotMS2windows(reporttab, picklist)
-@ 
-
 It is also possible to create manymany MSMS methods:
 
 <<the leftovers>>=
@@ -199,6 +192,19 @@ while (nrow(reporttab.tmp) > 0.15*nrow(reporttab)) {
 
 @ 
 
+
+Plot peaks and target windows superimposed.
+
+<<plotCoverage, fig = TRUE, eps = FALSE>>=
+## plot overview
+
+for (i in seq(1, length(picklists))) {
+  plotMS2windows(reporttab, picklists[[i]],
+                 peaks=ifelse(i==1, TRUE, FALSE),
+                 col=i)
+}
+
+@
 
 \section{Processing}
 
@@ -265,30 +271,11 @@ xa <- groupFWHM(xa)
 
 @ 
 
-You can plot the raw MS2 data, and superimpose the precursor
-
-<<plotMS2raw, fig = TRUE, eps = FALSE>>=
-
-plotGroups(xraw, 
-           precursor=ms2precursor,
-           xa=xa,
-           ms1peaks=ms1peaks,
-           precursorcol=1)
-
-@ 
 
 You can plot the overlaid MS2 raw data and the picked and grouped peaks:
 <<<plotRawMS2peaks, fig = TRUE, eps = FALSE>>=
 
 plotGroups(xraw, ms2precursor, xa)
-
-## segments(ms1pre[,"rt"], ms1pre[,"mz"],
-##          psppre[,"rt"], psppre[,"mz"],
-##          col="blue")
-
-## library(class)
-## ms1pre <- peaks(ms1peaks)[knn(ms1, psppre, 1:nrow(ms1)),c("rt","mz", "into")]
-## points(ms1pre, col="darkred", pch=".", cex=3)
 
 @ 
 
@@ -308,8 +295,6 @@ sp <- getpspectra(xa, grp=pspec)[,c("mz", "maxo")]
 plotPsSpectrum(xa, pspec=pspec,
           maxlabel=5, log=FALSE, sleep=0,
           title=paste("Spec:", pspec, "RT:", as.integer(rt), "m/z:", mz))
-
-}
 
 @ 
 

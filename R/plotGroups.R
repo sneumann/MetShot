@@ -1,3 +1,5 @@
+require(cluster)
+
 plotGroups <-
 function(xraw, precursor=NULL, xa, mzrange=NULL, rtrange=NULL,
                        ms1peaks=NULL, precursorcol=1) {
@@ -17,16 +19,16 @@ function(xraw, precursor=NULL, xa, mzrange=NULL, rtrange=NULL,
                                      rep(groupcolors[x], each=length(xa@pspectra[[x]]))
                                    }))
 
-  peakcolors <- rep(1, each=nrow(xa@peaks))
+  peakcolors <- rep(1, each=nrow(peaks(xa@xcmsSet)))
   peakcolors[unlist(xa@pspectra)] <- grouppeakcolors
 
   bbox <- t(sapply (xa@pspectra, function(x) {
-    c(rtmin = min(xa@peaks[x,"rtmin"]),
-      rtmed = mean(xa@peaks[x,"rt"]),
-      rtmax = max(xa@peaks[x,"rtmax"]),
-      mzmin = min(xa@peaks[x,"mzmin"]),
-      mzmed = mean(xa@peaks[x,"mz"]),
-      mzmax = max(xa@peaks[x,"mzmax"])
+    c(rtmin = min(peaks(xa@xcmsSet)[x,"rtmin"]),
+      rtmed = mean(peaks(xa@xcmsSet)[x,"rt"]),
+      rtmax = max(peaks(xa@xcmsSet)[x,"rtmax"]),
+      mzmin = min(peaks(xa@xcmsSet)[x,"mzmin"]),
+      mzmed = mean(peaks(xa@xcmsSet)[x,"mz"]),
+      mzmax = max(peaks(xa@xcmsSet)[x,"mzmax"])
       )
   }))
 
@@ -136,10 +138,10 @@ function(xraw, precursor=NULL, xa, mzrange=NULL, rtrange=NULL,
 ##        col=groupcolors, labels=1:length(xa@pspectra))
 
   ## Random order o to avoid biased overdrawing
-  o <- order(xa@peaks[,"into"])
-  points(xa@peaks[o,c("rt", "mz")],
-         cex=log(xa@peaks[o,"into"])*0.2,
-         lwd=log(xa@peaks[o,"into"])*0.33,
+  o <- order(peaks(xa@xcmsSet)[,"into"])
+  points(peaks(xa@xcmsSet)[o,c("rt", "mz")],
+         cex=log(peaks(xa@xcmsSet)[o,"into"])*0.2,
+         lwd=log(peaks(xa@xcmsSet)[o,"into"])*0.33,
          pch=4, col=peakcolors[o])
 }
 
