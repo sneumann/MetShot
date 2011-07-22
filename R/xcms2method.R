@@ -8,18 +8,21 @@ function(peaklist, method="", MSmode=c("positive","negative"),
 {
 
 
-    pickList <- peaklist2picklist(peaklist,
+    pickLists <- peaklist2picklist(peaklist,
                                   gradientStart=gradientStart, gradientEnd=gradientEnd,
                                   widthFactor=widthFactor,
                                   minWidth=minWidth)
 
-    if (is.null(pickList)) {
+    if (is.null(pickLists)) {
         warning("No suitable peaks found, returning empty picklist")
         return(NULL)
     }
-
-    picklist2method(pickList, method, MSmode, template,
+    
+    for (i in 1:length(pickLists)){
+        methodname<-paste(method,"_",i,sep="")
+        picklist2method(pickLists[[i]], methodname, MSmode, template,
                     MSMSManual_ListCollisionEnergy=MSMSManual_ListCollisionEnergy,
                     MSMSManual_ListIsolationWidth=MSMSManual_ListIsolationWidth)    
+    }
 }
 

@@ -7,6 +7,8 @@ function(anyPeaklist,
   ## handle peaks(xs), groups(xs), diffreport()
   ##
 
+  
+
   if (typeof(anyPeaklist)=="list") {
       peaklist <- as.matrix(anyPeaklist[,c("mzmin","mzmed", "mzmax","rtmin","rtmed", "rtmax")])
   } else {
@@ -59,24 +61,35 @@ function(anyPeaklist,
   ##
 
   o <- order(peaklist[, "rtmed"])
-  pickList <- findWindow(peaklist[o,,drop=FALSE],
-                         rtmin=gradientStart, rtmax=gradientEnd)
 
-  if (is.null(pickList) || nrow(pickList)<2) {
+  priorities <- c(length(peaklist):1) #peaklist is sorted according to fold change; you can change it here 
+
+  pickLists <- getSchedule(peaklist,priorities)	
+  #pickList <- findWindow(peaklist[o,,drop=FALSE],
+  #                       rtmin=gradientStart, rtmax=gradientEnd)
+
+  if (is.null(pickLists) || nrow(pickLists[[1]])<2) {
       return(NULL)
   }
 
-  o <- order(pickList[, "rtmed"])
-  pickListOrdered <- pickList[o,,drop=FALSE]
-  pickListFilled <- pickListOrdered
+  pickListsFilled<-list()
+  for (j in 1:length(pickLists)){
+      if (is.null(pickLists[[j]]) || nrow(pickLists[[j]])<2) {
+        break
+      }
+      o <- order(pickLists[[j]][, "rtmed"]) # already ordered
+      pickListOrdered <- pickLists[[j]][o,,drop=FALSE]
+      pickListFilled <- pickLists[[j]]
 
-  for (i in 1:(nrow(pickListOrdered)-1)) {
-      meanTime <- mean(c(pickListOrdered[i,"rtmax"],
-                         pickListOrdered[i+1,"rtmin"]))
-      pickListFilled[i, "rtmax"] <- meanTime
-      pickListFilled[i+1,"rtmin"] <- meanTime
+      for (i in 1:(nrow(pickListOrdered)-1)) {
+          meanTime <- mean(c(pickListOrdered[i,"rtmax"],
+                             pickListOrdered[i+1,"rtmin"]))
+          pickListFilled[i, "rtmax"] <- meanTime
+          pickListFilled[i+1,"rtmin"] <- meanTime
+      }
+      pickListsFilled[[j]]<-pickListFilled
   }
 
-  invisible(pickListFilled)
+  invisible(pickListsFilled)
 }
 
