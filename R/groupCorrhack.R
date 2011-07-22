@@ -67,10 +67,10 @@ function (xa,xraw=NULL,cor_eic_th=0.75) {
         CI <- data.frame(t(sapply(CIL,function(x) x$p)),sapply(CIL,function(x) x$cor) )
         colnames(CI) <- c('xi','yi','cors')
 
-        ##Subgraph Zerlegung nach Kantenkonnektivität##
+        ## Subgraph division according to connectivity
         xa@pspectra <- CAMERA:::calc_pc(peaks,CL,CI)
     } else {
-        warning("Keine Grp möglich in ", xraw@filepath)
+        warning("No groups found in ", xraw@filepath)
     }
     return(invisible(xa));
 }
