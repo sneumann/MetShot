@@ -3,7 +3,7 @@ if(require("RUnit", quietly=TRUE)) {
 
   ## --- Setup ---
 
-  pkg <- "mzR" # <-- Change to package name!
+  pkg <- "MetShot" # <-- Change to package name!
   if(Sys.getenv("RCMDCHECK") == "FALSE") {
     ## Path to unit tests for standalone running under Makefile (not R CMD check)
     ## PKG/tests/../inst/unitTests
