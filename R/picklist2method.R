@@ -20,8 +20,9 @@ function(pickList, method="", MSmode=c("positive","negative"),
   ##
 
   newTable <- xmlNode("timetable")
-##   firstSegment <- root[["method"]][["qtofacq"]][["timetable"]][[1]]
-##   newTable <- addChildren(newTable, firstSegment)
+
+    firstSegment <- root[["method"]][["qtofacq"]][["timetable"]][[1]]
+  newTable <- addChildren(newTable, firstSegment)
 
   ## Second Segment has to be the first MRM in the template
   segmentTemplate <- root[["method"]][["qtofacq"]][["timetable"]][[2]]
