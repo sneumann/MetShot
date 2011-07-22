@@ -55,6 +55,8 @@ library(xcms)
 library(CAMERA)
 library(MetShot)
 library(faahKO)
+
+
 @
 
 <<open the file>>=
@@ -161,7 +163,6 @@ while (nrow(reporttab.tmp) > 0.15*nrow(reporttab)) {
                           template=templateFile,
                           MSMSManual_ListCollisionEnergy=collisionEnergy,
                           MSmode="positive")
-  
 
   if (!is.null(picklist)) {
     message(paste("Created ", methodname,
@@ -247,7 +248,7 @@ filename <- system.file("microtof/MM48_MSMSpos_MH1_15ev_1-A,2_01_9310.mzXML",
 
 xraw <- msn2xcms(xcmsRaw(filename, includeMSn=TRUE))
 
-ms2peaks <- findPeaks(msn2xcms(xraw), method="centWave",
+ms2peaks <- findPeaks(xraw, method="centWave",
                       snthresh=snthresh, prefilter=prefilter,
                       peakwidth=peakwidth, ppm=ppm, verbose.columns=T)
 
@@ -268,6 +269,7 @@ xs@peaks <- cbind(xs@peaks, sample=1)
 
 xa <- xsAnnotate(xs)
 xa <- groupFWHM(xa)
+## xa <- groupCorrhack(xa,xraw,cor_eic_th=0.75)
 
 @ 
 
