@@ -13,7 +13,8 @@ LATEXFILES = *.aux\
         *.dvi\
         *.map\
         *.out\
-        MetShot-*.pdf
+        MetShot-*.pdf\
+        MetShot.R
 
 all:
 	make vignette

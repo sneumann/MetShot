@@ -12,9 +12,9 @@ straight to Bruker micrOTOF control method files
   segments for the "interesting" peaks in the peak list  
 }
 \usage{
-xcms2method(peaklist, method = "", MSmode = c("positive", "negative"), template = "test.method", gradientStart = NULL, gradientEnd = NULL, widthFactor = 1, minWidth = 1, MSMSManual_ListCollisionEnergy = 15, MSMSManual_ListIsolationWidth = 8)
+xcms2method(peaklist, methodPrefix = "", MSmode = c("positive", "negative"), template = "test.method", gradientStart = NULL, gradientEnd = NULL, widthFactor = 1, minWidth = 1, MSMSManual_ListCollisionEnergy = 15, MSMSManual_ListIsolationWidth = 8)
 
-picklist2method(pickList, method = "", MSmode = c("positive",
+picklist2method(pickList, methodPrefix = "", MSmode = c("positive",
 "negative"), template = "test.method", MSMSManual_ListCollisionEnergy =
 15, MSMSManual_ListIsolationWidth = 8)
 
@@ -34,7 +34,7 @@ widthFactor = 1, minWidth = 1)
   \item{pickList}{
     A picklist is XXX.
 }
-  \item{method}{
+  \item{methodPrefix}{
     Outfile prefix for the created method(s)
 }
   \item{MSmode}{

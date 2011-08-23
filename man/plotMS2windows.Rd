@@ -10,7 +10,7 @@
 	time is "unused".
 }
 \usage{
-plotMS2windows(anyPeaklist, pickList, peaks = TRUE, col = NULL)
+plotMS2windows(anyPeaklist, pickList, peaks = TRUE, col = NULL, labels=NULL)
 }
 \arguments{
   \item{anyPeaklist}{Eith a peak list with columns rtmin/rt/rtmax and
@@ -24,6 +24,9 @@ plotMS2windows(anyPeaklist, pickList, peaks = TRUE, col = NULL)
 }
   \item{col}{
   Color for the picklists
+}
+  \item{labels}{
+  Labels to be printed atop the MS2 windows
 }
 }
 \details{

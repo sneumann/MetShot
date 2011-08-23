@@ -122,7 +122,7 @@ collisionEnergy <- c(20)
 
 methodname <- paste(tempdir(), "/MSMS-faahKO-20eV.m", sep="")
 
-picklist <- xcms2method(reporttab, method=methodname,
+picklist <- xcms2method(reporttab, methodPrefix=methodname,
                         widthFactor=1.5, minWidth=4,
                         template=templateFile,
                         MSMSManual_ListCollisionEnergy=collisionEnergy,
@@ -158,7 +158,7 @@ while (nrow(reporttab.tmp) > 0.15*nrow(reporttab)) {
   methodname <- paste(tempdir(), "/MSMS-faahKO-" ,i,
                       "-20eV.m", sep="")
 
-  picklist <- xcms2method(reporttab.tmp, method=methodname,
+  picklist <- xcms2method(reporttab.tmp, methodPrefix=methodname,
                           widthFactor=1.5, minWidth=4,
                           template=templateFile,
                           MSMSManual_ListCollisionEnergy=collisionEnergy,
@@ -199,11 +199,11 @@ Plot peaks and target windows superimposed.
 <<plotCoverage, fig = TRUE, eps = FALSE>>=
 ## plot overview
 
-for (i in seq(1, length(picklists))) {
-  plotMS2windows(reporttab, picklists[[i]],
-                 peaks=ifelse(i==1, TRUE, FALSE),
-                 col=i)
-}
+## for (i in seq(1, length(picklists))) {
+##   plotMS2windows(reporttab, picklists[[i]],
+##                  peaks=ifelse(i==1, TRUE, FALSE),
+##                  col=i)
+## }
 
 @
 

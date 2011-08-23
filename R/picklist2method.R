@@ -1,12 +1,13 @@
 picklist2method <-
-function(pickList, method="", MSmode=c("positive","negative"),
+function(pickList, methodPrefix="", MSmode=c("positive","negative"),
                         template="test.method",
                         MSMSManual_ListCollisionEnergy=15,
                         MSMSManual_ListIsolationWidth=8)
 {
     require(XML) || stop("Couldn't load package XML")
 
-
+    for (MSMSManual_ListCollisionEnergy in MSMSManual_ListCollisionEnergy) {
+        method <- paste(methodPrefix, "-", MSMSManual_ListCollisionEnergy, "eV.m", sep="")
   ##
   ## Load and parse Template
   ##
@@ -108,11 +109,11 @@ function(pickList, method="", MSmode=c("positive","negative"),
   ##
 
     system(paste ("rm -rf ", method))
-    system(paste ("cp -ax ", template, method))
+    system(paste ("cp -rx ", template, method))
 
 
   saveXML(root, file=paste(method, "microTOFQAcquisition.method", sep="/"))
-
+}
   invisible(pickList[,,drop=FALSE])
 }
 

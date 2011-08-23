@@ -1,6 +1,7 @@
 plotMS2windows <-
 function(anyPeaklist, pickList,
-                           peaks=TRUE, col=NULL)
+         peaks=TRUE, col=NULL,
+         labels=NULL)
 {
 
     if (is.null(col)) {
@@ -50,6 +51,7 @@ function(anyPeaklist, pickList,
              pickList[,"rtmax"], pickList[,"mzmed"],
              col=col, lwd=2)
 
+    text(pickList[,"rtmin"], pickList[,"mzmed"], labels=labels, col=col, pos=4)
 
     ## Peak Groups
     segments(peaklist[,"rtmin"], peaklist[,"mzmed"],

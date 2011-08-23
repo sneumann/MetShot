@@ -1,5 +1,5 @@
 xcms2method <-
-function(peaklist, method="", MSmode=c("positive","negative"),
+function(peaklist, methodPrefix="", MSmode=c("positive","negative"),
                         template="test.method",
                         gradientStart=NULL, gradientEnd=NULL,
                         widthFactor=1, minWidth=1,
@@ -19,7 +19,7 @@ function(peaklist, method="", MSmode=c("positive","negative"),
     }
     
     for (i in 1:length(pickLists)){
-        methodname<-paste(method,"_",i,sep="")
+        methodname<-paste(methodPrefix,"_",i,sep="")
         picklist2method(pickLists[[i]], methodname, MSmode, template,
                     MSMSManual_ListCollisionEnergy=MSMSManual_ListCollisionEnergy,
                     MSMSManual_ListIsolationWidth=MSMSManual_ListIsolationWidth)    
