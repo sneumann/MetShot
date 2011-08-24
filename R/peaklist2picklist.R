@@ -68,7 +68,7 @@ function(anyPeaklist,
   #pickList <- findWindow(peaklist[o,,drop=FALSE],
   #                       rtmin=gradientStart, rtmax=gradientEnd)
 
-  if (is.null(pickLists) || nrow(pickLists[[1]])<2) {
+  if (is.null(pickLists)) {# || nrow(pickLists[[1]])<2
       return(NULL)
   }
 
