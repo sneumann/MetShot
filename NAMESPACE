@@ -1,6 +1,10 @@
+importClassesFrom(Biobase, "Versioned")
+importFrom(Biobase, validMsg)
+
 export(
 	peaklist2picklist,  
-	picklist2method,  
+	picklist2method,
+        picklist2Agilent,
 	plotMS2windows,
 	xcms2method,
 	beginTraml,
@@ -9,4 +13,8 @@ export(
 	msn2xcms,
 	plotGroups
 )
+
+exportClasses("MetShot")
+
+
 

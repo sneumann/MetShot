@@ -19,10 +19,15 @@ function(peaklist, methodPrefix="", MSmode=c("positive","negative"),
     }
     
     for (i in 1:length(pickLists)){
-        methodname<-paste(methodPrefix,"_",i,sep="")
+        methodname<-paste(methodPrefix,"_",i, ".m", sep="")
         picklist2method(pickLists[[i]], methodname, MSmode, template,
                     MSMSManual_ListCollisionEnergy=MSMSManual_ListCollisionEnergy,
                     MSMSManual_ListIsolationWidth=MSMSManual_ListIsolationWidth)    
-    }
+
+        message(paste("Created ", methodname,
+                      "with", nrow(pickLists[[i]]), "MS2 regions"))
+
+      }
+    invisible(pickLists)
 }
 

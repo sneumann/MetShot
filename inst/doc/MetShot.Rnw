@@ -128,8 +128,6 @@ picklist <- xcms2method(reporttab, methodPrefix=methodname,
                         MSMSManual_ListCollisionEnergy=collisionEnergy,
                         MSmode="positive")
 
-message(paste("Created ", methodname,
-              "with", nrow(picklist), "MS2 regions"))
 
 @ 
 
@@ -143,53 +141,38 @@ It is also possible to create manymany MSMS methods:
 
 <<the leftovers>>=
 
-picklists <- list()
-i <- 1;
+collisionEnergies <- c(20)
 
-if (is.null(rownames(reporttab))) {
-  rownames(reporttab) <- 1:nrow(reporttab)
-}
-reporttab.tmp <- reporttab
+pickLists <- list()
 
 reporttabTargetRun <- rep(NA, nrow(reporttab))
 
-while (nrow(reporttab.tmp) > 0.15*nrow(reporttab)) {
 
-  methodname <- paste(tempdir(), "/MSMS-faahKO-" ,i,
-                      "-20eV.m", sep="")
-
-  picklist <- xcms2method(reporttab.tmp, methodPrefix=methodname,
-                          widthFactor=1.5, minWidth=4,
-                          template=templateFile,
-                          MSMSManual_ListCollisionEnergy=collisionEnergy,
-                          MSmode="positive")
-
-  if (!is.null(picklist)) {
-    message(paste("Created ", methodname,
-                  "with", nrow(picklist), "MS2 regions"))
-  } else {
-    message("Finished, nothing left to do")
-    break;
+## write bruker method
+for (j in seq(length = length(collisionEnergies))) {
+  methodname <- paste(tempdir(), "/MSMS-faahKO-20eV", 
+                      collisionEnergies[j], ".m", sep="")
+  
+  pickLists <- xcms2method(reporttab, method=methodname,
+                           widthFactor=1.5, minWidth=4,
+                           template=templateFile,
+                           MSMSManual_ListCollisionEnergy=collisionEnergies[j],
+                           MSmode="positive")
+  
+  message(paste("Created ", methodname,
+                "with", length(pickLists), "Runs"))
+  
+  for (i in 1: length(pickLists)) {    
+    filename <- paste(methodname,"_",i, ".csv", sep="")
+    write.csv(pickLists[[i]], file=filename)
   }
-
-  picklists[[i]] <- picklist
-
-  ## Remember where they went
-  mplushidx <- as.numeric(rownames(picklist))
-
-  ## Save picklist
-  filename <- paste(paste(tempdir(), "/MSMS-faahKO-" ,i,
-                          ".csv", sep=""))
-  write.csv(picklist, file=filename)
-
-  excludePeakIdx <- match(rownames(picklist), rownames(reporttab.tmp))
-  reporttab.tmp <- reporttab.tmp[-excludePeakIdx,,drop=FALSE]
-
-  cat (rownames(picklist), "\n")
-  reporttabTargetRun[as.integer(rownames(picklist))] <- i
-
-  i <- i+1
 }
+
+for (j in 1:length(pickLists)) {
+  reporttabTargetRun[match(rownames(pickLists[[j]]), rownames(reporttab))] <- j
+}
+
+reporttab<-cbind(reporttab, reporttabTargetRun)
 
 @ 
 
@@ -199,11 +182,11 @@ Plot peaks and target windows superimposed.
 <<plotCoverage, fig = TRUE, eps = FALSE>>=
 ## plot overview
 
-## for (i in seq(1, length(picklists))) {
-##   plotMS2windows(reporttab, picklists[[i]],
-##                  peaks=ifelse(i==1, TRUE, FALSE),
-##                  col=i)
-## }
+##for (i in seq(1, length(pickLists))) {
+##  plotMS2windows(reporttab, pickLists[[i]],
+##                 peaks=ifelse(i==1, TRUE, FALSE),
+##                 col=i)
+##}
 
 @
 
