@@ -97,8 +97,8 @@ picklist2waters <-
   invisible(pickList[,,drop=FALSE])
 }
 
-picklist <- rbind(c(mzmed=666, rtmin=111, rtmax=222), c(mzmed=777, rtmin=222, rtmax=333))
-picklist2waters (picklist, MSmode="negative", method="tryptophane", 
-                 template="/vol/R/BioC/devel-29/MetShot/inst/waters-template/tryptophan5_30eV_30eV.EXP",
-                 MSMSManual_ListCollisionEnergy=15,
-                 MSMSManual_ListIsolationWidth=8)
+## picklist <- rbind(c(mzmed=666, rtmin=111, rtmax=222), c(mzmed=777, rtmin=222, rtmax=333))
+## picklist2waters (picklist, MSmode="negative", method="tryptophane", 
+##                  template="/vol/R/BioC/devel-29/MetShot/inst/waters-template/tryptophan5_30eV_30eV.EXP",
+##                  MSMSManual_ListCollisionEnergy=15,
+##                  MSMSManual_ListIsolationWidth=8)
