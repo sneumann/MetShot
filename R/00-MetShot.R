@@ -20,8 +20,8 @@ setGeneric("schedParams", function(object) standardGeneric("schedParams"))
 
 setGeneric("scheduleRuns", function(object) standardGeneric("scheduleRuns"))
 
-setGeneric("writeBruker", function(object) standardGeneric("writeBruker"))
-setGeneric("writeTraML", function(object) standardGeneric("writeTraML"))
+setGeneric("writeBruker", function(object, ...) standardGeneric("writeBruker"))
+setGeneric("writeTraML", function(object, ...) standardGeneric("writeTraML"))
 
 setMethod("show",
           signature="MetShot",

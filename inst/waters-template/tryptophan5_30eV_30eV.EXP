@@ -1,0 +1,179 @@
+GENERAL INFORMATION
+ExperimentName,Default Experiment
+ExperimentCreationTime,Fri 18 Nov 2011 10:57:41
+VersionNumber,1.0
+ExperimentDuration,6
+AnalogChannelDescription1,Channel 1,Disabled
+AnalogChannelDescription2,Channel 2,Disabled
+AnalogChannelDescription3,Channel 3,Disabled
+AnalogChannelDescription4,Channel 4,Disabled
+AnalogChannelDescription5,Channel 5,Disabled
+AnalogChannelDescription6,Channel 6,Disabled
+AnalogChannelDescription7,Channel 7,Disabled
+AnalogChannelDescription8,Channel 8,Disabled
+MUXAnalogOffset1,0
+MUXAnalogOffset2,0
+MUXAnalogOffset3,0
+MUXAnalogOffset4,0
+MUXAnalogOffset5,0
+MUXAnalogOffset6,0
+MUXAnalogOffset7,0
+MUXAnalogOffset8,0
+ExperimentCalibrationFilename,C:\ldra.pro\ACQUDB\2011-10-10.cal,Enabled
+ExperimentNegCalibrationFilename,,Disabled
+SolventDelayStart1,0
+SolventDelayEnd1,0
+SolventDelayTemp1,0
+SolventDelayStart2,0
+SolventDelayEnd2,0
+SolventDelayTemp2,0
+SolventDelayStart3,0
+SolventDelayEnd3,0
+SolventDelayTemp3,0
+SolventDelayStart4,0
+SolventDelayEnd4,0
+SolventDelayTemp4,0
+SolventDelayDivertValveEnabled,0
+ReferenceFrequency,10
+ReferenceConeVoltage,50
+ReferenceScanTime,0.4
+ReferenceCentroidAverage,5
+ReferenceSetMass,554.3
+ReferenceCollisionEnergy,5
+PositivePolarity,0
+WMode,0
+DREExtended,1
+NumberOfFunctions,2
+FunctionTypes,Tof MSMS,Tof MSMS
+
+FUNCTION 1
+FunctionType,Tof MSMS
+FunctionDataFormat,Centroid
+FunctionIonMode,ES Mode
+FunctionPolarity,Negative
+FunctionInstrumentConditions,c:\masslynx\default.pro\acqudb\default.ipr
+FunctionStartMass,40
+FunctionEndMass,500
+FunctionStartTime(min),0
+FunctionEndTime(min),6
+FunctionScanTime(sec),0.2
+FunctionInterScanTime(sec),0.02
+Scans To Sum,1
+Resolution,1000
+PrimaryScanLock,2
+SecondaryScanLock,2
+ThresholdLock,100
+StepLock,0.02
+FunctionOnOffState,1
+PeakDisplayTuneMode,0
+FastDDA,0
+SIRMode,Peak Top
+NumSIRMasses,0
+FastLockOn,1
+UseWMode,0
+RuleFile,
+UseRuleFileFiltering,0
+MaintainIMS,1
+SaveRawEIData,0
+TOFConeVoltage,30
+UseTunePageConeVoltage,0
+TOFProbeTemperature,550
+UseTunePageProbeTemperature,1
+TOFSetMass,407.1715
+TOFCollisionEnergy,30
+TOFUseTunePageCollisionEnergy,0
+UseCVRamp,0
+CVRampInitialVoltage,40
+CVRampFinalVoltage,40
+UseFixedCE,1
+UseCEProfile,0
+CEProfile01,30
+CEProfile02,30
+CEProfile03,30
+CEProfile04,30
+CEProfile05,30
+CEUsage,1
+UseCERamp,0
+CERampInitialEnergy,10
+CERampFinalEnergy,50
+EDCEnabled,0
+EDCUsage,0
+EDCMass1,0
+EDCMass2,-1
+EDCMass3,-1
+EDCMass4,-1
+EDCMass5,-1
+
+FUNCTION 2
+FunctionType,Tof MSMS
+FunctionDataFormat,Centroid
+FunctionIonMode,ES Mode
+FunctionPolarity,Negative
+FunctionInstrumentConditions,c:\masslynx\default.pro\acqudb\default.ipr
+FunctionStartMass,40
+FunctionEndMass,300
+FunctionStartTime(min),0
+FunctionEndTime(min),6
+FunctionScanTime(sec),0.2
+FunctionInterScanTime(sec),0.02
+Scans To Sum,1
+Resolution,1000
+PrimaryScanLock,2
+SecondaryScanLock,2
+ThresholdLock,100
+StepLock,0.02
+FunctionOnOffState,1
+PeakDisplayTuneMode,0
+FastDDA,0
+SIRMode,Peak Top
+NumSIRMasses,0
+FastLockOn,1
+UseWMode,0
+RuleFile,
+UseRuleFileFiltering,0
+MaintainIMS,1
+SaveRawEIData,0
+TOFConeVoltage,30
+UseTunePageConeVoltage,0
+TOFProbeTemperature,550
+UseTunePageProbeTemperature,1
+TOFSetMass,203.0814
+TOFCollisionEnergy,30
+TOFUseTunePageCollisionEnergy,0
+UseCVRamp,0
+CVRampInitialVoltage,40
+CVRampFinalVoltage,40
+UseFixedCE,1
+UseCEProfile,0
+CEProfile01,30
+CEProfile02,30
+CEProfile03,30
+CEProfile04,30
+CEProfile05,30
+CEUsage,1
+UseCERamp,0
+CERampInitialEnergy,10
+CERampFinalEnergy,50
+EDCEnabled,0
+EDCUsage,0
+EDCMass1,0
+EDCMass2,-1
+EDCMass3,-1
+EDCMass4,-1
+EDCMass5,-1
+MaldiLaserType,0
+MaldiFiringRate,0
+MaldiLaserEnergy,0
+MaldiPlateSpeed,0
+MaldiPatternFilename,
+MaldiAcquisitionType,0
+UseVariableFlow,0
+VariableFlowPortNumber,1
+VariableFlowPulseWidth,0
+CentroidLockMass,554.2615
+CentroidAttLockMass,0
+CentroidMassWindow,0.5
+RefCapillaryVoltage,0
+TemperatureCorrection,0
+TemperatureCoefficient,0
+UseWizCone,0
