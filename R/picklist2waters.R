@@ -16,6 +16,13 @@ picklist2waters <-
     headerEnd   <- grep("FUNCTION 1", d)[1]-1
     headerBlock <- d[headerStart:headerEnd]
 
+    numberFuncsIdx <- grep("^NumberOfFunctions,", headerBlock)
+    headerBlock[numberFuncsIdx] <- paste("NumberOfFunctions", nrow(pickList), sep=",")
+
+    typeFuncsIdx <- grep("^FunctionTypes,", headerBlock)
+    headerBlock[typeFuncsIdx] <- paste("FunctionTypes",
+                                         paste(rep("Tof MSMS", nrow(pickList)), collapse=","), sep=",")
+
     footerStart <- grep("^MaldiLaserType", d)[1]
     footerEnd   <- length(d)
     footerBlock <- d[footerStart:footerEnd]
@@ -97,7 +104,8 @@ picklist2waters <-
   invisible(pickList[,,drop=FALSE])
 }
 
-## picklist <- rbind(c(mzmed=666, rtmin=111, rtmax=222), c(mzmed=777, rtmin=222, rtmax=333))
+## picklist <- rbind(c(mzmed=222, rtmin=331, rtmax=333), c(mzmed=333, rtmin=441, rtmax=442),
+##                      c(mzmed=666, rtmin=111, rtmax=222), c(mzmed=777, rtmin=222, rtmax=333))
 ## picklist2waters (picklist, MSmode="negative", method="tryptophane", 
 ##                  template="/vol/R/BioC/devel-29/MetShot/inst/waters-template/tryptophan5_30eV_30eV.EXP",
 ##                  MSMSManual_ListCollisionEnergy=15,
