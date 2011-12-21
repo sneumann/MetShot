@@ -1,0 +1,7 @@
+2011-12-21  Steffen Neumann  <sneumann@ipb-halle.de>
+
+	* MetShot/R/picklists2waters.R: Added export of Picklists to
+	Waters *.EXP files
+
+	
+
