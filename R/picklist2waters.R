@@ -4,6 +4,9 @@ picklist2waters <-
            MSMSManual_ListCollisionEnergy=15,
            MSMSManual_ListIsolationWidth=8)
 {
+
+  polarity <- ifelse (MSmode=="negative", "Negative", "Positive")
+  
   for (MSMSManual_ListCollisionEnergy in MSMSManual_ListCollisionEnergy) {
     method <- paste(methodPrefix, "-", MSMSManual_ListCollisionEnergy, "eV.EXP", sep="")
     ##
@@ -15,14 +18,16 @@ picklist2waters <-
     headerStart <- grep("GENERAL INFORMATION", d)[1]
     headerEnd   <- grep("FUNCTION 1", d)[1]-1
     headerBlock <- d[headerStart:headerEnd]
-
+    
+    headerBlock[grep("PositivePolarity,", headerBlock, fixed=TRUE)] <- paste("PositivePolarity", ifelse (MSmode=="positive", "1", "0"), sep=",")
+        
     numberFuncsIdx <- grep("^NumberOfFunctions,", headerBlock)
     headerBlock[numberFuncsIdx] <- paste("NumberOfFunctions", nrow(pickList), sep=",")
 
     typeFuncsIdx <- grep("^FunctionTypes,", headerBlock)
     headerBlock[typeFuncsIdx] <- paste("FunctionTypes",
                                          paste(rep("Tof MSMS", nrow(pickList)), collapse=","), sep=",")
-
+    
     footerStart <- grep("^MaldiLaserType", d)[1]
     footerEnd   <- length(d)
     footerBlock <- d[footerStart:footerEnd]
@@ -33,6 +38,8 @@ picklist2waters <-
     templateStart <- grep("FUNCTION 1", d)[1]
     templateEnd   <- grep("FUNCTION 2", d)[1]-1
     templateBlock <- d[templateStart:templateEnd]
+
+    templateBlock[grep("FunctionPolarity,", templateBlock, fixed=TRUE)] <- paste(polarity, MSmode, sep="FunctionPolarity,")
 
     
     ##

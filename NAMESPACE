@@ -5,6 +5,7 @@ export(
 	peaklist2picklist,  
 	picklist2method,
         picklist2Agilent,
+        picklist2waters,
 	plotMS2windows,
 	xcms2method,
 	beginTraml,
