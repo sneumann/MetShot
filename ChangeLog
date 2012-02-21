@@ -1,3 +1,7 @@
+2012-02-21  Steffen Neumann  <sneumann@ipb-halle.de>
+
+	* MetShot/R/picklists2method.R: Use cross-plattform file tools
+
 2011-12-21  Steffen Neumann  <sneumann@ipb-halle.de>
 
 	* MetShot/R/picklists2waters.R: Added export of Picklists to

@@ -108,9 +108,9 @@ function(pickList, methodPrefix="", MSmode=c("positive","negative"),
   ## and inject the new method
   ##
 
-    system(paste ("rm -rf ", method))
-    system(paste ("cp -rx ", template, method))
-
+  unlink(method, recursive=TRUE)
+  dir.create(method, recursive=TRUE)
+  file.copy(template, method, recursive = TRUE)  
 
   saveXML(root, file=paste(method, "microTOFQAcquisition.method", sep="/"))
 }
