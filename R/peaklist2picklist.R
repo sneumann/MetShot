@@ -64,29 +64,31 @@ function(anyPeaklist,
 
   priorities <- c(length(peaklist):1) #peaklist is sorted according to fold change; you can change it here 
 
-  pickLists <- getSchedule(peaklist,priorities)	
+  pickLists <- getSchedule(peaklist,priorities) 
   #pickList <- findWindow(peaklist[o,,drop=FALSE],
   #                       rtmin=gradientStart, rtmax=gradientEnd)
 
-  if (is.null(pickLists)) {# || nrow(pickLists[[1]])<2
+  if (is.null(pickLists)) {
       return(NULL)
   }
 
   pickListsFilled<-list()
   for (j in 1:length(pickLists)){
-      if (is.null(pickLists[[j]]) || nrow(pickLists[[j]])<2) {
+      if (is.null(pickLists[[j]])) {
         break
       }
       o <- order(pickLists[[j]][, "rtmed"]) # already ordered
       pickListOrdered <- pickLists[[j]][o,,drop=FALSE]
       pickListFilled <- pickLists[[j]]
 
-      for (i in 1:(nrow(pickListOrdered)-1)) {
-          meanTime <- mean(c(pickListOrdered[i,"rtmax"],
-                             pickListOrdered[i+1,"rtmin"]))
-          pickListFilled[i, "rtmax"] <- meanTime
-          pickListFilled[i+1,"rtmin"] <- meanTime
-      }
+          if (nrow(pickLists[[j]]) > 1){#more than one entry
+                  for (i in 1:(nrow(pickListOrdered)-1)) {
+                      meanTime <- mean(c(pickListOrdered[i,"rtmax"],
+                                         pickListOrdered[i+1,"rtmin"]))
+                      pickListFilled[i, "rtmax"] <- meanTime
+                      pickListFilled[i+1,"rtmin"] <- meanTime
+                  }
+          }
       pickListsFilled[[j]]<-pickListFilled
   }
 

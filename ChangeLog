@@ -1,3 +1,8 @@
+2012-03-01  Steffen Neumann  <sneumann@ipb-halle.de>
+
+	* MetShot/R/picklists2method.R: Fix case where picklists
+	  with <2 peaks got ignored.
+
 2012-02-21  Steffen Neumann  <sneumann@ipb-halle.de>
 
 	* MetShot/R/picklists2method.R: Use cross-plattform file tools
@@ -6,6 +11,4 @@
 
 	* MetShot/R/picklists2waters.R: Added export of Picklists to
 	Waters *.EXP files
-
-	
 
