@@ -12,7 +12,8 @@ export(
 	addTargetSegment,
 	endTraml,
 	msn2xcms,
-	plotGroups
+	plotGroups,
+       	plotAllSpectra
 )
 
 exportClasses("MetShot")

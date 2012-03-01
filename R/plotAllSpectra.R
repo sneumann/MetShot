@@ -10,7 +10,7 @@ function(xa, specperpage=9, prefix="Spec",
         rt <- median(getpspectra(xa, pspec)[,"rt"])
         sp <- getpspectra(xa, grp=pspec)[,c("mz", "maxo")]
 
-        plotPeaks(xa, pspec=pspec,
+        plotPsSpectrum(xa, pspec=pspec,
                   title=paste("Spec:", pspec, "RT:", as.integer(rt)),
                   ...)
 

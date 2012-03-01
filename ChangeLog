@@ -2,6 +2,7 @@
 
 	* MetShot/R/picklists2method.R: Fix case where picklists
 	  with <2 peaks got ignored.
+	* Modified plots for RT[s]
 
 2012-02-21  Steffen Neumann  <sneumann@ipb-halle.de>
 

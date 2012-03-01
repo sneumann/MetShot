@@ -63,7 +63,7 @@ function(xraw, precursor=NULL, xa, mzrange=NULL, rtrange=NULL,
       colorlut <- terrain.colors(20)
       col <- colorlut[y*15+4]
       plot(cbind(raw[,"time"], raw[,"mz"]), pch=".", cex=1.8,
-           main = title, xlab="Seconds", ylab="m/z", col=col,
+           main = title, xlab="RT [s]", ylab="m/z", col=col,
            xlim=range(raw[,"time"]), ylim=range(raw[,"mz"]))
 
 ##       par(cex=0.5)
@@ -74,12 +74,12 @@ function(xraw, precursor=NULL, xa, mzrange=NULL, rtrange=NULL,
   } else {
     plot.new()
     plot.window(xlim=rtrange, ylim=mzrange,
-                xlab="Seconds", ylab="m/z")
+                xlab="RT [s]", ylab="m/z")
     axis(1)
     axis(2)
     box()
     title(main=title,
-          xlab="Seconds", ylab="m/z")
+          xlab="RT [s]", ylab="m/z")
   }
 
   if (!is.null(precursor)) {
@@ -105,8 +105,9 @@ function(xraw, precursor=NULL, xa, mzrange=NULL, rtrange=NULL,
   if (!is.null(ms1peaks)) {
       ## Most peaks are correct:
       ## TODO: weighted distance (e.g. rt+mz*10)
-
-      ms1    <- peaks(ms1peaks)[,c("rt","mz")]
+      if (class(ms1peaks)=="xcmsSet") {
+        ms1peaks    <- peaks(ms1peaks)[,c("rt","mz")]
+      }
 
       ms2pre <- precursor
       ms2a   <- xa
@@ -119,13 +120,18 @@ function(xraw, precursor=NULL, xa, mzrange=NULL, rtrange=NULL,
 
       ## Closest MS1 peak
 
-      ms1pre <- peaks(ms1peaks)[knn(ms1, psppre, 1:nrow(ms1)),c("rt","mz", "into")]
-      points(ms1pre, col=groupcolors,
-             cex=log(ms1pre[,"into"])*0.2,
-             lwd=log(ms1pre[,"into"])*0.33,
+      ##ms1pre <- peaks(ms1peaks)[knn(ms1, psppre, 1:nrow(ms1)),c("rt","mz")]
+      ms1pre <- ms1peaks[knn(ms1, psppre, 1:nrow(ms1)),c("rtmed","mzmed")]
+      
+      points(ms1pre, col=groupcolors#,
+             #cex=log(ms1pre[,"into"])*0.2,
+             #lwd=log(ms1pre[,"into"])*0.33,
              )
-      segments(bbox[,"rtmed"], bbox[,"mzmin"], ms1pre[,"rt"], ms1pre[,"mz"],
-               col=groupcolors, lwd=1.5)
+      
+      closeenough <- abs( bbox[,"rtmed"] - ms1pre[,"rtmed"] ) < 10
+      segments(bbox[closeenough,"rtmed"], bbox[closeenough,"mzmin"], ms1pre[closeenough,"rtmed"], ms1pre[closeenough,"mzmed"],
+               col=groupcolors[closeenough], lwd=1.5)
+      
 
   } else {
 

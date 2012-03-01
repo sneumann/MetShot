@@ -31,7 +31,7 @@ function(anyPeaklist, pickList,
 
     if (peaks){
         plot(rbind(c(gradientStart,mzrange[1]), c(gradientEnd,mzrange[2])),
-             xlab="RT", ylab="m/z", type="n")
+             xlab="RT [s]", ylab="m/z", type="n")
     }
 
   ##
