@@ -110,7 +110,8 @@ function(pickList, methodPrefix="", MSmode=c("positive","negative"),
 
   unlink(method, recursive=TRUE)
   dir.create(method, recursive=TRUE)
-  file.copy(template, method, recursive = TRUE)  
+  file.copy(list.files(template, full.names=TRUE),
+            method, recursive = TRUE)  
 
   saveXML(root, file=paste(method, "microTOFQAcquisition.method", sep="/"))
 }
