@@ -182,11 +182,11 @@ Plot peaks and target windows superimposed.
 <<plotCoverage, fig = TRUE, eps = FALSE>>=
 ## plot overview
 
-##for (i in seq(1, length(pickLists))) {
-##  plotMS2windows(reporttab, pickLists[[i]],
-##                 peaks=ifelse(i==1, TRUE, FALSE),
-##                 col=i)
-##}
+for (i in seq(1, length(pickLists))) {
+  plotMS2windows(reporttab, pickLists[[i]],
+                 peaks=ifelse(i==1, TRUE, FALSE),
+                 col=i)
+}
 
 @
 
