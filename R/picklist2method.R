@@ -9,7 +9,7 @@ function(pickLists, methodPrefix="", MSmode=c("positive","negative"),
         methodname <- paste(methodPrefix,"_",i, ".m", sep="")
         picklist2method(pickLists[[i]], methodname, MSmode, template,
                     MSMSManual_ListCollisionEnergy=MSMSManual_ListCollisionEnergy,
-                    MSMSManual_ListIsolationWidth=MSMSManual_ListIsolationWidth)    
+                    MSMSManual_ListIsolationWidth=MSMSManual_ListIsolationWidth)
 
         message(paste("Created ", methodname,
                       "with", nrow(pickLists[[i]]), "MS2 regions"))
@@ -105,26 +105,24 @@ function(pickList, methodPrefix="", MSmode=c("positive","negative"),
                                                    attrs=c(value=pickList[i,"mzmed"]))
 
 
-##     MSMSManual_ListIsolationWidth <- rbind(mzmin=c(mz=150, MSMSManual_ListIsolationWidth=1),
-##                                            mzmax=c(mz=900, MSMSManual_ListIsolationWidth=3))
+     ## MSMSManual_ListIsolationWidth <- rbind(mzmin=c(mz=150, MSMSManual_ListIsolationWidth=1),
+     ##                                        mzmax=c(mz=900, MSMSManual_ListIsolationWidth=3))
 
-                                   
-    
-    if (ncol(MSMSManual_ListIsolationWidth)==2) {
+    if (!missing(MSMSManual_ListIsolationWidth) && class(MSMSManual_ListIsolationWidth)=="matrix" && ncol(MSMSManual_ListIsolationWidth == 2)) {
       ## linear interpolation
       isomin <- MSMSManual_ListIsolationWidth["mzmin","MSMSManual_ListIsolationWidth"]
       isomax <- MSMSManual_ListIsolationWidth["mzmax","MSMSManual_ListIsolationWidth"]
       mzmin <- MSMSManual_ListIsolationWidth["mzmin","mz"]
       mzmax <- MSMSManual_ListIsolationWidth["mzmax","mz"]
       mz <- pickList[i,"mzmed"]
-      
+
       currentMSMSManual_ListIsolationWidth <- isomin + ( ((mz-mzmin)*isomax-(mz-mzmin)*isomin ) / (mzmax - mzmin)   )
     } else {
       currentMSMSManual_ListIsolationWidth <- MSMSManual_ListIsolationWidth
     }
     currentMSMSManual_ListIsolationWidth
 
-    
+
     newSegment[[dependentNr]][[posMSMSManual_ListIsolationWidth]][[1]] <- xmlNode("entry_double",
                                                     attrs=c(value=currentMSMSManual_ListIsolationWidth))
 
@@ -154,7 +152,7 @@ function(pickList, methodPrefix="", MSmode=c("positive","negative"),
   unlink(method, recursive=TRUE)
   dir.create(method, recursive=TRUE)
   file.copy(list.files(template, full.names=TRUE),
-            method, recursive = TRUE)  
+            method, recursive = TRUE)
 
   saveXML(root, file=paste(method, "microTOFQAcquisition.method", sep="/"))
 }
