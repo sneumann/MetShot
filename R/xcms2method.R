@@ -17,17 +17,11 @@ function(peaklist, methodPrefix="", MSmode=c("positive","negative"),
         warning("No suitable peaks found, returning empty picklist")
         return(NULL)
     }
+
+    picklists2methods(pickLists, methodname, MSmode, template,
+                      MSMSManual_ListCollisionEnergy=MSMSManual_ListCollisionEnergy,
+                      MSMSManual_ListIsolationWidth=MSMSManual_ListIsolationWidth)    
     
-    for (i in 1:length(pickLists)){
-        methodname<-paste(methodPrefix,"_",i, ".m", sep="")
-        picklist2method(pickLists[[i]], methodname, MSmode, template,
-                    MSMSManual_ListCollisionEnergy=MSMSManual_ListCollisionEnergy,
-                    MSMSManual_ListIsolationWidth=MSMSManual_ListIsolationWidth)    
-
-        message(paste("Created ", methodname,
-                      "with", nrow(pickLists[[i]]), "MS2 regions"))
-
-      }
     invisible(pickLists)
 }
 

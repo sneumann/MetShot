@@ -1,3 +1,11 @@
+2012-03-12  Steffen Neumann  <sneumann@paddy>
+
+	* R/xcms2method.R (xcms2method): Use linear interpolation for IsolationWidths if provided
+	* R/picklist2method.R (picklist2method): Fixed copying of template method
+	* R/picklist2method.R (picklists2methods): Added multi-picklist wrapper
+
+	* inst/doc/MetShot.Rnw: fixed example priority calculation
+	
 2012-03-01  Steffen Neumann  <sneumann@ipb-halle.de>
 
 	* MetShot/R/picklists2method.R: Fix case where picklists

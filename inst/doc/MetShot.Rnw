@@ -102,7 +102,7 @@ if (length(targetgroups) == 0) {
 priorities <- order(dr[targetgroups, "fold"])
 
 ##
-reporttab <- groups(faahko)[priorities,]
+reporttab <- groups(faahko)[targetgroups[priorities],]
 
 ## Fix column names
 ## Need to fix code later ;-) 
@@ -120,7 +120,7 @@ templateFile <- system.file("20minKalibpos_Startermethod_MSMS.m",
 
 collisionEnergy <- c(20)
 
-methodname <- paste(tempdir(), "/MSMS-faahKO-20eV.m", sep="")
+methodname <- paste(tempdir(), "/MSMS-faahKO-20eV", sep="")
 
 picklist <- xcms2method(reporttab, methodPrefix=methodname,
                         widthFactor=1.5, minWidth=4,

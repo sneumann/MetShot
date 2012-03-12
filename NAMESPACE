@@ -4,6 +4,7 @@ importFrom(Biobase, validMsg)
 export(
 	peaklist2picklist,  
 	picklist2method,
+	picklists2methods,
         picklist2Agilent,
         picklist2waters,
 	plotMS2windows,

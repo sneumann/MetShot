@@ -1,3 +1,25 @@
+
+picklists2methods <-
+function(pickLists, methodPrefix="", MSmode=c("positive","negative"),
+                        template="test.method",
+                        MSMSManual_ListCollisionEnergy=15,
+                        MSMSManual_ListIsolationWidth=8)
+  {
+    for (i in 1:length(pickLists)){
+        methodname <- paste(methodPrefix,"_",i, ".m", sep="")
+        picklist2method(pickLists[[i]], methodname, MSmode, template,
+                    MSMSManual_ListCollisionEnergy=MSMSManual_ListCollisionEnergy,
+                    MSMSManual_ListIsolationWidth=MSMSManual_ListIsolationWidth)    
+
+        message(paste("Created ", methodname,
+                      "with", nrow(pickLists[[i]]), "MS2 regions"))
+  }
+}
+
+
+
+
+
 picklist2method <-
 function(pickList, methodPrefix="", MSmode=c("positive","negative"),
                         template="test.method",
@@ -82,8 +104,29 @@ function(pickList, methodPrefix="", MSmode=c("positive","negative"),
     newSegment[[dependentNr]][[posMSMSManual_ListIsolationMass]][[1]] <- xmlNode("entry_double",
                                                    attrs=c(value=pickList[i,"mzmed"]))
 
+
+##     MSMSManual_ListIsolationWidth <- rbind(mzmin=c(mz=150, MSMSManual_ListIsolationWidth=1),
+##                                            mzmax=c(mz=900, MSMSManual_ListIsolationWidth=3))
+
+                                   
+    
+    if (ncol(MSMSManual_ListIsolationWidth)==2) {
+      ## linear interpolation
+      isomin <- MSMSManual_ListIsolationWidth["mzmin","MSMSManual_ListIsolationWidth"]
+      isomax <- MSMSManual_ListIsolationWidth["mzmax","MSMSManual_ListIsolationWidth"]
+      mzmin <- MSMSManual_ListIsolationWidth["mzmin","mz"]
+      mzmax <- MSMSManual_ListIsolationWidth["mzmax","mz"]
+      mz <- pickList[i,"mzmed"]
+      
+      currentMSMSManual_ListIsolationWidth <- isomin + ( ((mz-mzmin)*isomax-(mz-mzmin)*isomin ) / (mzmax - mzmin)   )
+    } else {
+      currentMSMSManual_ListIsolationWidth <- MSMSManual_ListIsolationWidth
+    }
+    currentMSMSManual_ListIsolationWidth
+
+    
     newSegment[[dependentNr]][[posMSMSManual_ListIsolationWidth]][[1]] <- xmlNode("entry_double",
-                                                    attrs=c(value=MSMSManual_ListIsolationWidth))
+                                                    attrs=c(value=currentMSMSManual_ListIsolationWidth))
 
     newSegment[[dependentNr]][[posMSMSManual_ListCollisionEnergy]][[1]] <- xmlNode("entry_double",
                                                     attrs=c(value=MSMSManual_ListCollisionEnergy))

@@ -1,8 +1,8 @@
 Package: MetShot
 Type: Package
 Title: High throughput prioritized acquisition and processing of tandem mass spectra
-Version: 0.1.4
-Date: 2012-03-01
+Version: 0.1.5
+Date: 2012-03-12
 Author: Steffen Neumann <sneumann@ipb-halle.de>
 Maintainer: Steffen Neumann <sneumann@ipb-halle.de>,
             Andrea Thum <andrea.thum@informatik.uni-halle.de>
@@ -16,6 +16,6 @@ Description: MetShot will provides functions to schedule the high-throughput acq
             files for identification against MassBank or MetFrag.
 License: GPL Version 2 or later
 LazyLoad: yes
-Depends: CAMERA, XML, class
+Depends: CAMERA, XML, class, Biobase
 Suggests: msdata, RUnit, faahKO
 biocViews: Infrastructure, Bioinformatics, DataImport, Proteomics, Metabolomics, MassSpectrometry

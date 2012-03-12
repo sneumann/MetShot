@@ -1,7 +1,7 @@
 peaklist2picklist <-
 function(anyPeaklist,
                               gradientStart=NULL, gradientEnd=NULL,
-                              widthFactor=1, minWidth=1) {
+                              widthFactor=1, minWidth=1, fillGaps=TRUE) {
 
   ##
   ## handle peaks(xs), groups(xs), diffreport()
@@ -72,7 +72,7 @@ function(anyPeaklist,
       return(NULL)
   }
 
-  pickListsFilled<-list()
+  pickListsFilled <- list()
   for (j in 1:length(pickLists)){
       if (is.null(pickLists[[j]])) {
         break
@@ -81,16 +81,17 @@ function(anyPeaklist,
       pickListOrdered <- pickLists[[j]][o,,drop=FALSE]
       pickListFilled <- pickLists[[j]]
 
-          if (nrow(pickLists[[j]]) > 1){#more than one entry
-                  for (i in 1:(nrow(pickListOrdered)-1)) {
-                      meanTime <- mean(c(pickListOrdered[i,"rtmax"],
-                                         pickListOrdered[i+1,"rtmin"]))
-                      pickListFilled[i, "rtmax"] <- meanTime
-                      pickListFilled[i+1,"rtmin"] <- meanTime
-                  }
+          if (nrow(pickLists[[j]]) > 1 & fillGaps){
+            ##more than one entry
+            for (i in 1:(nrow(pickListOrdered)-1)) {
+              meanTime <- mean(c(pickListOrdered[i,"rtmax"],
+                                 pickListOrdered[i+1,"rtmin"]))
+              pickListFilled[i, "rtmax"] <- meanTime
+              pickListFilled[i+1,"rtmin"] <- meanTime
+            }
           }
-      pickListsFilled[[j]]<-pickListFilled
-  }
+      pickListsFilled[[j]] <- pickListFilled
+    }
 
   invisible(pickListsFilled)
 }
