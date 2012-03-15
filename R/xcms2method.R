@@ -18,7 +18,7 @@ function(peaklist, methodPrefix="", MSmode=c("positive","negative"),
         return(NULL)
     }
 
-    picklists2methods(pickLists, methodname, MSmode, template,
+    picklists2methods(pickLists, methodname, MSmode=MSmode, template=template,
                       MSMSManual_ListCollisionEnergy=MSMSManual_ListCollisionEnergy,
                       MSMSManual_ListIsolationWidth=MSMSManual_ListIsolationWidth)    
     

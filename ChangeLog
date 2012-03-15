@@ -1,11 +1,18 @@
-2012-03-12  Steffen Neumann  <sneumann@paddy>
+2012-03-15  Steffen Neumann  <sneumann@ipb-halle.de>
+
+	* R/picklist2method.R (picklist2method): round isolationWidth to
+	one decimal if interpolated
+	* R/picklist2method.R (picklist2method): depending on polarity,
+	use positive or negative collision energy for XML method file
+
+2012-03-12  Steffen Neumann  <sneumann@ipb-halle.de>
 
 	* R/xcms2method.R (xcms2method): Use linear interpolation for IsolationWidths if provided
 	* R/picklist2method.R (picklist2method): Fixed copying of template method
 	* R/picklist2method.R (picklists2methods): Added multi-picklist wrapper
 
 	* inst/doc/MetShot.Rnw: fixed example priority calculation
-	
+
 2012-03-01  Steffen Neumann  <sneumann@ipb-halle.de>
 
 	* MetShot/R/picklists2method.R: Fix case where picklists

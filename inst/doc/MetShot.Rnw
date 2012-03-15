@@ -76,8 +76,8 @@ xa_pos <- groupFWHM(xa_pos)
 
 xa_pos <- findIsotopes(xa_pos)
 xa_pos <- groupCorr(xa_pos)
-xa_pos <- findAdducts(xa_pos, 
-                      ppm=100, mzabs=0.1, 
+xa_pos <- findAdducts(xa_pos,
+                      ppm=100, mzabs=0.1,
                       polarity="positive")
 
 p <- getPeaklist(xa_pos)
@@ -105,7 +105,7 @@ priorities <- order(dr[targetgroups, "fold"])
 reporttab <- groups(faahko)[targetgroups[priorities],]
 
 ## Fix column names
-## Need to fix code later ;-) 
+## Need to fix code later ;-)
 
 colnames(reporttab) <- sub("^rt$", "rtmed", colnames(reporttab))
 colnames(reporttab) <- sub("^mz$", "mzmed", colnames(reporttab))
@@ -115,7 +115,7 @@ colnames(reporttab) <- sub("^mz$", "mzmed", colnames(reporttab))
 ## method generation
 ##
 
-templateFile <- system.file("20minKalibpos_Startermethod_MSMS.m", 
+templateFile <- system.file("20minKalibpos_Startermethod_MSMS.m",
                             package = "MetShot")
 
 collisionEnergy <- c(20)
@@ -129,13 +129,13 @@ picklist <- xcms2method(reporttab, methodPrefix=methodname,
                         MSmode="positive")
 
 
-@ 
+@
 
-The picklist 
+The picklist
 
 <<picklist>>=
 picklist
-@ 
+@
 
 It is also possible to create manymany MSMS methods:
 
@@ -150,19 +150,19 @@ reporttabTargetRun <- rep(NA, nrow(reporttab))
 
 ## write bruker method
 for (j in seq(length = length(collisionEnergies))) {
-  methodname <- paste(tempdir(), "/MSMS-faahKO-20eV", 
+  methodname <- paste(tempdir(), "/MSMS-faahKO-20eV",
                       collisionEnergies[j], ".m", sep="")
-  
+
   pickLists <- xcms2method(reporttab, method=methodname,
                            widthFactor=1.5, minWidth=4,
                            template=templateFile,
                            MSMSManual_ListCollisionEnergy=collisionEnergies[j],
                            MSmode="positive")
-  
+
   message(paste("Created ", methodname,
                 "with", length(pickLists), "Runs"))
-  
-  for (i in 1: length(pickLists)) {    
+
+  for (i in 1: length(pickLists)) {
     filename <- paste(methodname,"_",i, ".csv", sep="")
     write.csv(pickLists[[i]], file=filename)
   }
@@ -174,7 +174,7 @@ for (j in 1:length(pickLists)) {
 
 reporttab<-cbind(reporttab, reporttabTargetRun)
 
-@ 
+@
 
 
 Plot peaks and target windows superimposed.
@@ -193,7 +193,7 @@ for (i in seq(1, length(pickLists))) {
 \section{Processing}
 
 Now a file was measured, we need to extract the MS2 spectra.
-Instead if ``just'' taking a spectrum, we do peak picking 
+Instead if ``just'' taking a spectrum, we do peak picking
 and CAMERA grouping.
 
 <<<Processing>>=
@@ -226,7 +226,7 @@ snthresh=2
 
 
 ## Create a pseudo-MS1 xraw
-filename <- system.file("microtof/MM48_MSMSpos_MH1_15ev_1-A,2_01_9310.mzXML", 
+filename <- system.file("microtof/MM48_MSMSpos_MH1_15ev_1-A,2_01_9310.mzXML",
                         package = "MetShot")
 
 xraw <- msn2xcms(xcmsRaw(filename, includeMSn=TRUE))
@@ -254,7 +254,7 @@ xa <- xsAnnotate(xs)
 xa <- groupFWHM(xa)
 ## xa <- groupCorrhack(xa,xraw,cor_eic_th=0.75)
 
-@ 
+@
 
 
 You can plot the overlaid MS2 raw data and the picked and grouped peaks:
@@ -262,7 +262,7 @@ You can plot the overlaid MS2 raw data and the picked and grouped peaks:
 
 plotGroups(xraw, ms2precursor, xa)
 
-@ 
+@
 
 
 
@@ -281,14 +281,14 @@ plotPsSpectrum(xa, pspec=pspec,
           maxlabel=5, log=FALSE, sleep=0,
           title=paste("Spec:", pspec, "RT:", as.integer(rt), "m/z:", mz))
 
-@ 
+@
 
 
-\section{Session information}\label{sec:sessionInfo} 
+\section{Session information}\label{sec:sessionInfo}
 
 <<label=sessioninfo,results=tex,echo=FALSE,cache=FALSE>>=
   toLatex(sessionInfo())
-@ 
+@
 
 
 \bibliographystyle{plainnat}

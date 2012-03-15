@@ -6,8 +6,8 @@ function(pickLists, methodPrefix="", MSmode=c("positive","negative"),
                         MSMSManual_ListIsolationWidth=8)
   {
     for (i in 1:length(pickLists)){
-        methodname <- paste(methodPrefix,"_",i, ".m", sep="")
-        picklist2method(pickLists[[i]], methodname, MSmode, template,
+        methodname <- paste(methodPrefix,i, sep="_")
+        picklist2method(pickLists[[i]], methodname, MSmode=MSmode, template=template,
                     MSMSManual_ListCollisionEnergy=MSMSManual_ListCollisionEnergy,
                     MSMSManual_ListIsolationWidth=MSMSManual_ListIsolationWidth)
 
@@ -30,9 +30,23 @@ function(pickList, methodPrefix="", MSmode=c("positive","negative"),
 
     for (MSMSManual_ListCollisionEnergy in MSMSManual_ListCollisionEnergy) {
         method <- paste(methodPrefix, "-", MSMSManual_ListCollisionEnergy, "eV.m", sep="")
-  ##
-  ## Load and parse Template
-  ##
+
+        ##
+        ## Modify the collision energy in case of negative mode 
+        ##
+        message(paste("Debug: Polarity is <", MSmode, ">", sep=""))
+        
+        if (MSmode=="positive" & MSMSManual_ListCollisionEnergy <0 ) {
+            MSMSManual_ListCollisionEnergy <- -1 * MSMSManual_ListCollisionEnergy 
+            message(paste("Polarity is positive, changed MSMSManual_ListCollisionEnergy to", MSMSManual_ListCollisionEnergy))
+        } else if (MSmode=="negative" & MSMSManual_ListCollisionEnergy >0 ) {
+            MSMSManual_ListCollisionEnergy <- -1 * MSMSManual_ListCollisionEnergy 
+            message(paste("Polarity is negative, changed MSMSManual_ListCollisionEnergy to", MSMSManual_ListCollisionEnergy))
+        }
+        
+        ##
+        ## Load and parse Template
+        ##
 
   tree <-  xmlTreeParse(paste(template, "microTOFQAcquisition.method", sep="/"))
   root <-  xmlRoot(tree)
@@ -116,12 +130,11 @@ function(pickList, methodPrefix="", MSmode=c("positive","negative"),
       mzmax <- MSMSManual_ListIsolationWidth["mzmax","mz"]
       mz <- pickList[i,"mzmed"]
 
-      currentMSMSManual_ListIsolationWidth <- isomin + ( ((mz-mzmin)*isomax-(mz-mzmin)*isomin ) / (mzmax - mzmin)   )
+      ## Rounded (ceiling) with one decimal
+      currentMSMSManual_ListIsolationWidth <- ceiling(10*(isomin + ( ((mz-mzmin)*isomax-(mz-mzmin)*isomin ) / (mzmax - mzmin)   )))/10
     } else {
       currentMSMSManual_ListIsolationWidth <- MSMSManual_ListIsolationWidth
     }
-    currentMSMSManual_ListIsolationWidth
-
 
     newSegment[[dependentNr]][[posMSMSManual_ListIsolationWidth]][[1]] <- xmlNode("entry_double",
                                                     attrs=c(value=currentMSMSManual_ListIsolationWidth))
@@ -133,11 +146,9 @@ function(pickList, methodPrefix="", MSmode=c("positive","negative"),
     newTable <- addChildren(newTable, newSegment)
   }
 
-  ## Manuallz Add the Calibration Segment
-  newSegment <- root[["method"]][["qtofacq"]][["timetable"]][[3]]
-  newSegment <- removeAttributes(newSegment, "endtime")
-  newSegment <- addAttributes(newSegment, .attrs=c(endtime = "18"))
-  newTable <- addChildren(newTable, newSegment)
+  ## Manually add the template MS2 Segment to "fill up" the time
+
+        newTable <- addChildren(newTable, segmentTemplate)
 
   newTable <- addChildren(newTable, root[["method"]][["qtofacq"]][["timetable"]][[3]])
   newTable <- addChildren(newTable, root[["method"]][["qtofacq"]][["timetable"]][[4]])
