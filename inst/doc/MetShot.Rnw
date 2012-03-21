@@ -258,7 +258,7 @@ xa <- groupFWHM(xa)
 
 
 You can plot the overlaid MS2 raw data and the picked and grouped peaks:
-<<<plotRawMS2peaks, fig = TRUE, eps = FALSE>>=
+<<plotRawMS2peaks, fig = TRUE, eps = FALSE>>=
 
 plotGroups(xraw, ms2precursor, xa)
 
@@ -268,7 +268,7 @@ plotGroups(xraw, ms2precursor, xa)
 
 You can plot the individual retrieved MS2 Spectrum:
 
-<<<plotMS2peaks, fig = TRUE, eps = FALSE>>=
+<<plotMS2peaks, fig = TRUE, eps = FALSE>>=
 
 pspec <- 12
 
