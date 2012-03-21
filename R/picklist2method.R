@@ -34,8 +34,6 @@ function(pickList, methodPrefix="", MSmode=c("positive","negative"),
         ##
         ## Modify the collision energy in case of negative mode 
         ##
-        message(paste("Debug: Polarity is <", MSmode, ">", sep=""))
-        
         if (MSmode=="positive" & MSMSManual_ListCollisionEnergy <0 ) {
             MSMSManual_ListCollisionEnergy <- -1 * MSMSManual_ListCollisionEnergy 
             message(paste("Polarity is positive, changed MSMSManual_ListCollisionEnergy to", MSMSManual_ListCollisionEnergy))
@@ -61,7 +59,7 @@ function(pickList, methodPrefix="", MSmode=c("positive","negative"),
   firstSegment <- root[["method"]][["qtofacq"]][["timetable"]][[1]]
   newTable <- addChildren(newTable, firstSegment)
 
-  firstSegmentEndtime <- as.numeric(value4attribute(firstSegment, "endtime"))
+  firstSegmentEndtime <- as.numeric(xmlAttrs(firstSegment)["endtime"])
 
   ## Second Segment has to be the first MRM in the template
   segmentTemplate <- root[["method"]][["qtofacq"]][["timetable"]][[2]]
