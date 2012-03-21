@@ -1,3 +1,8 @@
+2012-03-21  Steffen Neumann  <sneumann@paddy>
+
+	* R/picklist2method.R (picklist2method): omit warning if picklist retention time 
+	is too early, and emit warning
+
 2012-03-15  Steffen Neumann  <sneumann@ipb-halle.de>
 
 	* R/picklist2method.R (picklist2method): round isolationWidth to

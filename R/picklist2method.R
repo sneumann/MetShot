@@ -58,8 +58,10 @@ function(pickList, methodPrefix="", MSmode=c("positive","negative"),
 
   newTable <- xmlNode("timetable")
 
-    firstSegment <- root[["method"]][["qtofacq"]][["timetable"]][[1]]
+  firstSegment <- root[["method"]][["qtofacq"]][["timetable"]][[1]]
   newTable <- addChildren(newTable, firstSegment)
+
+  firstSegmentEndtime <- as.numeric(value4attribute(firstSegment, "endtime"))
 
   ## Second Segment has to be the first MRM in the template
   segmentTemplate <- root[["method"]][["qtofacq"]][["timetable"]][[2]]
@@ -110,6 +112,13 @@ function(pickList, methodPrefix="", MSmode=c("positive","negative"),
 
 
   for (i in 1:nrow(pickList)) {
+    if (pickList[i,"rtmax"]/60 < firstSegmentEndtime) {
+      warning("The end of pick item ", i,
+              "at", pickList[i,"rtmax"]/60 ,
+              "is before the end of the template segment at", firstSegmentEndtime);
+      next;
+    }
+    
     newSegment <- segmentTemplate
     newSegment <- removeAttributes(newSegment, "endtime")
     newSegment <- addAttributes(newSegment,
