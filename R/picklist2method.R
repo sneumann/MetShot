@@ -119,8 +119,14 @@ function(pickList, methodPrefix="", MSmode=c("positive","negative"),
     
     newSegment <- segmentTemplate
     newSegment <- removeAttributes(newSegment, "endtime")
-    newSegment <- addAttributes(newSegment,
-                                .attrs=c(endtime = pickList[i,"rtmax"]/60))
+
+    if (i == nrow(pickList)) {
+      newSegment <- addAttributes(newSegment,
+                                  .attrs=c(endtime = pickList[i,"rtmax"]/60))
+    } else {
+      newSegment <- addAttributes(newSegment,
+                                  .attrs=c(endtime = firstSegmentEndtime))      
+    }
 
     newSegment[[dependentNr]][[posMSMSManual_ListIsolationMass]][[1]] <- xmlNode("entry_double",
                                                    attrs=c(value=pickList[i,"mzmed"]))
@@ -149,13 +155,10 @@ function(pickList, methodPrefix="", MSmode=c("positive","negative"),
     newSegment[[dependentNr]][[posMSMSManual_ListCollisionEnergy]][[1]] <- xmlNode("entry_double",
                                                     attrs=c(value=MSMSManual_ListCollisionEnergy))
 
+    
     ## Add this segment to the table
     newTable <- addChildren(newTable, newSegment)
   }
-
-  ## Manually add the template MS2 Segment to "fill up" the time
-
-        newTable <- addChildren(newTable, segmentTemplate)
 
   newTable <- addChildren(newTable, root[["method"]][["qtofacq"]][["timetable"]][[3]])
   newTable <- addChildren(newTable, root[["method"]][["qtofacq"]][["timetable"]][[4]])
