@@ -120,7 +120,7 @@ function(pickList, methodPrefix="", MSmode=c("positive","negative"),
     newSegment <- segmentTemplate
     newSegment <- removeAttributes(newSegment, "endtime")
 
-    if (i == nrow(pickList)) {
+    if (i < nrow(pickList)) {
       newSegment <- addAttributes(newSegment,
                                   .attrs=c(endtime = pickList[i,"rtmax"]/60))
     } else {
