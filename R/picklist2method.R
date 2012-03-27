@@ -57,13 +57,15 @@ function(pickList, methodPrefix="", MSmode=c("positive","negative"),
   newTable <- xmlNode("timetable")
 
   firstSegment <- root[["method"]][["qtofacq"]][["timetable"]][[1]]
+  firstSegmentEndtime <- as.numeric(xmlAttrs(firstSegment)["endtime"])
+
   newTable <- addChildren(newTable, firstSegment)
 
-  firstSegmentEndtime <- as.numeric(xmlAttrs(firstSegment)["endtime"])
 
   ## Second Segment has to be the first MRM in the template
   segmentTemplate <- root[["method"]][["qtofacq"]][["timetable"]][[2]]
-
+  segmentTemplateEndtime <- as.numeric(xmlAttrs(segmentTemplate)["endtime"])
+        
   newSegment <- segmentTemplate
   dependentNr <- 2
 
@@ -125,7 +127,7 @@ function(pickList, methodPrefix="", MSmode=c("positive","negative"),
                                   .attrs=c(endtime = pickList[i,"rtmax"]/60))
     } else {
       newSegment <- addAttributes(newSegment,
-                                  .attrs=c(endtime = firstSegmentEndtime))      
+                                  .attrs=c(endtime = segmentTemplateEndtime))      
     }
 
     newSegment[[dependentNr]][[posMSMSManual_ListIsolationMass]][[1]] <- xmlNode("entry_double",
