@@ -2,7 +2,10 @@ picklist2waters <-
   function(pickList, methodPrefix="", MSmode=c("positive","negative"),
            template="test.exp",
            MSMSManual_ListCollisionEnergy=15,
-           MSMSManual_ListIsolationWidth=8)
+           MSMSManual_ListIsolationWidth=8,
+           TOFConeVoltage=NULL,
+           lockMassMZ=NULL,
+           calibrationFileName=NULL)
 {
 
   polarity <- ifelse (MSmode=="negative", "Negative", "Positive")
@@ -20,8 +23,20 @@ picklist2waters <-
     headerBlock <- d[headerStart:headerEnd]
     
     headerBlock[grep("PositivePolarity,", headerBlock, fixed=TRUE)] <- paste("PositivePolarity", ifelse (MSmode=="positive", "1", "0"), sep=",")
-        
-    numberFuncsIdx <- grep("^NumberOfFunctions,", headerBlock)
+
+    if (!missing(calibrationFileName)) {
+      headerBlock[grep("ExperimentCalibrationFilename,", headerBlock, fixed=TRUE)] <- paste("ExperimentCalibrationFilename", calibrationFileName, sep=",")
+    }
+
+    if (!missing(lockMassMZ)) {
+      headerBlock[grep("ReferenceSetMass,", headerBlock, fixed=TRUE)] <- paste("ReferenceSetMass", lockMassMZ, sep=",")
+      usedLockMassMZ <- lockMassMZ
+    } else {
+      usedLockMassMZ <- grep("ReferenceSetMass,([0-9.]*)", headerBlock, fixed=TRUE)
+    }
+
+   
+    numberFuncsIdx <- grep("^NumberOfFunctions,", headerBlock) 
     headerBlock[numberFuncsIdx] <- paste("NumberOfFunctions", nrow(pickList), sep=",")
 
     typeFuncsIdx <- grep("^FunctionTypes,", headerBlock)
@@ -31,7 +46,12 @@ picklist2waters <-
     footerStart <- grep("^MaldiLaserType", d)[1]
     footerEnd   <- length(d)
     footerBlock <- d[footerStart:footerEnd]
-        
+
+    if (!missing(lockMassMZ)) {
+      footerBlock[grep("CentroidLockMass,", footerBlock, fixed=TRUE)] <- paste("CentroidLockMass", lockMassMZ, sep=",")
+    }
+
+    
     expFile <- list()
     expFile[[1]] <- headerBlock
 
@@ -67,6 +87,9 @@ picklist2waters <-
       newFunction <- templateBlock
       newFunction[1] <- paste("FUNCTION", i)
 
+      ## Set Polarity for each function
+      newFunction[grep("FunctionPolarity,", newFunction, fixed=TRUE)] <- paste("FunctionPolarity", ifelse (MSmode=="positive", "Positive", "Negative"), sep=",")
+      
       ## Set start/end time
       newFunction[grep("FunctionStartTime(min)", newFunction, fixed=TRUE)] <- paste("FunctionStartTime(min)",
                                                                 pickList[i,"rtmin"]/60, sep=",")
@@ -80,12 +103,17 @@ picklist2waters <-
       newFunction[grep("FunctionStartMass", newFunction, fixed=TRUE)] <- paste("FunctionStartMass",
                                                                 40, sep=",")
       newFunction[grep("FunctionEndMass", newFunction, fixed=TRUE)] <- paste("FunctionEndMass",
-                                                              round(pickList[i,"mzmed"], -2)+100, sep=",")
+                                                              max(usedLockMassMz, round(pickList[i,"mzmed"], -2))+100, sep=",")
       
       ## Set collision energy
       newFunction[grep("TOFCollisionEnergy", newFunction, fixed=TRUE)] <- paste("TOFCollisionEnergy",
                                                             MSMSManual_ListCollisionEnergy, sep=",")
-      
+
+      if (!missing(TOFConeVoltage)) {
+        newFunction[grep("TOFConeVoltage,", newFunction, fixed=TRUE)] <- paste("TOFConeVoltage",
+                                                           TOFConeVoltage, sep=",")
+      }
+
       CEProfileIdx <- grep("^CEProfile[0-9][0-9]", newFunction)
       CEProfiles <- t(sapply(strsplit(newFunction[CEProfileIdx], ","), function(x) x))
       CEProfiles[,2] <- MSMSManual_ListCollisionEnergy
