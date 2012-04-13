@@ -5,7 +5,7 @@ function(pickLists, methodPrefix="", MSmode=c("positive","negative"),
                         MSMSManual_ListCollisionEnergy=15,
                         MSMSManual_ListIsolationWidth=8)
   {
-    for (i in 1:length(pickLists)){
+    for (i in 1:length(pickLists)) {
         methodname <- paste(methodPrefix,i, sep="_")
         picklist2method(pickLists[[i]], methodname, MSmode=MSmode, template=template,
                     MSMSManual_ListCollisionEnergy=MSMSManual_ListCollisionEnergy,
@@ -26,7 +26,12 @@ function(pickList, methodPrefix="", MSmode=c("positive","negative"),
                         MSMSManual_ListCollisionEnergy=15,
                         MSMSManual_ListIsolationWidth=8)
 {
-    require(XML) || stop("Couldn't load package XML")
+  if (is.null(pickList)) {
+   warning("Skipping empty picklist")
+   return (NULL)
+  }
+
+  require(XML) || stop("Couldn't load package XML")
 
     for (MSMSManual_ListCollisionEnergy in MSMSManual_ListCollisionEnergy) {
         method <- paste(methodPrefix, "-", MSMSManual_ListCollisionEnergy, "eV.m", sep="")
