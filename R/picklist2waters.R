@@ -1,3 +1,28 @@
+picklists2waters <- function(pickLists, methodPrefix="", MSmode=c("positive","negative"),
+           template="test.exp",
+           MSMSManual_ListCollisionEnergy=15,
+           MSMSManual_ListIsolationWidth=8,
+           TOFConeVoltage=NULL,
+           lockMassMZ=NULL,
+           calibrationFileName=NULL) 
+{
+    for (i in 1:length(pickLists)) {
+        methodname <- paste(methodPrefix,i, sep="_")
+        
+        picklist2waters(pickList=pickLists[[i]], methodPrefix=methodPrefix, MSmode=MSmode,
+           template=template,
+           MSMSManual_ListCollisionEnergy=MSMSManual_ListCollisionEnergy,
+           MSMSManual_ListIsolationWidth=MSMSManual_ListIsolationWidth,
+           TOFConeVoltage=TOFConeVoltage,
+           lockMassMZ=lockMassMZ,
+           calibrationFileName=calibrationFileName)
+
+        message(paste("Created ", methodname,
+                      "with", nrow(pickLists[[i]]), "MS2 regions"))
+  }
+}
+
+
 picklist2waters <- 
   function(pickList, methodPrefix="", MSmode=c("positive","negative"),
            template="test.exp",

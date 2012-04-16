@@ -37,16 +37,16 @@ function(pickList, methodPrefix="", MSmode=c("positive","negative"),
         method <- paste(methodPrefix, "-", MSMSManual_ListCollisionEnergy, "eV.m", sep="")
 
         ##
-        ## Modify the collision energy in case of negative mode 
+        ## Modify the collision energy in case of negative mode
         ##
         if (MSmode=="positive" & MSMSManual_ListCollisionEnergy <0 ) {
-            MSMSManual_ListCollisionEnergy <- -1 * MSMSManual_ListCollisionEnergy 
+            MSMSManual_ListCollisionEnergy <- -1 * MSMSManual_ListCollisionEnergy
             message(paste("Polarity is positive, changed MSMSManual_ListCollisionEnergy to", MSMSManual_ListCollisionEnergy))
         } else if (MSmode=="negative" & MSMSManual_ListCollisionEnergy >0 ) {
-            MSMSManual_ListCollisionEnergy <- -1 * MSMSManual_ListCollisionEnergy 
+            MSMSManual_ListCollisionEnergy <- -1 * MSMSManual_ListCollisionEnergy
             message(paste("Polarity is negative, changed MSMSManual_ListCollisionEnergy to", MSMSManual_ListCollisionEnergy))
         }
-        
+
         ##
         ## Load and parse Template
         ##
@@ -70,7 +70,7 @@ function(pickList, methodPrefix="", MSmode=c("positive","negative"),
   ## Second Segment has to be the first MRM in the template
   segmentTemplate <- root[["method"]][["qtofacq"]][["timetable"]][[2]]
   segmentTemplateEndtime <- as.numeric(xmlAttrs(segmentTemplate)["endtime"])
-        
+
   newSegment <- segmentTemplate
   dependentNr <- 2
 
@@ -123,7 +123,7 @@ function(pickList, methodPrefix="", MSmode=c("positive","negative"),
               "is before the end of the template segment at", firstSegmentEndtime);
       next;
     }
-    
+
     newSegment <- segmentTemplate
     newSegment <- removeAttributes(newSegment, "endtime")
 
@@ -132,7 +132,7 @@ function(pickList, methodPrefix="", MSmode=c("positive","negative"),
                                   .attrs=c(endtime = pickList[i,"rtmax"]/60))
     } else {
       newSegment <- addAttributes(newSegment,
-                                  .attrs=c(endtime = segmentTemplateEndtime))      
+                                  .attrs=c(endtime = segmentTemplateEndtime))
     }
 
     newSegment[[dependentNr]][[posMSMSManual_ListIsolationMass]][[1]] <- xmlNode("entry_double",
@@ -162,7 +162,7 @@ function(pickList, methodPrefix="", MSmode=c("positive","negative"),
     newSegment[[dependentNr]][[posMSMSManual_ListCollisionEnergy]][[1]] <- xmlNode("entry_double",
                                                     attrs=c(value=MSMSManual_ListCollisionEnergy))
 
-    
+
     ## Add this segment to the table
     newTable <- addChildren(newTable, newSegment)
   }
