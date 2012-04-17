@@ -9,7 +9,7 @@ picklists2waters <- function(pickLists, methodPrefix="", MSmode=c("positive","ne
     for (i in 1:length(pickLists)) {
         methodname <- paste(methodPrefix,i, sep="_")
         
-        picklist2waters(pickList=pickLists[[i]], methodPrefix=methodPrefix, MSmode=MSmode,
+        picklist2waters(pickList=pickLists[[i]], methodPrefix=methodname, MSmode=MSmode,
            template=template,
            MSMSManual_ListCollisionEnergy=MSMSManual_ListCollisionEnergy,
            MSMSManual_ListIsolationWidth=MSMSManual_ListIsolationWidth,
@@ -95,13 +95,14 @@ picklist2waters <-
     
 
     ## Make sure segments don't overlap
+    if (nrow(pickList) > 1) {
     for (i in 2:nrow(pickList)) {
       if (pickList[i,"rtmin"] == pickList[i-1,"rtmax"]) {
         pickList[i-1,"rtmax"] <- pickList[i-1,"rtmax"]-0.5
         pickList[i,"rtmin"] <- pickList[i,"rtmin"]+0.5
       }        
     }
-    
+  }
     ##
     ## Create the new segments
     ##
@@ -128,7 +129,7 @@ picklist2waters <-
       newFunction[grep("FunctionStartMass", newFunction, fixed=TRUE)] <- paste("FunctionStartMass",
                                                                 40, sep=",")
       newFunction[grep("FunctionEndMass", newFunction, fixed=TRUE)] <- paste("FunctionEndMass",
-                                                              max(usedLockMassMz, round(pickList[i,"mzmed"], -2))+100, sep=",")
+                                                              max(usedLockMassMZ, round(pickList[i,"mzmed"], -2))+100, sep=",")
       
       ## Set collision energy
       newFunction[grep("TOFCollisionEnergy", newFunction, fixed=TRUE)] <- paste("TOFCollisionEnergy",
@@ -157,6 +158,8 @@ picklist2waters <-
     ##
 
     expFile[[i+2]] <- footerBlock
+
+    dir.create(dirname(method), recursive = TRUE, showWarnings = FALSE)
     write.table(unlist(expFile), method,
                 sep = ",", quote = FALSE, row.names = FALSE, col.names=FALSE)
 
