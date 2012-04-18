@@ -1,9 +1,14 @@
+2012-04-18  Steffen Neumann  <sneumann@ipb-halle.de>
+
+	* R/picklist2waters.R (picklist2waters): fixed some inconsistencies, more checks
+	on rtmin/rtmax and skipping/truncation if necessary.
+
 2012-04-17  Steffen Neumann  <sneumann@ipb-halle.de>
 
 	* R/picklist2waters.R (picklists2waters): added convenience
 	wrapper for multiple peaklists
 	* R/picklist2waters.R (picklist2waters): create parent directory for methd
-	* R/picklist2waters.R (picklists2waters): fixed variable name, filename-generation, and single-row picklist issue	
+	* R/picklist2waters.R (picklists2waters): fixed variable name, filename-generation, and single-row picklist issue
 
 2012-04-13  Steffen Neumann  <sneumann@ipb-halle.de>
 
@@ -12,13 +17,13 @@
 
 2012-03-27  Steffen Neumann  <sneumann@ipb-halle.de>
 
-	* R/picklist2method.R (picklist2method): instead of adding the 
-	template MS/MS segment at the end, modify the endtime of the last 
+	* R/picklist2method.R (picklist2method): instead of adding the
+	template MS/MS segment at the end, modify the endtime of the last
 	picklist segment to last until the calibration
 
 2012-03-21  Steffen Neumann  <sneumann@ipb-halle.de>
 
-	* R/picklist2method.R (picklist2method): omit warning if picklist retention time 
+	* R/picklist2method.R (picklist2method): omit warning if picklist retention time
 	is too early, and emit warning
 
 2012-03-15  Steffen Neumann  <sneumann@ipb-halle.de>

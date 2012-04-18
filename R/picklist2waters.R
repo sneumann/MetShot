@@ -1,22 +1,10 @@
-picklists2waters <- function(pickLists, methodPrefix="", MSmode=c("positive","negative"),
-           template="test.exp",
-           MSMSManual_ListCollisionEnergy=15,
-           MSMSManual_ListIsolationWidth=8,
-           TOFConeVoltage=NULL,
-           lockMassMZ=NULL,
-           calibrationFileName=NULL) 
+picklists2waters <- function(pickLists, ...)  
 {
     for (i in 1:length(pickLists)) {
         methodname <- paste(methodPrefix,i, sep="_")
         
-        picklist2waters(pickList=pickLists[[i]], methodPrefix=methodname, MSmode=MSmode,
-           template=template,
-           MSMSManual_ListCollisionEnergy=MSMSManual_ListCollisionEnergy,
-           MSMSManual_ListIsolationWidth=MSMSManual_ListIsolationWidth,
-           TOFConeVoltage=TOFConeVoltage,
-           lockMassMZ=lockMassMZ,
-           calibrationFileName=calibrationFileName)
-
+        picklist2waters(pickList=pickLists[[i]], methodPrefix=methodname, ...)
+        
         message(paste("Created ", methodname,
                       "with", nrow(pickLists[[i]]), "MS2 regions"))
   }
@@ -27,10 +15,10 @@ picklist2waters <-
   function(pickList, methodPrefix="", MSmode=c("positive","negative"),
            template="test.exp",
            MSMSManual_ListCollisionEnergy=15,
-           MSMSManual_ListIsolationWidth=8,
            TOFConeVoltage=NULL,
-           lockMassMZ=NULL,
-           calibrationFileName=NULL)
+           lockMassMZ=NULL
+           # ,calibrationFileName=NULL
+           )
 {
 
   polarity <- ifelse (MSmode=="negative", "Negative", "Positive")
@@ -46,12 +34,14 @@ picklist2waters <-
     headerStart <- grep("GENERAL INFORMATION", d)[1]
     headerEnd   <- grep("FUNCTION 1", d)[1]-1
     headerBlock <- d[headerStart:headerEnd]
-    
+
+    ExperimentDuration <- grep("ExperimentDuration,([0-9.]*)", headerBlock, fixed=TRUE)
+
     headerBlock[grep("PositivePolarity,", headerBlock, fixed=TRUE)] <- paste("PositivePolarity", ifelse (MSmode=="positive", "1", "0"), sep=",")
 
-    if (!missing(calibrationFileName)) {
-      headerBlock[grep("ExperimentCalibrationFilename,", headerBlock, fixed=TRUE)] <- paste("ExperimentCalibrationFilename", calibrationFileName, sep=",")
-    }
+    ## if (!missing(calibrationFileName)) {
+    ##   headerBlock[grep("ExperimentCalibrationFilename,", headerBlock, fixed=TRUE)] <- paste("ExperimentCalibrationFilename", calibrationFileName, sep=",")
+    ## }
 
     if (!missing(lockMassMZ)) {
       headerBlock[grep("ReferenceSetMass,", headerBlock, fixed=TRUE)] <- paste("ReferenceSetMass", lockMassMZ, sep=",")
@@ -59,7 +49,6 @@ picklist2waters <-
     } else {
       usedLockMassMZ <- grep("ReferenceSetMass,([0-9.]*)", headerBlock, fixed=TRUE)
     }
-
    
     numberFuncsIdx <- grep("^NumberOfFunctions,", headerBlock) 
     headerBlock[numberFuncsIdx] <- paste("NumberOfFunctions", nrow(pickList), sep=",")
@@ -110,6 +99,7 @@ picklist2waters <-
 
     for (i in 1:nrow(pickList)) {
       cat ("pick", i, "\n")
+
       newFunction <- templateBlock
       newFunction[1] <- paste("FUNCTION", i)
 
@@ -117,10 +107,33 @@ picklist2waters <-
       newFunction[grep("FunctionPolarity,", newFunction, fixed=TRUE)] <- paste("FunctionPolarity", ifelse (MSmode=="positive", "Positive", "Negative"), sep=",")
       
       ## Set start/end time
+      rtmin <- pickList[i,"rtmin"]/60
+      rtmax <- pickList[i,"rtmax"]/60
+
+      if (rtmax < 0) {
+        warning("Skipping MS/MS function with negative end time ", rtmax)
+        next();
+      }
+      if (rtmin < 0) {
+        warning("Truncating MS/MS function with negative start time ", rtmin, " to zero")
+        rtmin <- 0
+      }
+      if (rtmin > ExperimentDuration) {
+        warning("Skipping MS/MS function beyond ExperimentDuration ", ExperimentDuration,
+                " having start time ", rtmin, " to zero")
+        next()
+      }
+      if (rtmax > ExperimentDuration) {
+        warning("Truncating MS/MS function end time ", rtmax,
+                " beyond ExperimentDuration ", ExperimentDuration)
+        rtmax <- ExperimentDuration
+      }
+
+            
       newFunction[grep("FunctionStartTime(min)", newFunction, fixed=TRUE)] <- paste("FunctionStartTime(min)",
-                                                                pickList[i,"rtmin"]/60, sep=",")
+                                                                rtmin, sep=",")
       newFunction[grep("FunctionEndTime(min)", newFunction, fixed=TRUE)] <- paste("FunctionEndTime(min)",
-                                                              pickList[i,"rtmax"]/60, sep=",")
+                                                              rtmax, sep=",")
       
       ## Isolation mass and scan window
       newFunction[grep("TOFSetMass", newFunction, fixed=TRUE)] <- paste("TOFSetMass",
