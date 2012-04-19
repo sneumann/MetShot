@@ -1,3 +1,7 @@
+2012-04-19  Steffen Neumann  <sneumann@ipb-halle.de>
+
+	* R/picklist2waters.R (picklists2waters): fixed arguments for wrapper method
+
 2012-04-18  Steffen Neumann  <sneumann@ipb-halle.de>
 
 	* R/picklist2waters.R (picklist2waters): fixed some inconsistencies, more checks

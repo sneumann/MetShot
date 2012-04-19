@@ -1,4 +1,4 @@
-picklists2waters <- function(pickLists, ...)  
+picklists2waters <- function(pickLists, methodPrefix, ...)  
 {
     for (i in 1:length(pickLists)) {
         methodname <- paste(methodPrefix,i, sep="_")
