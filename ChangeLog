@@ -1,5 +1,10 @@
 2012-04-19  Steffen Neumann  <sneumann@ipb-halle.de>
 
+	* R/picklist2waters.R (picklist2waters): use the actual number of functions,
+	instead of the planned number. Also change way resulting method file is written.
+
+2012-04-19  Steffen Neumann  <sneumann@ipb-halle.de>
+
 	* R/picklist2waters.R (picklists2waters): fixed arguments for wrapper method,
 	fixed reading values from template
 

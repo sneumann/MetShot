@@ -51,14 +51,7 @@ picklist2waters <-
       usedLockMassMZ <- sub("ReferenceSetMass,([0-9.]*)", "\\1", headerBlock[grep("ReferenceSetMass,([0-9.]*)", headerBlock)])
       usedLockMassMZ <- as.numeric(usedLockMassMZ)
     }
-   
-    numberFuncsIdx <- grep("^NumberOfFunctions,", headerBlock) 
-    headerBlock[numberFuncsIdx] <- paste("NumberOfFunctions", nrow(pickList), sep=",")
-
-    typeFuncsIdx <- grep("^FunctionTypes,", headerBlock)
-    headerBlock[typeFuncsIdx] <- paste("FunctionTypes",
-                                         paste(rep("Tof MSMS", nrow(pickList)), collapse=","), sep=",")
-    
+       
     footerStart <- grep("^MaldiLaserType", d)[1]
     footerEnd   <- length(d)
     footerBlock <- d[footerStart:footerEnd]
@@ -69,7 +62,6 @@ picklist2waters <-
 
     
     expFile <- list()
-    expFile[[1]] <- headerBlock
 
     templateStart <- grep("FUNCTION 1", d)[1]
     templateEnd   <- grep("FUNCTION 2", d)[1]-1
@@ -162,20 +154,22 @@ picklist2waters <-
       newFunction[CEProfileIdx] <- CEProfiles
 
       ## Add this segment to the table
-      expFile[[i+1]] <- newFunction
-      
+      expFile[[i]] <- newFunction      
     }
 
 
     ##
-    ## Copy the template directory
-    ## and inject the new method
+    ## Now write the (actual) number of Functions into the Header
     ##
+    numberFuncsIdx <- grep("^NumberOfFunctions,", headerBlock) 
+    headerBlock[numberFuncsIdx] <- paste("NumberOfFunctions", nrow(pickList), sep=",")
 
-    expFile[[i+2]] <- footerBlock
-
+    typeFuncsIdx <- grep("^FunctionTypes,", headerBlock)
+    headerBlock[typeFuncsIdx] <- paste("FunctionTypes",
+                                         paste(rep("Tof MSMS", nrow(pickList)), collapse=","), sep=",")
+    
     dir.create(dirname(method), recursive = TRUE, showWarnings = FALSE)
-    write.table(unlist(expFile), method,
+    write.table(c(headerBlock, unlist(expFile), footerBlock), method,
                 sep = ",", quote = FALSE, row.names = FALSE, col.names=FALSE)
 
   }
