@@ -162,11 +162,11 @@ picklist2waters <-
     ## Now write the (actual) number of Functions into the Header
     ##
     numberFuncsIdx <- grep("^NumberOfFunctions,", headerBlock) 
-    headerBlock[numberFuncsIdx] <- paste("NumberOfFunctions", nrow(pickList), sep=",")
+    headerBlock[numberFuncsIdx] <- paste("NumberOfFunctions", length(expFile),  sep=",")
 
     typeFuncsIdx <- grep("^FunctionTypes,", headerBlock)
     headerBlock[typeFuncsIdx] <- paste("FunctionTypes",
-                                         paste(rep("Tof MSMS", nrow(pickList)), collapse=","), sep=",")
+                                         paste(rep("Tof MSMS", length(expFile)), collapse=","), sep=",")
     
     dir.create(dirname(method), recursive = TRUE, showWarnings = FALSE)
     write.table(c(headerBlock, unlist(expFile), footerBlock), method,
