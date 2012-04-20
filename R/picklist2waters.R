@@ -13,7 +13,7 @@ picklists2waters <- function(pickLists, methodPrefix, ...)
 
 picklist2waters <- 
   function(pickList, methodPrefix="", MSmode=c("positive","negative"),
-           template="test.exp",
+           template=NULL,
            MSMSManual_ListCollisionEnergy=15,
            TOFConeVoltage=NULL,
            lockMassMZ=NULL
@@ -35,8 +35,9 @@ picklist2waters <-
     headerEnd   <- grep("FUNCTION 1", d)[1]-1
     headerBlock <- d[headerStart:headerEnd]
 
-    ExperimentDuration <- grep("ExperimentDuration,([0-9.]*)", headerBlock, fixed=TRUE)
-
+    ExperimentDuration <- sub("ExperimentDuration,([0-9.]*)", "\\1", headerBlock[grep("ExperimentDuration,([0-9.]*)", headerBlock)])
+    ExperimentDuration <- as.numeric(ExperimentDuration)
+    
     headerBlock[grep("PositivePolarity,", headerBlock, fixed=TRUE)] <- paste("PositivePolarity", ifelse (MSmode=="positive", "1", "0"), sep=",")
 
     ## if (!missing(calibrationFileName)) {
@@ -47,7 +48,8 @@ picklist2waters <-
       headerBlock[grep("ReferenceSetMass,", headerBlock, fixed=TRUE)] <- paste("ReferenceSetMass", lockMassMZ, sep=",")
       usedLockMassMZ <- lockMassMZ
     } else {
-      usedLockMassMZ <- grep("ReferenceSetMass,([0-9.]*)", headerBlock, fixed=TRUE)
+      usedLockMassMZ <- sub("ReferenceSetMass,([0-9.]*)", "\\1", headerBlock[grep("ReferenceSetMass,([0-9.]*)", headerBlock)])
+      usedLockMassMZ <- as.numeric(usedLockMassMZ)
     }
    
     numberFuncsIdx <- grep("^NumberOfFunctions,", headerBlock) 

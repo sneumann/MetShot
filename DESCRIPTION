@@ -1,7 +1,7 @@
 Package: MetShot
 Type: Package
 Title: High throughput prioritized acquisition and processing of tandem mass spectra
-Version: 0.1.14
+Version: 0.1.15
 Date: 2012-04-19
 Author: Steffen Neumann <sneumann@ipb-halle.de>
 Maintainer: Steffen Neumann <sneumann@ipb-halle.de>,
