@@ -157,7 +157,11 @@ picklist2waters <-
       expFile[[i]] <- newFunction      
     }
 
-
+    ##
+    ## Cleanup functions that were removed
+    ##
+    expFile[sapply(expFile, is.na)] <- NULL
+      
     ##
     ## Now write the (actual) number of Functions into the Header
     ##
