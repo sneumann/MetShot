@@ -1,3 +1,8 @@
+2012-04-21  Steffen Neumann  <sneumann@paddy>
+
+	* R/picklist2waters.R (functionNr): More fixes in waters output, 
+	skip empty EXP files altogether
+
 2012-04-19  Steffen Neumann  <sneumann@ipb-halle.de>
 
 	* R/picklist2waters.R (picklist2waters): use the actual number of functions,

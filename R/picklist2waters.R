@@ -4,10 +4,7 @@ picklists2waters <- function(pickLists, methodPrefix, ...)
         methodname <- paste(methodPrefix,i, sep="_")
         
         picklist2waters(pickList=pickLists[[i]], methodPrefix=methodname, ...)
-        
-        message(paste("Created ", methodname,
-                      "with", nrow(pickLists[[i]]), "MS2 regions"))
-  }
+      }
 }
 
 
@@ -90,12 +87,11 @@ picklist2waters <-
     ## Create the new segments
     ##
     
-
+    functionNr <- 1
     for (i in 1:nrow(pickList)) {
-      cat ("pick", i, "\n")
 
       newFunction <- templateBlock
-      newFunction[1] <- paste("FUNCTION", i)
+      newFunction[1] <- paste("FUNCTION", functionNr)
 
       ## Set Polarity for each function
       newFunction[grep("FunctionPolarity,", newFunction, fixed=TRUE)] <- paste("FunctionPolarity", ifelse (MSmode=="positive", "Positive", "Negative"), sep=",")
@@ -154,27 +150,31 @@ picklist2waters <-
       newFunction[CEProfileIdx] <- CEProfiles
 
       ## Add this segment to the table
-      expFile[[i]] <- newFunction      
+      expFile[[functionNr]] <- newFunction
+      functionNr <- functionNr +1 
     }
-
-    ##
-    ## Cleanup functions that were removed
-    ##
-    expFile[sapply(expFile, is.na)] <- NULL
-      
+    
     ##
     ## Now write the (actual) number of Functions into the Header
     ##
     numberFuncsIdx <- grep("^NumberOfFunctions,", headerBlock) 
-    headerBlock[numberFuncsIdx] <- paste("NumberOfFunctions", length(expFile),  sep=",")
+    headerBlock[numberFuncsIdx] <- paste("NumberOfFunctions", functionNr-1,  sep=",")
 
     typeFuncsIdx <- grep("^FunctionTypes,", headerBlock)
     headerBlock[typeFuncsIdx] <- paste("FunctionTypes",
-                                         paste(rep("Tof MSMS", length(expFile)), collapse=","), sep=",")
+                                         paste(rep("Tof MSMS", functionNr-1), collapse=","), sep=",")
+
+    if (functionNr <= 1) {
+      ## Don't write empty EXP files
+      next()
+    }
     
     dir.create(dirname(method), recursive = TRUE, showWarnings = FALSE)
     write.table(c(headerBlock, unlist(expFile), footerBlock), method,
                 sep = ",", quote = FALSE, row.names = FALSE, col.names=FALSE)
+
+    message(paste("Created ", method,
+                  "with", functionNr-1, "MS2 regions"))
 
   }
   invisible(pickList[,,drop=FALSE])
