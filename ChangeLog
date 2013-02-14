@@ -1,3 +1,7 @@
+2013-02-14  Steffen Neumann  <sneumann@ipb-halle.de>
+
+	* R/plotGroups.R: fix y axis for plots without xcmsRaw background.
+
 2012-04-21  Steffen Neumann  <sneumann@paddy>
 
 	* R/picklist2waters.R (functionNr): More fixes in waters output, 

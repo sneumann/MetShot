@@ -73,7 +73,7 @@ function(xraw, precursor=NULL, xa, mzrange=NULL, rtrange=NULL,
 ##       par(cex=1)
   } else {
     plot.new()
-    plot.window(xlim=rtrange, ylim=mzrange,
+    plot.window(xlim=rtrange, ylim=rev(mzrange),
                 xlab="RT [s]", ylab="m/z")
     axis(1)
     axis(2)
