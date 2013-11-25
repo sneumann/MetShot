@@ -12,14 +12,14 @@ straight to Bruker micrOTOF control method files
   segments for the "interesting" peaks in the peak list  
 }
 \usage{
-xcms2method(peaklist, methodPrefix = "", MSmode = c("positive", "negative"), template = "test.method", gradientStart = NULL, gradientEnd = NULL, widthFactor = 1, minWidth = 1, MSMSManual_ListCollisionEnergy = 15, MSMSManual_ListIsolationWidth = 8)
+xcms2method(peaklist, methodPrefix = "", MSmode = c("positive", "negative"), template = "test.m/microTOFQAcquisition.method", gradientStart = NULL, gradientEnd = NULL, widthFactor = 1, minWidth = 1, MSMSManual_ListCollisionEnergy = 15, MSMSManual_ListIsolationWidth = 8)
 
 picklist2method(pickList, methodPrefix = "", MSmode = c("positive",
-"negative"), template = "test.method", MSMSManual_ListCollisionEnergy =
-15, MSMSManual_ListIsolationWidth = 8)
+"negative"), template = "test.m/microTOFQAcquisition.method", MSMSManual_ListCollisionEnergy =
+15, MSMSManual_ListIsolationWidth = 8, instrumentprefix = "qtofacq")
 
 peaklist2picklist(anyPeaklist, gradientStart = NULL, gradientEnd = NULL,
-widthFactor = 1, minWidth = 1)
+widthFactor = 1, minWidth = 1, fillGaps=TRUE)
 
 
 }
@@ -57,12 +57,21 @@ widthFactor = 1, minWidth = 1)
   \item{minWidth}{
     Ensure a minimum retention time window for the target windows
 }
-  \item{MSMSManual_ListCollisionEnergy}{
+  \item{fillGaps}{
+    If set to TRUE, then adjacent segments will be enlarged so that they
+    meet "in the middle", otherwise if FALSE then rtmin and rtmax are unchanged
+}
+
+\item{MSMSManual_ListCollisionEnergy}{
     Specify one or more collision energies to use
 }
   \item{MSMSManual_ListIsolationWidth}{
     Specify one or more isolation widths to use
-}
+  }
+  \item{instrumentprefix}{
+  The XML tags inside the Bruker method files depend on the instrument,
+  so for the micrOTOFq use "qtofacq", or for the maXis "qtofmaxacq".
+  }
 }
 \details{
   Prioritizes by what ?

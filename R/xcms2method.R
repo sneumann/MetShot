@@ -1,6 +1,6 @@
 xcms2method <-
 function(peaklist, methodPrefix="", MSmode=c("positive","negative"),
-                        template="test.method",
+                        template="test.m/microTOFQAcquisition.method",
                         gradientStart=NULL, gradientEnd=NULL,
                         widthFactor=1, minWidth=1,
                         MSMSManual_ListCollisionEnergy=15,

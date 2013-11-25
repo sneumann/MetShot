@@ -1,3 +1,15 @@
+CHANGES IN VERSION 0.1.21
+----------------------
+
+INCOMPATIBLE CHANGES:
+
+    o the XXX2method for Bruker now takes a filename 
+      instead of the directory name
+
+NEW FEATURES
+
+    o Started support to export for Bruker maXis instruments 
+
 CHANGES IN VERSION 0.1.2
 ----------------------
 

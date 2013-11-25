@@ -1,7 +1,7 @@
 
 picklists2methods <-
 function(pickLists, methodPrefix="", MSmode=c("positive","negative"),
-                        template="test.method",
+                        template="test.m/microTOFQAcquisition.method",
                         MSMSManual_ListCollisionEnergy=15,
                         MSMSManual_ListIsolationWidth=8)
   {
@@ -22,9 +22,10 @@ function(pickLists, methodPrefix="", MSmode=c("positive","negative"),
 
 picklist2method <-
 function(pickList, methodPrefix="", MSmode=c("positive","negative"),
-                        template="test.method",
+                        template="test.m/microTOFQAcquisition.method",
                         MSMSManual_ListCollisionEnergy=15,
-                        MSMSManual_ListIsolationWidth=8)
+                        MSMSManual_ListIsolationWidth=8,
+         instrumentprefix = "qtofacq")
 {
   if (is.null(pickList)) {
    warning("Skipping empty picklist")
@@ -51,7 +52,7 @@ function(pickList, methodPrefix="", MSmode=c("positive","negative"),
         ## Load and parse Template
         ##
 
-  tree <-  xmlTreeParse(paste(template, "microTOFQAcquisition.method", sep="/"))
+  tree <-  xmlTreeParse(template)
   root <-  xmlRoot(tree)
 
   ##
@@ -61,14 +62,16 @@ function(pickList, methodPrefix="", MSmode=c("positive","negative"),
 
   newTable <- xmlNode("timetable")
 
-  firstSegment <- root[["method"]][["qtofacq"]][["timetable"]][[1]]
+        
+  ## TODO: add a check if instrumentprefix exists.       
+  firstSegment <- root[["method"]][[instrumentprefix]][["timetable"]][[1]]
   firstSegmentEndtime <- as.numeric(xmlAttrs(firstSegment)["endtime"])
 
   newTable <- addChildren(newTable, firstSegment)
 
 
   ## Second Segment has to be the first MRM in the template
-  segmentTemplate <- root[["method"]][["qtofacq"]][["timetable"]][[2]]
+  segmentTemplate <- root[["method"]][[instrumentprefix]][["timetable"]][[2]]
   segmentTemplateEndtime <- as.numeric(xmlAttrs(segmentTemplate)["endtime"])
 
   newSegment <- segmentTemplate
@@ -167,10 +170,10 @@ function(pickList, methodPrefix="", MSmode=c("positive","negative"),
     newTable <- addChildren(newTable, newSegment)
   }
 
-  newTable <- addChildren(newTable, root[["method"]][["qtofacq"]][["timetable"]][[3]])
-  newTable <- addChildren(newTable, root[["method"]][["qtofacq"]][["timetable"]][[4]])
+  newTable <- addChildren(newTable, root[["method"]][[instrumentprefix]][["timetable"]][[3]])
+  newTable <- addChildren(newTable, root[["method"]][[instrumentprefix]][["timetable"]][[4]])
 
-  root[["method"]][["qtofacq"]][["timetable"]] <- newTable
+  root[["method"]][[instrumentprefix]][["timetable"]] <- newTable
 
   ##
   ## Copy the template directory
@@ -179,10 +182,10 @@ function(pickList, methodPrefix="", MSmode=c("positive","negative"),
 
   unlink(method, recursive=TRUE)
   dir.create(method, recursive=TRUE)
-  file.copy(list.files(template, full.names=TRUE),
+  file.copy(list.files(dirname(template), full.names=TRUE),
             method, recursive = TRUE)
 
-  saveXML(root, file=paste(method, "microTOFQAcquisition.method", sep="/"))
+  saveXML(root, file=paste(method, basename(template), sep="/"))
 }
   invisible(pickList[,,drop=FALSE])
 }

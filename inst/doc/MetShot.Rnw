@@ -115,7 +115,7 @@ colnames(reporttab) <- sub("^mz$", "mzmed", colnames(reporttab))
 ## method generation
 ##
 
-templateFile <- system.file("20minKalibpos_Startermethod_MSMS.m",
+templateFile <- system.file("20minKalibpos_Startermethod_MSMS.m/microTOFQAcquisition.method",
                             package = "MetShot")
 
 collisionEnergy <- c(20)
