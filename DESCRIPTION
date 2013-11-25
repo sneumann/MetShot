@@ -14,7 +14,7 @@ Description: MetShot will provides functions to schedule the high-throughput acq
             After the measurements, MetShot uses CAMERA functions to create tandem mass peak
             list, to avoid background signals. Finally, MetShot can create batch query
             files for identification against MassBank or MetFrag.
-License: GPL Version 2 or later
+License: GPL (>= 2)
 LazyLoad: yes
 Depends: CAMERA, xcms, XML, class, Biobase
 Suggests: msdata, RUnit, faahKO
