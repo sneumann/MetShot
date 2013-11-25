@@ -1,16 +1,10 @@
 
 picklists2methods <-
-function(pickLists, methodPrefix="", MSmode=c("positive","negative"),
-                        template="test.m/microTOFQAcquisition.method",
-                        MSMSManual_ListCollisionEnergy=15,
-                        MSMSManual_ListIsolationWidth=8)
-  {
+function(pickLists, methodPrefix="", ...)
+{
     for (i in 1:length(pickLists)) {
         methodname <- paste(methodPrefix,i, sep="_")
-        picklist2method(pickLists[[i]], methodname, MSmode=MSmode, template=template,
-                    MSMSManual_ListCollisionEnergy=MSMSManual_ListCollisionEnergy,
-                    MSMSManual_ListIsolationWidth=MSMSManual_ListIsolationWidth)
-
+        picklist2method(pickLists[[i]], methodname, ...)
         message(paste("Created ", methodname,
                       "with", nrow(pickLists[[i]]), "MS2 regions"))
   }
@@ -31,8 +25,6 @@ function(pickList, methodPrefix="", MSmode=c("positive","negative"),
    warning("Skipping empty picklist")
    return (NULL)
   }
-
-  require(XML) || stop("Couldn't load package XML")
 
     for (MSMSManual_ListCollisionEnergy in MSMSManual_ListCollisionEnergy) {
         method <- paste(methodPrefix, "-", MSMSManual_ListCollisionEnergy, "eV.m", sep="")

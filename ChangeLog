@@ -1,5 +1,8 @@
 2013-11-25  Steffen Neumann  <sneumann@ipb-halle.de>
 
+	* R/picklist2Agilent.R (picklist2Agilent): USER VISIBLE CHANGE: rename the 
+	collision_energy argument with MSMSManual_ListCollisionEnergy
+
 	* R/picklist2method.R (picklist2method): USER VISIBLE CHANGE: the template parameter
 	in picklist2method() is now the actual path to the *.method XML file,
 	instead of the template.m directory name. This is because different Bruker instruments
@@ -8,6 +11,9 @@
 	* R/picklist2method.R (picklist2method): Added a parameter instrument, which encodes
 	the instrumentname that is used as XML tag inside the *.method file,
 	e.g. "qtofacq" or "qtofmaxacq"
+
+	* R/picklist2XXX.R (picklists2XXX): Use ... in wrapper methods picklists2XXX() 
+	to pass arguments down to picklist2XXX().
 
 2013-02-22  Steffen Neumann  <sneumann@ipb-halle.de>
 

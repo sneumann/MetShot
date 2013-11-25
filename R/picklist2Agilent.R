@@ -1,7 +1,8 @@
 
 picklist2Agilent <- function(pickList, filename="TargetedMSMSTable.csv", 
                              delta_ret_time=10,
-                             iso_width=c("Narrow (~1.3 m/z)", "Medium (~4 m/z)"),collision_energy="20") {
+                             iso_width=c("Narrow (~1.3 m/z)", "Medium (~4 m/z)"),
+                             MSMSManual_ListCollisionEnergy = 20) {
   cnames <- c("On","Prec. m/z","Z","Ret. time (min)","Delta ret. time (min)","Iso. width","Collision energy","Acquisition time (ms/spec)")
 
   iso_width <- match.arg(iso_width)
@@ -18,7 +19,7 @@ picklist2Agilent <- function(pickList, filename="TargetedMSMSTable.csv",
   x[r,4] <- round(pickList[,"rtmed"] / 60, 3)  ## Ret. time (min)
   x[r,5] <- round(delta_ret_time / 60, 3)      ## "Delta ret. time (min)"
   x[r,6] <- iso_width
-  x[r,7] <- collision_energy
+  x[r,7] <- MSMSManual_ListCollisionEnergy
   
   idx <- order(as.numeric(x[r,4])) ## sort by RT
   x[r,] <- x[r[idx],]

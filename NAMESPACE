@@ -1,5 +1,6 @@
 importClassesFrom(Biobase, "Versioned")
 importFrom(Biobase, validMsg)
+#importFrom(CAMERA, calc_pc)
 
 export(
 	peaklist2picklist,  

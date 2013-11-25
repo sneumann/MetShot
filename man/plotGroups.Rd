@@ -1,5 +1,6 @@
 \name{plotGroups}
 \alias{plotGroups}
+\alias{plotAllSpectra}
 \title{
 	Convenient plot for MS2 data, with superimposed Raw- and processed data.
 }
@@ -7,7 +8,13 @@
 	Convenient plot for MS2 data, with superimposed Raw- and processed data.
 }
 \usage{
-plotGroups(xraw, precursor = NULL, xa, mzrange = NULL, rtrange = NULL, ms1peaks = NULL, precursorcol = 1)
+plotGroups(xraw, precursor = NULL, xa, mzrange = NULL, rtrange = NULL,
+ms1peaks = NULL, precursorcol = 1)
+
+plotAllSpectra(xa, specperpage=9, prefix="Spec",
+                           pspecs=1:length(xa@pspectra),
+                           titles="", ...)
+
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -32,6 +39,19 @@ plotGroups(xraw, precursor = NULL, xa, mzrange = NULL, rtrange = NULL, ms1peaks 
   \item{precursorcol}{
 %%     ~~Describe \code{precursorcol} here~~
 }
+
+  \item{specperpage}{Plot multiple spectra per page
+}
+  \item{prefix}{Use prefix for generated graphics
+}
+  \item{pspecs}{Indix of spectra to be plotted, default: all
+}
+  \item{titles}{Graphics title(s)
+}
+  \item{...}{Arguments passed to - idontknow.
+}
+
+
 }
 \details{
 %%  ~~ If necessary, more details than the description above ~~
