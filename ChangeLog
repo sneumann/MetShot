@@ -1,7 +1,9 @@
 2013-12-11  Steffen Neumann  <sneumann@paddy.ipb-halle.de>
 
+	* R/picklist2method.R (picklist2method): Use XML node name instead of hardcoded number
+
 	* Added a parameter for Burker method generation to specify
-	the template segment number. 
+	the template segment number.
 
 2013-11-25  Steffen Neumann  <sneumann@ipb-halle.de>
 

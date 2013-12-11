@@ -70,20 +70,14 @@ function(pickList, methodPrefix="", MSmode=c("positive","negative"),
 
   newSegment <- segmentTemplate
 
-        ## Halle
-        dependentNr = 2
         
-        ## Munich
-        dependentNr = 3
-
-        
-##    if (MSmode=="positive") {
-##      if (xmlAttrs(newSegment[[dependentNr]])["polarity"] != "positive")
-##          stop(paste("Polarity ", MSmode, "at wrong position in template"))
-##    } else {
-##      if (xmlAttrs(newSegment[[dependentNr]])["polarity"] != "positive")
-##          stop(paste("Polarity ", MSmode, "at wrong position in template"))
-##    }
+   if (MSmode=="positive") {
+     if (xmlAttrs(newSegment[["dependent"]])["polarity"] != "positive")
+         stop(paste("Polarity ", MSmode, "at wrong position in template"))
+   } else {
+     if (xmlAttrs(newSegment[["dependent"]])["polarity"] != "positive")
+         stop(paste("Polarity ", MSmode, "at wrong position in template"))
+   }
 
 
 
@@ -96,15 +90,15 @@ function(pickList, methodPrefix="", MSmode=c("positive","negative"),
       stop("Segment nr. ", templateSegmentNr, " in Template file is not MRM.")
   }
 
-  if (length(newSegment[[dependentNr]][[1]])>1)
+  if (length(newSegment[["dependent"]][[1]])>1)
     warning("More than one parent mass in template")
 
 
-  posMSMSManual_ListIsolationMass <- index4attribute(newSegment[[dependentNr]],
+  posMSMSManual_ListIsolationMass <- index4attribute(newSegment[["dependent"]],
                                                      "MSMSManual_ListIsolationMass")
-  posMSMSManual_ListIsolationWidth <- index4attribute(newSegment[[dependentNr]],
+  posMSMSManual_ListIsolationWidth <- index4attribute(newSegment[["dependent"]],
                                                       "MSMSManual_ListIsolationWidth")
-  posMSMSManual_ListCollisionEnergy <- index4attribute(newSegment[[dependentNr]],
+  posMSMSManual_ListCollisionEnergy <- index4attribute(newSegment[["dependent"]],
                                                        "MSMSManual_ListCollisionEnergy")
 
   if (is.null(posMSMSManual_ListIsolationMass))
@@ -138,7 +132,7 @@ function(pickList, methodPrefix="", MSmode=c("positive","negative"),
                                   .attrs=c(endtime = segmentTemplateEndtime))
     }
 
-    newSegment[[dependentNr]][[posMSMSManual_ListIsolationMass]][[1]] <- xmlNode("entry_double",
+    newSegment[["dependent"]][[posMSMSManual_ListIsolationMass]][[1]] <- xmlNode("entry_double",
                                                    attrs=c(value=pickList[i,"mzmed"]))
 
 
@@ -159,10 +153,10 @@ function(pickList, methodPrefix="", MSmode=c("positive","negative"),
       currentMSMSManual_ListIsolationWidth <- MSMSManual_ListIsolationWidth
     }
 
-    newSegment[[dependentNr]][[posMSMSManual_ListIsolationWidth]][[1]] <- xmlNode("entry_double",
+    newSegment[["dependent"]][[posMSMSManual_ListIsolationWidth]][[1]] <- xmlNode("entry_double",
                                                     attrs=c(value=currentMSMSManual_ListIsolationWidth))
 
-    newSegment[[dependentNr]][[posMSMSManual_ListCollisionEnergy]][[1]] <- xmlNode("entry_double",
+    newSegment[["dependent"]][[posMSMSManual_ListCollisionEnergy]][[1]] <- xmlNode("entry_double",
                                                     attrs=c(value=MSMSManual_ListCollisionEnergy))
 
 
