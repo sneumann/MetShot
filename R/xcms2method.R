@@ -1,6 +1,6 @@
-xcms2method <-
-function(peaklist, methodPrefix="", MSmode=c("positive","negative"),
+xcms2method <- function(peaklist, methodPrefix="", MSmode=c("positive","negative"),
                         template="test.m/microTOFQAcquisition.method",
+                        templateSegmentNr=2,
                         gradientStart=NULL, gradientEnd=NULL,
                         widthFactor=1, minWidth=1,
                         MSMSManual_ListCollisionEnergy=15,
@@ -18,7 +18,8 @@ function(peaklist, methodPrefix="", MSmode=c("positive","negative"),
         return(NULL)
     }
 
-    picklists2methods(pickLists, methodname, MSmode=MSmode, template=template,
+    picklists2methods(pickLists, methodname, MSmode=MSmode,
+                      template=template, templateSegmentNr=templateSegmentNr,
                       MSMSManual_ListCollisionEnergy=MSMSManual_ListCollisionEnergy,
                       MSMSManual_ListIsolationWidth=MSMSManual_ListIsolationWidth)    
     

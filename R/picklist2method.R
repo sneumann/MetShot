@@ -16,9 +16,10 @@ function(pickLists, methodPrefix="", ...)
 
 picklist2method <-
 function(pickList, methodPrefix="", MSmode=c("positive","negative"),
-                        template="test.m/microTOFQAcquisition.method",
-                        MSMSManual_ListCollisionEnergy=15,
-                        MSMSManual_ListIsolationWidth=8,
+         template="test.m/microTOFQAcquisition.method",
+         templateSegmentNr=2,
+         MSMSManual_ListCollisionEnergy=15,
+         MSMSManual_ListIsolationWidth=8,
          instrumentprefix = "qtofacq")
 {
   if (is.null(pickList)) {
@@ -56,19 +57,26 @@ function(pickList, methodPrefix="", MSmode=c("positive","negative"),
 
         
   ## TODO: add a check if instrumentprefix exists.       
-  firstSegment <- root[["method"]][[instrumentprefix]][["timetable"]][[1]]
-  firstSegmentEndtime <- as.numeric(xmlAttrs(firstSegment)["endtime"])
 
-  newTable <- addChildren(newTable, firstSegment)
-
+        for (i in seq(1, templateSegmentNr-1) ) {
+            firstSegment <- root[["method"]][[instrumentprefix]][["timetable"]][[i]]
+            firstSegmentEndtime <- as.numeric(xmlAttrs(firstSegment)["endtime"])
+            newTable <- addChildren(newTable, firstSegment)            
+        }
 
   ## Second Segment has to be the first MRM in the template
-  segmentTemplate <- root[["method"]][[instrumentprefix]][["timetable"]][[2]]
+  segmentTemplate <- root[["method"]][[instrumentprefix]][["timetable"]][[templateSegmentNr]]
   segmentTemplateEndtime <- as.numeric(xmlAttrs(segmentTemplate)["endtime"])
 
   newSegment <- segmentTemplate
-  dependentNr <- 2
 
+        ## Halle
+        dependentNr = 2
+        
+        ## Munich
+        dependentNr = 3
+
+        
 ##    if (MSmode=="positive") {
 ##      if (xmlAttrs(newSegment[[dependentNr]])["polarity"] != "positive")
 ##          stop(paste("Polarity ", MSmode, "at wrong position in template"))
@@ -85,7 +93,7 @@ function(pickList, methodPrefix="", MSmode=c("positive","negative"),
 
 
   if ("3.000000" != value4attribute(newSegment, "Mode_ScanMode")) {
-      stop("Second Segment in Template file is not MRM.")
+      stop("Segment nr. ", templateSegmentNr, " in Template file is not MRM.")
   }
 
   if (length(newSegment[[dependentNr]][[1]])>1)
@@ -100,11 +108,11 @@ function(pickList, methodPrefix="", MSmode=c("positive","negative"),
                                                        "MSMSManual_ListCollisionEnergy")
 
   if (is.null(posMSMSManual_ListIsolationMass))
-      stop("Template file corrupt: MSMSManual_ListIsolationMass not here.")
+      stop("Template file missing expected content: MSMSManual_ListIsolationMass not here.")
   if (is.null(posMSMSManual_ListIsolationWidth))
-      stop("Template file corrupt: MSMSManual_ListIsolationWidth not here.")
+      stop("Template file missing expected content: MSMSManual_ListIsolationWidth not here.")
   if (is.null(posMSMSManual_ListCollisionEnergy))
-      stop("Template file corrupt: MSMSManual_ListCollisionEnergy not here.")
+      stop("Template file missing expected content: MSMSManual_ListCollisionEnergy not here.")
 
   ##
   ## Create the new segments
@@ -162,8 +170,11 @@ function(pickList, methodPrefix="", MSmode=c("positive","negative"),
     newTable <- addChildren(newTable, newSegment)
   }
 
-  newTable <- addChildren(newTable, root[["method"]][[instrumentprefix]][["timetable"]][[3]])
-  newTable <- addChildren(newTable, root[["method"]][[instrumentprefix]][["timetable"]][[4]])
+
+        for (i in seq(templateSegmentNr+1, length(root[["method"]][[instrumentprefix]][["timetable"]])) ) {
+            lastSegment <- root[["method"]][[instrumentprefix]][["timetable"]][[i]]
+            newTable <- addChildren(newTable, lastSegment)            
+        }
 
   root[["method"]][[instrumentprefix]][["timetable"]] <- newTable
 

@@ -1,6 +1,11 @@
+2013-12-11  Steffen Neumann  <sneumann@paddy.ipb-halle.de>
+
+	* Added a parameter for Burker method generation to specify
+	the template segment number. 
+
 2013-11-25  Steffen Neumann  <sneumann@ipb-halle.de>
 
-	* R/picklist2Agilent.R (picklist2Agilent): USER VISIBLE CHANGE: rename the 
+	* R/picklist2Agilent.R (picklist2Agilent): USER VISIBLE CHANGE: rename the
 	collision_energy argument with MSMSManual_ListCollisionEnergy
 
 	* R/picklist2method.R (picklist2method): USER VISIBLE CHANGE: the template parameter
@@ -12,7 +17,7 @@
 	the instrumentname that is used as XML tag inside the *.method file,
 	e.g. "qtofacq" or "qtofmaxacq"
 
-	* R/picklist2XXX.R (picklists2XXX): Use ... in wrapper methods picklists2XXX() 
+	* R/picklist2XXX.R (picklists2XXX): Use ... in wrapper methods picklists2XXX()
 	to pass arguments down to picklist2XXX().
 
 2013-02-22  Steffen Neumann  <sneumann@ipb-halle.de>
