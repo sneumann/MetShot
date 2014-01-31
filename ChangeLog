@@ -1,6 +1,7 @@
 2014-01-31  Steffen Neumann  <sneumann@ipb-halle.de>
 
-	* R/picklist2method.R (picklist2method): Fixed check for negative polatity 
+	* R/picklist2method.R (picklist2method): Fixed check for negative polatity
+	* R/value4attribute.R (value4attribute): make parsing of template method more robust
 
 2013-12-11  Steffen Neumann  <sneumann@ipb-halle.de>
 

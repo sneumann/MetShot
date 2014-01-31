@@ -4,11 +4,8 @@ function(node, attribute, value="value") {
         childNode <- node[[i]]
         nodeAttributes <- xmlAttrs(childNode)
 
-        ## Maybe this is needed for complex Bruker microtof files
-        ## if (any(grepl(attribute, nodeAttributes))) {
-
-        if (grep(attribute, nodeAttributes)) {
-          return(nodeAttributes[value])
+        if (any(grepl(attribute, nodeAttributes))) {
+            return(nodeAttributes[value])
         }
     }
     return(NULL)
