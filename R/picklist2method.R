@@ -74,9 +74,11 @@ function(pickList, methodPrefix="", MSmode=c("positive","negative"),
    if (MSmode=="positive") {
      if (xmlAttrs(newSegment[["dependent"]])["polarity"] != "positive")
          stop(paste("Polarity ", MSmode, "at wrong position in template"))
-   } else {
-     if (xmlAttrs(newSegment[["dependent"]])["polarity"] != "positive")
+   } else if (MSmode=="negative") {
+     if (xmlAttrs(newSegment[["dependent"]])["polarity"] != "negative")
          stop(paste("Polarity ", MSmode, "at wrong position in template"))
+   } else {
+       stop(paste("Unknown Polarity ", MSmode))
    }
 
 

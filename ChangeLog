@@ -1,4 +1,8 @@
-2013-12-11  Steffen Neumann  <sneumann@paddy.ipb-halle.de>
+2014-01-31  Steffen Neumann  <sneumann@ipb-halle.de>
+
+	* R/picklist2method.R (picklist2method): Fixed check for negative polatity 
+
+2013-12-11  Steffen Neumann  <sneumann@ipb-halle.de>
 
 	* R/picklist2method.R (picklist2method): Use XML node name instead of hardcoded number
 
