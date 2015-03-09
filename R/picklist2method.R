@@ -88,7 +88,8 @@ function(pickList, methodPrefix="", MSmode=c("positive","negative"),
   ##
 
 
-  if ("3.000000" != value4attribute(newSegment, "Mode_ScanMode")) {
+  if ( as.integer(value4attribute(newSegment, "Mode_ScanMode")) != 3) {
+      cat('value4attribute(newSegment, "Mode_ScanMode") = ', value4attribute(newSegment, "Mode_ScanMode"), "\n")
       stop("Segment nr. ", templateSegmentNr, " in Template file is not MRM.")
   }
 

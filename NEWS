@@ -1,3 +1,10 @@
+CHANGES IN VERSION 0.2.0
+------------------------
+
+BUG FIXES:
+    o Fix check for MRM mode, work now also on Bruker microTOFcontrol 
+      that comes with DA 4.2
+
 CHANGES IN VERSION 0.1.21
 ----------------------
 
