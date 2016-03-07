@@ -27,9 +27,29 @@ picklist2method <-
         return (NULL)
     }
 
-    for (MSMSManual_ListCollisionEnergy in MSMSManual_ListCollisionEnergy) {
-        method <- paste(methodPrefix, "-", MSMSManual_ListCollisionEnergy, "eV.m", sep="")
+    ## 
+    ## MSMSManual_ListCollisionEnergy is now a matrix,
+    ## Where the columns are individual method files,
+    ## and the rows are repeated scans within a segment 
+    ## which can have different collision energies
+    ## and isolation widths in the row(s)
+    ##
 
+    MSMSManual_ListCollisionEnergyMatrix <- NULL
+    
+    if (is.null(dim(MSMSManual_ListCollisionEnergy))) {
+        MSMSManual_ListCollisionEnergyMatrix <- t(MSMSManual_ListCollisionEnergy)
+    } else {
+        MSMSManual_ListCollisionEnergyMatrix <- MSMSManual_ListCollisionEnergy
+    }
+        
+    for (j in 1:ncol(MSMSManual_ListCollisionEnergyMatrix)) {
+
+        MSMSManual_LstCollisionEnergy <- MSMSManual_ListCollisionEnergyMatrix[,j]        
+        method <- paste(methodPrefix, "-",
+                        paste(MSMSManual_LstCollisionEnergy, collapse=","),
+                        "eV.m", sep="")
+        
         ##
         ## Modify the collision energy in case of negative mode
         ##
@@ -137,9 +157,10 @@ picklist2method <-
                                             .attrs=c(endtime = segmentTemplateEndtime))
             }
 
-            newSegment[["dependent"]][[posMSMSManual_ListIsolationMass]][[1]] <- xmlNode("entry_double",
+            for (k in 1:length(MSMSManual_LstCollisionEnergy)) {
+            newSegment[["dependent"]][[posMSMSManual_ListIsolationMass]][[k]] <- xmlNode("entry_double",
                                                                                          attrs=c(value=pickList[i,"mzmed"]))
-
+            }
 
             ## MSMSManual_ListIsolationWidth <- rbind(mzmin=c(mz=150, MSMSManual_ListIsolationWidth=1),
             ##                                        mzmax=c(mz=900, MSMSManual_ListIsolationWidth=3))
@@ -158,12 +179,13 @@ picklist2method <-
                 currentMSMSManual_ListIsolationWidth <- MSMSManual_ListIsolationWidth
             }
 
-            newSegment[["dependent"]][[posMSMSManual_ListIsolationWidth]][[1]] <- xmlNode("entry_double",
+            for (k in 1:length(MSMSManual_LstCollisionEnergy)) {
+            newSegment[["dependent"]][[posMSMSManual_ListIsolationWidth]][[k]] <- xmlNode("entry_double",
                                                                                           attrs=c(value=currentMSMSManual_ListIsolationWidth))
 
-            newSegment[["dependent"]][[posMSMSManual_ListCollisionEnergy]][[1]] <- xmlNode("entry_double",
-                                                                                           attrs=c(value=MSMSManual_ListCollisionEnergy))
-
+            newSegment[["dependent"]][[posMSMSManual_ListCollisionEnergy]][[k]] <- xmlNode("entry_double",
+                                                                                           attrs=c(value=MSMSManual_ListCollisionEnergy[k]))
+            }
 
             ## Add this segment to the table
             newTable <- addChildren(newTable, newSegment)

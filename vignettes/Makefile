@@ -16,14 +16,15 @@ LATEXFILES = *.aux\
         MetShot-*.pdf\
         MetShot.R
 
-all:
-	make vignette
-	make clean
+all: install vignette clean
 
 setvars:
 ifeq (${R_HOME},)
 R_HOME= $(shell R RHOME)
 endif
+
+install:
+	"$(R_HOME)/bin/R" CMD INSTALL ..
 
 vignette:
 	"$(R_HOME)/bin/R" CMD Sweave MetShot.Rnw
