@@ -4,7 +4,8 @@ xcms2method <- function(peaklist, methodPrefix="", MSmode=c("positive","negative
                         gradientStart=NULL, gradientEnd=NULL,
                         widthFactor=1, minWidth=1,
                         MSMSManual_ListCollisionEnergy=15,
-                        MSMSManual_ListIsolationWidth=8)
+                        MSMSManual_ListIsolationWidth=8,
+                        instrumentprefix = "qtofacq")
 {
 
 
@@ -21,7 +22,8 @@ xcms2method <- function(peaklist, methodPrefix="", MSmode=c("positive","negative
     picklists2methods(pickLists, methodname, MSmode=MSmode,
                       template=template, templateSegmentNr=templateSegmentNr,
                       MSMSManual_ListCollisionEnergy=MSMSManual_ListCollisionEnergy,
-                      MSMSManual_ListIsolationWidth=MSMSManual_ListIsolationWidth)    
+                      MSMSManual_ListIsolationWidth=MSMSManual_ListIsolationWidth,
+                      instrumentprefix=instrumentprefix)    
     
     invisible(pickLists)
 }

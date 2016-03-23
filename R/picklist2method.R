@@ -109,6 +109,14 @@ picklist2method <-
         ## Some sanity checks
         ##
 
+        if (templateSegmentNr<2) {
+          warn("The template method should have at least one segmnet before the MRM Segment nr. ", templateSegmentNr,
+               " which should set most of the instrument parameters.")
+        }
+        
+        if (length(root[["method"]][[instrumentprefix]][["timetable"]]) <= templateSegmentNr) {
+          stop("The template method requires at least one segment after the MRM Segment nr. ", templateSegmentNr)
+        }
 
         if ( as.integer(value4attribute(newSegment, "Mode_ScanMode")) != 3) {
             cat('value4attribute(newSegment, "Mode_ScanMode") = ', value4attribute(newSegment, "Mode_ScanMode"), "\n")
