@@ -1,3 +1,8 @@
+2016-05-23  Steffen Neumann  <sneumann@ipb-halle.de>
+
+	* R/picklist2method.R (picklist2method): add another sanity check
+	for "dependent" in template segment, indicating that template is not MS/MS
+
 2016-03-23  Steffen Neumann  <sneumann@ipb-halle.de>
 
 	* R/picklist2method.R (picklist2method): add sanity check

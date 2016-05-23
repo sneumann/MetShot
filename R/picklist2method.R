@@ -86,12 +86,14 @@ picklist2method <-
             newTable <- addChildren(newTable, firstSegment)            
         }
 
-        ## Second Segment has to be the first MRM in the template
+        ## templateSegmentNr (e.g. Second) Segment has to be the first MRM in the template
         segmentTemplate <- root[["method"]][[instrumentprefix]][["timetable"]][[templateSegmentNr]]
         segmentTemplateEndtime <- as.numeric(xmlAttrs(segmentTemplate)["endtime"])
 
         newSegment <- segmentTemplate
-
+        
+        if (! "dependent" %in% names(newSegment)) 
+          stop(paste("Segment", templateSegmentNr, "incomplete, possibly not MRM ?"))
         
         if (MSmode=="positive") {
             if (xmlAttrs(newSegment[["dependent"]])["polarity"] != "positive")
