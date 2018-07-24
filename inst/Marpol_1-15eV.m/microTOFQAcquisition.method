@@ -1,0 +1,3124 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<root>
+<fileinfo type="micrOTOF-Q Method" appname="otofControl" appversion="3.4.16.0" createdate="2018-07-09 12:23:59" typeversion="18.0"/>
+<generalinfo><org>Bruker Daltonik GmbH, Bremen, Germany</org>
+<os>Windows 7 Professional</os>
+<hostname>TOF-PC-2</hostname>
+<author>BDAL@DE</author>
+<configuration>V0.0 0 0 0 0 0 0 .</configuration>
+<options>--</options>
+<id>--</id>
+<comment>--</comment>
+</generalinfo>
+<instrument>
+<qtofacq><para_int value="1" permname="Collision_EntranceFix"/>
+<para_int value="0" permname="Collision_QuenchAlways_Set"/>
+<para_int value="0" permname="Digitizer_ADCCompensation"/>
+<para_int value="0" permname="Digitizer_Channel"/>
+<para_int value="2" permname="Digitizer_ConfigurationMode"/>
+<para_int value="3" permname="Digitizer_NoiseSuppressionPeakWidth"/>
+<para_int value="1" permname="Digitizer_NoiseSupresssionEnable"/>
+<para_int value="0" permname="Digitizer_SignalCoupling"/>
+<para_int value="2500" permname="Digitizer_TriggerLevel"/>
+<para_int value="0" permname="Digitizer_bandwidth"/>
+<para_int value="1" permname="Digitizer_nTrigResync"/>
+<para_int value="2400" permname="Digitizer_trigOutOffset"/>
+<para_double value="30.000000" permname="Collision_GasSupply_Set"/>
+<para_double value="100.000000" permname="Digitizer_FullScale"/>
+<para_double value="2.527050" permname="Digitizer_NoiseSupresssionThreshold"/>
+<para_double value="0.500000" permname="Digitizer_SampleIntervall"/>
+<para_double value="50.210000" permname="Digitizer_VertOffset"/>
+<para_double value="5.000000" permname="Internal_AutotuneSingleIonIntensityFactor"/>
+
+<dependent polarity="positive"><para_int value="12" permname="Calibration_RegressionMode"/>
+<para_int value="5" permname="Calibration_Tof2CalibrationMode"/>
+<para_int value="1" permname="Calibration_TofCalVersion"/>
+<para_int value="100" permname="TOF_DeviceTempAverageNumber1"/>
+<para_int value="100" permname="TOF_DeviceTempAverageNumber2"/>
+<para_int value="1" permname="TOF_SwitchTempCompensation"/>
+<para_double value="0.999976" permname="Calibration_Score"/>
+<para_double value="0.000255" permname="Calibration_StdDev"/>
+<para_double value="0.710922" permname="Calibration_StdDevInPPM"/>
+<para_double value="204.744996" permname="Calibration_Tof2CalC0"/>
+<para_double value="403996.817274" permname="Calibration_Tof2CalC1"/>
+<para_double value="-0.000862" permname="Calibration_Tof2CalC2"/>
+<para_double value="0.000000" permname="Calibration_Tof2CalC3"/>
+<para_double value="0.011804" permname="Calibration_Tof2CalDM"/>
+<para_double value="0.990000" permname="Calibration_Tof2Score"/>
+<para_double value="0.000000" permname="Calibration_Tof2StdDev"/>
+<para_double value="1.200000" permname="Calibration_Tof2StdDevInPPM"/>
+<para_double value="206.091626" permname="Calibration_TofCalC0"/>
+<para_double value="404024.746866" permname="Calibration_TofCalC1"/>
+<para_double value="-0.000396" permname="Calibration_TofCalC2"/>
+<para_double value="20.000000" permname="Collision_Bias_Set"/>
+<para_double value="20.000000" permname="Collision_In_Set"/>
+<para_double value="20.000000" permname="Collision_Out_Set"/>
+<para_double value="20.000000" permname="FocusPreCollisionCell_Lens1_Base_Set"/>
+<para_double value="-35.000000" permname="FocusPreCollisionCell_Lens2_Base_Set"/>
+<para_double value="15.000000" permname="FocusPreCollisionCell_Lens3_Base_Set"/>
+<para_double value="21.000000" permname="FocusPreQuadrupole_Lens1_Extraction_Base_Set"/>
+<para_double value="30.000000" permname="FocusPreQuadrupole_Lens1_Storage_Base_Set"/>
+<para_double value="-15.000000" permname="FocusPreQuadrupole_Lens2_Base_Set"/>
+<para_double value="29.000000" permname="FocusPreQuadrupole_Lens3_Base_Set"/>
+<para_double value="18.500000" permname="FocusPreTOF_Lens1_Extraction_Set"/>
+<para_double value="28.000000" permname="FocusPreTOF_Lens1_Storage_Set"/>
+<para_double value="8.000000" permname="FocusPreTOF_Lens2_Set"/>
+<para_double value="-18.000000" permname="FocusPreTOF_Lens3_Set"/>
+<para_double value="1.000000" permname="FocusPreTOF_Lens4_Set"/>
+<para_double value="-25.000000" permname="FocusPreTOF_Lens5_Set"/>
+<para_double value="20.000000" permname="Quadrupole_Bias_Base_Set"/>
+<para_double value="20.000000" permname="Quadrupole_EntranceRampDC_Base_Set"/>
+<para_double value="524.000000" permname="TOF_CorrectorExtractSetValue"/>
+<para_double value="44.000000" permname="TOF_CorrectorFillSetValue"/>
+<para_double value="0.000000" permname="TOF_DeceleratorSetValue"/>
+<para_double value="0.000000" permname="TOF_DetectorSourceSetValue"/>
+<para_double value="2250.000000" permname="TOF_DetectorTofSetValue"/>
+<para_double value="33.840157" permname="TOF_DeviceReferenceTemp1"/>
+<para_double value="30.128637" permname="TOF_DeviceReferenceTemp2"/>
+<para_double value="50.000000" permname="TOF_DeviceTempGradient1"/>
+<para_double value="0.000000" permname="TOF_DeviceTempGradient2"/>
+<para_double value="8610.000000" permname="TOF_FlightTubeSetValue"/>
+<para_double value="9200.000000" permname="TOF_PulserLensSetValue"/>
+<para_double value="780.000000" permname="TOF_PulserPullSetValue"/>
+<para_double value="780.000000" permname="TOF_PulserPushSetValue"/>
+<para_double value="1700.000000" permname="TOF_ReflectorSetValue"/>
+<para_double value="155.000000" permname="Transfer_CapillaryExit_Base_Set"/>
+<para_double value="200.000000" permname="Transfer_DeflectorPlate_Base_Set"/>
+<para_double value="21.000000" permname="Transfer_Funnel1Base_Base_Set"/>
+<para_double value="145.000000" permname="Transfer_Funnel1In_Base_Set"/>
+<para_double value="21.000000" permname="Transfer_Funnel1Out_Base_Set"/>
+<para_double value="21.000000" permname="Transfer_Funnel2Base_Base_Set"/>
+<para_double value="21.000000" permname="Transfer_Funnel2In_Base_Set"/>
+<para_double value="21.000000" permname="Transfer_Funnel2Out_Base_Set"/>
+<para_double value="20.000000" permname="Transfer_MultipoleBias_Base_Set"/>
+<para_string value="2009-07-27 11:20:04" permname="Calibration_LastCalibrationDate"/>
+<para_string value="Bruker Customer" permname="Calibration_LastCalibrationUser"/>
+<para_string value=" V1.0CHPCData  Order 6 vCoeff V1.0VectorDouble 7 -0.023807812087522404 0.00043327176337944748 -2.8022726367833353e-006 8.4421251354860224e-009 -1.2930573518142249e-011 9.8221348413769631e-015 -2.9495258019554344e-018  c2 -0.00039421380684023717 c0 206.09276807900352 minMass 162.05643000000001 maxMass 944.261304 bUse 1 endCHPCData " permname="Calibration_TofCalHPC"/>
+<para_vec_double permname="Calibration_LastCalibrationCurrentMass">
+</para_vec_double>
+<para_vec_double permname="Calibration_LastCalibrationCurrentTime">
+</para_vec_double>
+<para_vec_double permname="Calibration_LastCalibrationMassError">
+</para_vec_double>
+<para_vec_double permname="Calibration_LastCalibrationMassIntensity">
+</para_vec_double>
+<para_vec_double permname="Calibration_LastCalibrationReferenceMass">
+</para_vec_double>
+<para_vec_double permname="Calibration_LastCalibrationResultMass">
+</para_vec_double>
+<para_vec_double permname="TOF_DeviceTempGradientEnhanced">
+<entry_double value="50.000000"/>
+<entry_double value="0.000000"/>
+</para_vec_double>
+<para_vec_string permname="Calibration_LastCalibrationReferenceMassName">
+</para_vec_string>
+</dependent>
+<dependent polarity="negative"><para_int value="12" permname="Calibration_RegressionMode"/>
+<para_int value="5" permname="Calibration_Tof2CalibrationMode"/>
+<para_int value="1" permname="Calibration_TofCalVersion"/>
+<para_int value="100" permname="TOF_DeviceTempAverageNumber1"/>
+<para_int value="100" permname="TOF_DeviceTempAverageNumber2"/>
+<para_int value="1" permname="TOF_SwitchTempCompensation"/>
+<para_double value="0.999999" permname="Calibration_Score"/>
+<para_double value="0.000272" permname="Calibration_StdDev"/>
+<para_double value="0.601722" permname="Calibration_StdDevInPPM"/>
+<para_double value="201.169377" permname="Calibration_Tof2CalC0"/>
+<para_double value="404468.274694" permname="Calibration_Tof2CalC1"/>
+<para_double value="-0.000388" permname="Calibration_Tof2CalC2"/>
+<para_double value="0.000000" permname="Calibration_Tof2CalC3"/>
+<para_double value="0.003844" permname="Calibration_Tof2CalDM"/>
+<para_double value="-1.000000" permname="Calibration_Tof2Score"/>
+<para_double value="0.000000" permname="Calibration_Tof2StdDev"/>
+<para_double value="0.000000" permname="Calibration_Tof2StdDevInPPM"/>
+<para_double value="206.021822" permname="Calibration_TofCalC0"/>
+<para_double value="404589.984881" permname="Calibration_TofCalC1"/>
+<para_double value="0.000264" permname="Calibration_TofCalC2"/>
+<para_double value="-20.000000" permname="Collision_Bias_Set"/>
+<para_double value="-20.000000" permname="Collision_In_Set"/>
+<para_double value="-20.000000" permname="Collision_Out_Set"/>
+<para_double value="-20.000000" permname="FocusPreCollisionCell_Lens1_Base_Set"/>
+<para_double value="35.000000" permname="FocusPreCollisionCell_Lens2_Base_Set"/>
+<para_double value="-15.000000" permname="FocusPreCollisionCell_Lens3_Base_Set"/>
+<para_double value="-21.000000" permname="FocusPreQuadrupole_Lens1_Extraction_Base_Set"/>
+<para_double value="-30.000000" permname="FocusPreQuadrupole_Lens1_Storage_Base_Set"/>
+<para_double value="15.000000" permname="FocusPreQuadrupole_Lens2_Base_Set"/>
+<para_double value="-29.000000" permname="FocusPreQuadrupole_Lens3_Base_Set"/>
+<para_double value="-18.000000" permname="FocusPreTOF_Lens1_Extraction_Set"/>
+<para_double value="-28.000000" permname="FocusPreTOF_Lens1_Storage_Set"/>
+<para_double value="-8.000000" permname="FocusPreTOF_Lens2_Set"/>
+<para_double value="18.000000" permname="FocusPreTOF_Lens3_Set"/>
+<para_double value="-1.000000" permname="FocusPreTOF_Lens4_Set"/>
+<para_double value="24.000000" permname="FocusPreTOF_Lens5_Set"/>
+<para_double value="-20.000000" permname="Quadrupole_Bias_Base_Set"/>
+<para_double value="-20.000000" permname="Quadrupole_EntranceRampDC_Base_Set"/>
+<para_double value="545.000000" permname="TOF_CorrectorExtractSetValue"/>
+<para_double value="52.000000" permname="TOF_CorrectorFillSetValue"/>
+<para_double value="0.000000" permname="TOF_DeceleratorSetValue"/>
+<para_double value="0.000000" permname="TOF_DetectorSourceSetValue"/>
+<para_double value="2250.000000" permname="TOF_DetectorTofSetValue"/>
+<para_double value="33.782645" permname="TOF_DeviceReferenceTemp1"/>
+<para_double value="30.056801" permname="TOF_DeviceReferenceTemp2"/>
+<para_double value="50.000000" permname="TOF_DeviceTempGradient1"/>
+<para_double value="0.000000" permname="TOF_DeviceTempGradient2"/>
+<para_double value="8610.000000" permname="TOF_FlightTubeSetValue"/>
+<para_double value="9200.000000" permname="TOF_PulserLensSetValue"/>
+<para_double value="784.000000" permname="TOF_PulserPullSetValue"/>
+<para_double value="784.000000" permname="TOF_PulserPushSetValue"/>
+<para_double value="1710.000000" permname="TOF_ReflectorSetValue"/>
+<para_double value="-155.000000" permname="Transfer_CapillaryExit_Base_Set"/>
+<para_double value="200.000000" permname="Transfer_DeflectorPlate_Base_Set"/>
+<para_double value="-21.000000" permname="Transfer_Funnel1Base_Base_Set"/>
+<para_double value="-145.000000" permname="Transfer_Funnel1In_Base_Set"/>
+<para_double value="-21.000000" permname="Transfer_Funnel1Out_Base_Set"/>
+<para_double value="-21.000000" permname="Transfer_Funnel2Base_Base_Set"/>
+<para_double value="-21.000000" permname="Transfer_Funnel2In_Base_Set"/>
+<para_double value="-21.000000" permname="Transfer_Funnel2Out_Base_Set"/>
+<para_double value="-20.000000" permname="Transfer_MultipoleBias_Base_Set"/>
+<para_string value="2009-07-27 11:04:15" permname="Calibration_LastCalibrationDate"/>
+<para_string value="Bruker Customer" permname="Calibration_LastCalibrationUser"/>
+<para_string value=" V1.0CHPCData  Order 6 vCoeff V1.0VectorDouble 7 -0.022794181716371893 0.00034359903050293448 -1.910801958413035e-006 5.1358416144660981e-009 -7.221370909080124e-012 5.1408894755658025e-015 -1.4678997095068214e-018  c2 0.0002626936260590704 c0 206.02105937847926 minMass 148.02552 maxMass 982.24405200000001 bUse 1 endCHPCData " permname="Calibration_TofCalHPC"/>
+<para_vec_double permname="Calibration_LastCalibrationCurrentMass">
+</para_vec_double>
+<para_vec_double permname="Calibration_LastCalibrationCurrentTime">
+</para_vec_double>
+<para_vec_double permname="Calibration_LastCalibrationMassError">
+</para_vec_double>
+<para_vec_double permname="Calibration_LastCalibrationMassIntensity">
+</para_vec_double>
+<para_vec_double permname="Calibration_LastCalibrationReferenceMass">
+</para_vec_double>
+<para_vec_double permname="Calibration_LastCalibrationResultMass">
+</para_vec_double>
+<para_vec_double permname="TOF_DeviceTempGradientEnhanced">
+<entry_double value="50.000000"/>
+<entry_double value="0.000000"/>
+</para_vec_double>
+<para_vec_string permname="Calibration_LastCalibrationReferenceMassName">
+</para_vec_string>
+</dependent>
+<dependent source="esi" polarity="positive"><para_double value="0.000000" permname="Source_StandbyNanoBoosterPressureSetValue"/>
+<para_vec_double permname="Source_StandbyDryGasFlowRateSetValue">
+<entry_double value="4.000000"/>
+<entry_double value="4.000000"/>
+<entry_double value="4.000000"/>
+</para_vec_double>
+<para_vec_double permname="Source_StandbyDryGasTemperatureSetValue">
+<entry_double value="180.000000"/>
+<entry_double value="180.000000"/>
+<entry_double value="180.000000"/>
+</para_vec_double>
+<para_vec_double permname="Source_StandbyNebulizerPressureSetValue">
+<entry_double value="0.500000"/>
+<entry_double value="0.500000"/>
+<entry_double value="0.500000"/>
+</para_vec_double>
+<para_vec_double permname="Source_StandbyVaporizerTemperatureSetValue">
+<entry_double value="0.000000"/>
+<entry_double value="0.000000"/>
+<entry_double value="0.000000"/>
+</para_vec_double>
+</dependent>
+<dependent source="apci" polarity="positive"><para_double value="0.000000" permname="Source_StandbyNanoBoosterPressureSetValue"/>
+<para_vec_double permname="Source_StandbyDryGasFlowRateSetValue">
+<entry_double value="3.500000"/>
+<entry_double value="4.000000"/>
+<entry_double value="4.000000"/>
+</para_vec_double>
+<para_vec_double permname="Source_StandbyDryGasTemperatureSetValue">
+<entry_double value="220.000000"/>
+<entry_double value="180.000000"/>
+<entry_double value="180.000000"/>
+</para_vec_double>
+<para_vec_double permname="Source_StandbyNebulizerPressureSetValue">
+<entry_double value="2.000000"/>
+<entry_double value="0.500000"/>
+<entry_double value="0.500000"/>
+</para_vec_double>
+<para_vec_double permname="Source_StandbyVaporizerTemperatureSetValue">
+<entry_double value="370.000000"/>
+<entry_double value="0.000000"/>
+<entry_double value="0.000000"/>
+</para_vec_double>
+</dependent>
+<dependent source="nesioff" polarity="positive"><para_double value="0.000000" permname="Source_StandbyNanoBoosterPressureSetValue"/>
+<para_vec_double permname="Source_StandbyDryGasFlowRateSetValue">
+<entry_double value="4.000000"/>
+<entry_double value="4.000000"/>
+<entry_double value="4.000000"/>
+</para_vec_double>
+<para_vec_double permname="Source_StandbyDryGasTemperatureSetValue">
+<entry_double value="120.000000"/>
+<entry_double value="180.000000"/>
+<entry_double value="180.000000"/>
+</para_vec_double>
+<para_vec_double permname="Source_StandbyNebulizerPressureSetValue">
+<entry_double value="0.000000"/>
+<entry_double value="0.500000"/>
+<entry_double value="0.500000"/>
+</para_vec_double>
+<para_vec_double permname="Source_StandbyVaporizerTemperatureSetValue">
+<entry_double value="0.000000"/>
+<entry_double value="0.000000"/>
+<entry_double value="0.000000"/>
+</para_vec_double>
+</dependent>
+<dependent source="nesion" polarity="positive"><para_double value="0.000000" permname="Source_StandbyNanoBoosterPressureSetValue"/>
+<para_vec_double permname="Source_StandbyDryGasFlowRateSetValue">
+<entry_double value="4.000000"/>
+<entry_double value="4.000000"/>
+<entry_double value="4.000000"/>
+</para_vec_double>
+<para_vec_double permname="Source_StandbyDryGasTemperatureSetValue">
+<entry_double value="150.000000"/>
+<entry_double value="180.000000"/>
+<entry_double value="180.000000"/>
+</para_vec_double>
+<para_vec_double permname="Source_StandbyNebulizerPressureSetValue">
+<entry_double value="0.500000"/>
+<entry_double value="0.500000"/>
+<entry_double value="0.500000"/>
+</para_vec_double>
+<para_vec_double permname="Source_StandbyVaporizerTemperatureSetValue">
+<entry_double value="0.000000"/>
+<entry_double value="0.000000"/>
+<entry_double value="0.000000"/>
+</para_vec_double>
+</dependent>
+<dependent source="appi" polarity="positive"><para_double value="0.000000" permname="Source_StandbyNanoBoosterPressureSetValue"/>
+<para_vec_double permname="Source_StandbyDryGasFlowRateSetValue">
+<entry_double value="4.000000"/>
+<entry_double value="4.000000"/>
+<entry_double value="4.000000"/>
+</para_vec_double>
+<para_vec_double permname="Source_StandbyDryGasTemperatureSetValue">
+<entry_double value="220.000000"/>
+<entry_double value="180.000000"/>
+<entry_double value="180.000000"/>
+</para_vec_double>
+<para_vec_double permname="Source_StandbyNebulizerPressureSetValue">
+<entry_double value="2.000000"/>
+<entry_double value="0.500000"/>
+<entry_double value="0.500000"/>
+</para_vec_double>
+<para_vec_double permname="Source_StandbyVaporizerTemperatureSetValue">
+<entry_double value="370.000000"/>
+<entry_double value="0.000000"/>
+<entry_double value="0.000000"/>
+</para_vec_double>
+</dependent>
+<dependent source="multimode" polarity="positive"><para_double value="0.000000" permname="Source_StandbyNanoBoosterPressureSetValue"/>
+<para_vec_double permname="Source_StandbyDryGasFlowRateSetValue">
+<entry_double value="4.000000"/>
+<entry_double value="4.000000"/>
+<entry_double value="4.000000"/>
+</para_vec_double>
+<para_vec_double permname="Source_StandbyDryGasTemperatureSetValue">
+<entry_double value="180.000000"/>
+<entry_double value="180.000000"/>
+<entry_double value="180.000000"/>
+</para_vec_double>
+<para_vec_double permname="Source_StandbyNebulizerPressureSetValue">
+<entry_double value="4.100000"/>
+<entry_double value="1.400000"/>
+<entry_double value="2.800000"/>
+</para_vec_double>
+<para_vec_double permname="Source_StandbyVaporizerTemperatureSetValue">
+<entry_double value="120.000000"/>
+<entry_double value="120.000000"/>
+<entry_double value="220.000000"/>
+</para_vec_double>
+</dependent>
+<dependent source="nanoflowesi" polarity="positive"><para_double value="0.000000" permname="Source_StandbyNanoBoosterPressureSetValue"/>
+<para_vec_double permname="Source_StandbyDryGasFlowRateSetValue">
+<entry_double value="4.000000"/>
+<entry_double value="4.000000"/>
+<entry_double value="4.000000"/>
+</para_vec_double>
+<para_vec_double permname="Source_StandbyDryGasTemperatureSetValue">
+<entry_double value="150.000000"/>
+<entry_double value="180.000000"/>
+<entry_double value="180.000000"/>
+</para_vec_double>
+<para_vec_double permname="Source_StandbyNebulizerPressureSetValue">
+<entry_double value="0.700000"/>
+<entry_double value="0.500000"/>
+<entry_double value="0.500000"/>
+</para_vec_double>
+<para_vec_double permname="Source_StandbyVaporizerTemperatureSetValue">
+<entry_double value="0.000000"/>
+<entry_double value="0.000000"/>
+<entry_double value="0.000000"/>
+</para_vec_double>
+</dependent>
+<dependent source="ultraspray" polarity="positive"><para_double value="0.000000" permname="Source_StandbyNanoBoosterPressureSetValue"/>
+<para_vec_double permname="Source_StandbyDryGasFlowRateSetValue">
+<entry_double value="3.000000"/>
+<entry_double value="4.000000"/>
+<entry_double value="4.000000"/>
+</para_vec_double>
+<para_vec_double permname="Source_StandbyDryGasTemperatureSetValue">
+<entry_double value="180.000000"/>
+<entry_double value="180.000000"/>
+<entry_double value="180.000000"/>
+</para_vec_double>
+<para_vec_double permname="Source_StandbyNebulizerPressureSetValue">
+<entry_double value="4.100000"/>
+<entry_double value="0.500000"/>
+<entry_double value="0.500000"/>
+</para_vec_double>
+<para_vec_double permname="Source_StandbyVaporizerTemperatureSetValue">
+<entry_double value="250.000000"/>
+<entry_double value="0.000000"/>
+<entry_double value="0.000000"/>
+</para_vec_double>
+</dependent>
+<dependent source="captivespray" polarity="positive"><para_double value="0.000000" permname="Source_StandbyNanoBoosterPressureSetValue"/>
+<para_vec_double permname="Source_StandbyDryGasFlowRateSetValue">
+<entry_double value="3.000000"/>
+<entry_double value="4.000000"/>
+<entry_double value="4.000000"/>
+</para_vec_double>
+<para_vec_double permname="Source_StandbyDryGasTemperatureSetValue">
+<entry_double value="150.000000"/>
+<entry_double value="180.000000"/>
+<entry_double value="180.000000"/>
+</para_vec_double>
+<para_vec_double permname="Source_StandbyNebulizerPressureSetValue">
+<entry_double value="0.500000"/>
+<entry_double value="0.500000"/>
+<entry_double value="0.500000"/>
+</para_vec_double>
+<para_vec_double permname="Source_StandbyVaporizerTemperatureSetValue">
+<entry_double value="0.000000"/>
+<entry_double value="0.000000"/>
+<entry_double value="0.000000"/>
+</para_vec_double>
+</dependent>
+<dependent source="gc-apci" polarity="positive"><para_double value="0.000000" permname="Source_StandbyNanoBoosterPressureSetValue"/>
+<para_vec_double permname="Source_StandbyDryGasFlowRateSetValue">
+<entry_double value="4.000000"/>
+<entry_double value="4.000000"/>
+<entry_double value="4.000000"/>
+</para_vec_double>
+<para_vec_double permname="Source_StandbyDryGasTemperatureSetValue">
+<entry_double value="180.000000"/>
+<entry_double value="180.000000"/>
+<entry_double value="180.000000"/>
+</para_vec_double>
+<para_vec_double permname="Source_StandbyNebulizerPressureSetValue">
+<entry_double value="0.500000"/>
+<entry_double value="0.500000"/>
+<entry_double value="0.500000"/>
+</para_vec_double>
+<para_vec_double permname="Source_StandbyVaporizerTemperatureSetValue">
+<entry_double value="0.000000"/>
+<entry_double value="0.000000"/>
+<entry_double value="0.000000"/>
+</para_vec_double>
+</dependent>
+<dependent source="esi" polarity="negative"><para_double value="0.000000" permname="Source_StandbyNanoBoosterPressureSetValue"/>
+<para_vec_double permname="Source_StandbyDryGasFlowRateSetValue">
+<entry_double value="4.000000"/>
+<entry_double value="4.000000"/>
+<entry_double value="4.000000"/>
+</para_vec_double>
+<para_vec_double permname="Source_StandbyDryGasTemperatureSetValue">
+<entry_double value="180.000000"/>
+<entry_double value="180.000000"/>
+<entry_double value="180.000000"/>
+</para_vec_double>
+<para_vec_double permname="Source_StandbyNebulizerPressureSetValue">
+<entry_double value="0.500000"/>
+<entry_double value="0.500000"/>
+<entry_double value="0.500000"/>
+</para_vec_double>
+<para_vec_double permname="Source_StandbyVaporizerTemperatureSetValue">
+<entry_double value="0.000000"/>
+<entry_double value="0.000000"/>
+<entry_double value="0.000000"/>
+</para_vec_double>
+</dependent>
+<dependent source="apci" polarity="negative"><para_double value="0.000000" permname="Source_StandbyNanoBoosterPressureSetValue"/>
+<para_vec_double permname="Source_StandbyDryGasFlowRateSetValue">
+<entry_double value="3.500000"/>
+<entry_double value="4.000000"/>
+<entry_double value="4.000000"/>
+</para_vec_double>
+<para_vec_double permname="Source_StandbyDryGasTemperatureSetValue">
+<entry_double value="220.000000"/>
+<entry_double value="180.000000"/>
+<entry_double value="180.000000"/>
+</para_vec_double>
+<para_vec_double permname="Source_StandbyNebulizerPressureSetValue">
+<entry_double value="2.000000"/>
+<entry_double value="0.500000"/>
+<entry_double value="0.500000"/>
+</para_vec_double>
+<para_vec_double permname="Source_StandbyVaporizerTemperatureSetValue">
+<entry_double value="370.000000"/>
+<entry_double value="0.000000"/>
+<entry_double value="0.000000"/>
+</para_vec_double>
+</dependent>
+<dependent source="nesioff" polarity="negative"><para_double value="0.000000" permname="Source_StandbyNanoBoosterPressureSetValue"/>
+<para_vec_double permname="Source_StandbyDryGasFlowRateSetValue">
+<entry_double value="4.000000"/>
+<entry_double value="4.000000"/>
+<entry_double value="4.000000"/>
+</para_vec_double>
+<para_vec_double permname="Source_StandbyDryGasTemperatureSetValue">
+<entry_double value="120.000000"/>
+<entry_double value="180.000000"/>
+<entry_double value="180.000000"/>
+</para_vec_double>
+<para_vec_double permname="Source_StandbyNebulizerPressureSetValue">
+<entry_double value="0.000000"/>
+<entry_double value="0.500000"/>
+<entry_double value="0.500000"/>
+</para_vec_double>
+<para_vec_double permname="Source_StandbyVaporizerTemperatureSetValue">
+<entry_double value="0.000000"/>
+<entry_double value="0.000000"/>
+<entry_double value="0.000000"/>
+</para_vec_double>
+</dependent>
+<dependent source="nesion" polarity="negative"><para_double value="0.000000" permname="Source_StandbyNanoBoosterPressureSetValue"/>
+<para_vec_double permname="Source_StandbyDryGasFlowRateSetValue">
+<entry_double value="4.000000"/>
+<entry_double value="4.000000"/>
+<entry_double value="4.000000"/>
+</para_vec_double>
+<para_vec_double permname="Source_StandbyDryGasTemperatureSetValue">
+<entry_double value="150.000000"/>
+<entry_double value="180.000000"/>
+<entry_double value="180.000000"/>
+</para_vec_double>
+<para_vec_double permname="Source_StandbyNebulizerPressureSetValue">
+<entry_double value="0.500000"/>
+<entry_double value="0.500000"/>
+<entry_double value="0.500000"/>
+</para_vec_double>
+<para_vec_double permname="Source_StandbyVaporizerTemperatureSetValue">
+<entry_double value="0.000000"/>
+<entry_double value="0.000000"/>
+<entry_double value="0.000000"/>
+</para_vec_double>
+</dependent>
+<dependent source="appi" polarity="negative"><para_double value="0.000000" permname="Source_StandbyNanoBoosterPressureSetValue"/>
+<para_vec_double permname="Source_StandbyDryGasFlowRateSetValue">
+<entry_double value="4.000000"/>
+<entry_double value="4.000000"/>
+<entry_double value="4.000000"/>
+</para_vec_double>
+<para_vec_double permname="Source_StandbyDryGasTemperatureSetValue">
+<entry_double value="220.000000"/>
+<entry_double value="180.000000"/>
+<entry_double value="180.000000"/>
+</para_vec_double>
+<para_vec_double permname="Source_StandbyNebulizerPressureSetValue">
+<entry_double value="2.000000"/>
+<entry_double value="0.500000"/>
+<entry_double value="0.500000"/>
+</para_vec_double>
+<para_vec_double permname="Source_StandbyVaporizerTemperatureSetValue">
+<entry_double value="370.000000"/>
+<entry_double value="0.000000"/>
+<entry_double value="0.000000"/>
+</para_vec_double>
+</dependent>
+<dependent source="multimode" polarity="negative"><para_double value="0.000000" permname="Source_StandbyNanoBoosterPressureSetValue"/>
+<para_vec_double permname="Source_StandbyDryGasFlowRateSetValue">
+<entry_double value="4.000000"/>
+<entry_double value="4.000000"/>
+<entry_double value="4.000000"/>
+</para_vec_double>
+<para_vec_double permname="Source_StandbyDryGasTemperatureSetValue">
+<entry_double value="180.000000"/>
+<entry_double value="180.000000"/>
+<entry_double value="180.000000"/>
+</para_vec_double>
+<para_vec_double permname="Source_StandbyNebulizerPressureSetValue">
+<entry_double value="4.100000"/>
+<entry_double value="1.400000"/>
+<entry_double value="2.800000"/>
+</para_vec_double>
+<para_vec_double permname="Source_StandbyVaporizerTemperatureSetValue">
+<entry_double value="120.000000"/>
+<entry_double value="120.000000"/>
+<entry_double value="220.000000"/>
+</para_vec_double>
+</dependent>
+<dependent source="nanoflowesi" polarity="negative"><para_double value="0.000000" permname="Source_StandbyNanoBoosterPressureSetValue"/>
+<para_vec_double permname="Source_StandbyDryGasFlowRateSetValue">
+<entry_double value="4.000000"/>
+<entry_double value="4.000000"/>
+<entry_double value="4.000000"/>
+</para_vec_double>
+<para_vec_double permname="Source_StandbyDryGasTemperatureSetValue">
+<entry_double value="150.000000"/>
+<entry_double value="180.000000"/>
+<entry_double value="180.000000"/>
+</para_vec_double>
+<para_vec_double permname="Source_StandbyNebulizerPressureSetValue">
+<entry_double value="0.700000"/>
+<entry_double value="0.500000"/>
+<entry_double value="0.500000"/>
+</para_vec_double>
+<para_vec_double permname="Source_StandbyVaporizerTemperatureSetValue">
+<entry_double value="0.000000"/>
+<entry_double value="0.000000"/>
+<entry_double value="0.000000"/>
+</para_vec_double>
+</dependent>
+<dependent source="ultraspray" polarity="negative"><para_double value="0.000000" permname="Source_StandbyNanoBoosterPressureSetValue"/>
+<para_vec_double permname="Source_StandbyDryGasFlowRateSetValue">
+<entry_double value="3.000000"/>
+<entry_double value="4.000000"/>
+<entry_double value="4.000000"/>
+</para_vec_double>
+<para_vec_double permname="Source_StandbyDryGasTemperatureSetValue">
+<entry_double value="180.000000"/>
+<entry_double value="180.000000"/>
+<entry_double value="180.000000"/>
+</para_vec_double>
+<para_vec_double permname="Source_StandbyNebulizerPressureSetValue">
+<entry_double value="4.100000"/>
+<entry_double value="0.500000"/>
+<entry_double value="0.500000"/>
+</para_vec_double>
+<para_vec_double permname="Source_StandbyVaporizerTemperatureSetValue">
+<entry_double value="250.000000"/>
+<entry_double value="0.000000"/>
+<entry_double value="0.000000"/>
+</para_vec_double>
+</dependent>
+<dependent source="captivespray" polarity="negative"><para_double value="0.000000" permname="Source_StandbyNanoBoosterPressureSetValue"/>
+<para_vec_double permname="Source_StandbyDryGasFlowRateSetValue">
+<entry_double value="3.000000"/>
+<entry_double value="4.000000"/>
+<entry_double value="4.000000"/>
+</para_vec_double>
+<para_vec_double permname="Source_StandbyDryGasTemperatureSetValue">
+<entry_double value="150.000000"/>
+<entry_double value="180.000000"/>
+<entry_double value="180.000000"/>
+</para_vec_double>
+<para_vec_double permname="Source_StandbyNebulizerPressureSetValue">
+<entry_double value="0.500000"/>
+<entry_double value="0.500000"/>
+<entry_double value="0.500000"/>
+</para_vec_double>
+<para_vec_double permname="Source_StandbyVaporizerTemperatureSetValue">
+<entry_double value="0.000000"/>
+<entry_double value="0.000000"/>
+<entry_double value="0.000000"/>
+</para_vec_double>
+</dependent>
+<dependent source="gc-apci" polarity="negative"><para_double value="0.000000" permname="Source_StandbyNanoBoosterPressureSetValue"/>
+<para_vec_double permname="Source_StandbyDryGasFlowRateSetValue">
+<entry_double value="4.000000"/>
+<entry_double value="4.000000"/>
+<entry_double value="4.000000"/>
+</para_vec_double>
+<para_vec_double permname="Source_StandbyDryGasTemperatureSetValue">
+<entry_double value="180.000000"/>
+<entry_double value="180.000000"/>
+<entry_double value="180.000000"/>
+</para_vec_double>
+<para_vec_double permname="Source_StandbyNebulizerPressureSetValue">
+<entry_double value="0.500000"/>
+<entry_double value="0.500000"/>
+<entry_double value="0.500000"/>
+</para_vec_double>
+<para_vec_double permname="Source_StandbyVaporizerTemperatureSetValue">
+<entry_double value="0.000000"/>
+<entry_double value="0.000000"/>
+<entry_double value="0.000000"/>
+</para_vec_double>
+</dependent></qtofacq>
+</instrument>
+<method>
+<qtofacq>
+<timetable>
+<segment endtime="0.333333"><para_int value="0" permname="Calibration_MarkSegment"/>
+<para_int value="0" permname="CollisionSweep_Mode_Set"/>
+<para_int value="1" permname="CollisionSweep_Switch_Set"/>
+<para_int value="1" permname="Digitizer_SpectraRateMode"/>
+<para_int value="3333" permname="Digitizer_Summation"/>
+<para_int value="0" permname="Internal_AutotuneControl"/>
+<para_int value="2" permname="Internal_ViewMode"/>
+<para_int value="0" permname="MSMSAuto_ChargedIonsExcludeSingle"/>
+<para_int value="0" permname="MSMSAuto_ChargedIonsExcludeUnknown"/>
+<para_int value="5" permname="MSMSAuto_ChargedIonsGroupLength"/>
+<para_int value="1" permname="MSMSAuto_ChargedIonsGroupLengthUseStrict"/>
+<para_int value="3" permname="MSMSAuto_ExclusionActivation"/>
+<para_int value="1" permname="MSMSAuto_ExclusionActive"/>
+<para_int value="0" permname="MSMSAuto_ExclusionActiveStrict"/>
+<para_int value="0" permname="MSMSAuto_ExclusionReIncludeActive"/>
+<para_int value="60" permname="MSMSAuto_ExclusionRelease"/>
+<para_int value="0" permname="MSMSAuto_FragmentationMode"/>
+<para_int value="0" permname="MSMSAuto_ModeExcludeMassRange"/>
+<para_int value="5" permname="MSMSAuto_PreCursorBackgroundAverageNumber"/>
+<para_int value="0" permname="MSMSAuto_PreCursorCycleMode"/>
+<para_int value="3" permname="MSMSAuto_PreCursorIonCount"/>
+<para_int value="2" permname="MSMSAuto_PreferChargeRangeHigh"/>
+<para_int value="2" permname="MSMSAuto_PreferChargeRangeLow"/>
+<para_int value="0" permname="MSMSAuto_RTMLSwitchActive"/>
+<para_int value="0" permname="MSMSAuto_RTMLSwitchEmptyIntervalsAcquireMSMS"/>
+<para_int value="0" permname="MSMSAuto_RTMLSwitchSetNumberOfPrecursors"/>
+<para_int value="1" permname="MSMSAuto_RTMLTimeSlice"/>
+<para_int value="0" permname="MSMSAuto_SileCheckChargeConsistency"/>
+<para_int value="3" permname="MSMSAuto_SileDoMSMSOf"/>
+<para_int value="1" permname="MSMSAuto_SileIntensityRatioMode"/>
+<para_int value="100" permname="MSMSAuto_SileTopN"/>
+<para_int value="0" permname="MSMSAuto_SortByMass"/>
+<para_int value="1" permname="MSMSAuto_SwitchPreCursorBackgroundSubstraction"/>
+<para_int value="0" permname="MSMSAuto_SwitchPreferChargeRange"/>
+<para_int value="0" permname="MSMSAuto_SwitchSile"/>
+<para_int value="1" permname="MSMS_SummationControlSwitchActive"/>
+<para_int value="0" permname="Mode_IonPolarity"/>
+<para_int value="0" permname="Mode_ScanMode"/>
+<para_int value="1" permname="Other_AccelerateSpectraRate"/>
+<para_int value="0" permname="Other_LoadInstrumentParameter"/>
+<para_int value="2" permname="Other_ParameterMode"/>
+<para_int value="0" permname="Other_RunProcessingScript"/>
+<para_int value="0" permname="Processing_SwitchCalcGoodness"/>
+<para_int value="0" permname="Processing_SwitchCalcIntegratedIntensity"/>
+<para_int value="1" permname="Processing_SwitchCalcPeakWidth"/>
+<para_int value="0" permname="Processing_SwitchCalcSignalToNoise"/>
+<para_int value="0" permname="RollingAverage_Mode"/>
+<para_int value="3" permname="RollingAverage_Number"/>
+<para_int value="1" permname="Source_DivertValve"/>
+<para_int value="0" permname="SpectraAcquisition_CompressionFilterActive"/>
+<para_int value="1" permname="SpectraAcquisition_CompressionFilterLevel"/>
+<para_int value="1" permname="SpectraAcquisition_SaveSpectra"/>
+<para_int value="0" permname="TOF_FocusMode"/>
+<para_double value="3.000000" permname="Digitizer_SpectraRate"/>
+<para_double value="0.333333" permname="Digitizer_SpectraSampleTime"/>
+<para_double value="5.000000" permname="MSMSAuto_ExclusionReIncludeFactor"/>
+<para_double value="3.000000" permname="MSMSAuto_PreCursorCycleTimeMS"/>
+<para_double value="0.600000" permname="MSMSAuto_SileCrossCorrelation"/>
+<para_double value="0.050000" permname="MSMSAuto_SileHeavyLightAndFirst"/>
+<para_double value="20.000000" permname="MSMSAuto_SileHeavyLightAndLast"/>
+<para_double value="1.200000" permname="MSMSAuto_SileHeavyLightOrFirst"/>
+<para_double value="0.800000" permname="MSMSAuto_SileHeavyLightOrLast"/>
+<para_double value="0.200000" permname="MSMSAuto_SileTolerance"/>
+<para_double value="600.060006" permname="MSMSAuto_ThresholdAbsolute"/>
+<para_double value="0.000000" permname="MSMSAuto_ThresholdRelative"/>
+<para_double value="50.000000" permname="Mode_ScanBegin"/>
+<para_double value="1000.000000" permname="Mode_ScanEnd"/>
+<para_double value="1000.000000" permname="Mode_TargetMassEnd"/>
+<para_double value="50.000000" permname="Mode_TargetMassStart"/>
+<para_double value="3.000000" permname="Processing_AssumedPeakWidth"/>
+<para_double value="1.000000" permname="Processing_AverageNoise"/>
+<para_double value="0.140000" permname="Processing_BaselineFlatness"/>
+<para_double value="100.000000" permname="Processing_GuessedAverage"/>
+<para_double value="200.000000" permname="Processing_GuessedNoise"/>
+<para_double value="6.000600" permname="Processing_ThresholdSignalToNoise"/>
+<para_double value="100.000000" permname="Quadrupole_IsolationMass_Set"/>
+<para_double value="0.000000" permname="Quadrupole_IsolationResolution_Set"/>
+<para_double value="0.000000" permname="Service_InstrumentOverlayValue"/>
+<para_string value="" permname="Service_InstrumentOverlayName"/>
+<para_vec_int permname="Internal_ChromatogramTraceColor">
+<entry_int value="255"/>
+</para_vec_int>
+<para_vec_int permname="Internal_ChromatogramTraceShow">
+<entry_int value="1"/>
+</para_vec_int>
+<para_vec_int permname="MSMSAuto_SileListChargeRangeEnd">
+<entry_int value="3"/>
+</para_vec_int>
+<para_vec_int permname="MSMSAuto_SileListChargeRangeStart">
+<entry_int value="1"/>
+</para_vec_int>
+<para_vec_int permname="MSMSAuto_SileListMaxSubstitutions">
+<entry_int value="2"/>
+</para_vec_int>
+<para_vec_double permname="CollisionSweep_CollisionEnergy_Factor_Set">
+<entry_double value="1.000000"/>
+<entry_double value="1.000000"/>
+<entry_double value="1.000000"/>
+<entry_double value="1.000000"/>
+</para_vec_double>
+<para_vec_double permname="CollisionSweep_CollisionRF_Factor_Set">
+<entry_double value="1.000000"/>
+<entry_double value="1.000000"/>
+<entry_double value="2.000000"/>
+<entry_double value="2.000000"/>
+</para_vec_double>
+<para_vec_double permname="CollisionSweep_Time_Set">
+<entry_double value="0.000000"/>
+<entry_double value="25.000000"/>
+<entry_double value="50.000000"/>
+<entry_double value="75.000000"/>
+</para_vec_double>
+<para_vec_double permname="CollisionSweep_TransferTime_Factor_Set">
+<entry_double value="0.833333"/>
+<entry_double value="0.833333"/>
+<entry_double value="0.833333"/>
+<entry_double value="0.833333"/>
+</para_vec_double>
+<para_vec_double permname="MSMSAuto_ListExcludeMassEnd">
+</para_vec_double>
+<para_vec_double permname="MSMSAuto_ListExcludeMassStart">
+</para_vec_double>
+<para_vec_double permname="MSMSAuto_ListPreferMassEnd">
+</para_vec_double>
+<para_vec_double permname="MSMSAuto_ListPreferMassStart">
+</para_vec_double>
+<para_vec_double permname="MSMSAuto_SileListDeltaMass">
+<entry_double value="6.020100"/>
+</para_vec_double>
+<para_vec_double permname="MSMS_SummationControlIntensity">
+<entry_double value="10000.000000"/>
+<entry_double value="1000000.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMS_SummationFactor">
+<entry_double value="1.000000"/>
+<entry_double value="1.000000"/>
+</para_vec_double>
+<para_vec_string permname="Internal_ChromatogramTraceDefinition">
+<entry_string value="TIC,&lt;c2>&lt;b1>All"/>
+</para_vec_string>
+
+<dependent polarity="positive"><para_int value="0" permname="MSMS_BBCIDSwitchActive"/>
+<para_int value="1" permname="MSMS_DefaultChargeState"/>
+<para_int value="0" permname="MSMS_ISCIDSwitchActive"/>
+<para_int value="1" permname="TOF_EnableSwitchGeneralHV"/>
+<para_double value="10.000000" permname="Collision_Energy_Offset_Set"/>
+<para_double value="200.000000" permname="Collision_RF_Set"/>
+<para_double value="5.000000" permname="Digitizer_ExtractPulsWidth"/>
+<para_double value="5.000000" permname="FocusPreTOF_Lens1_PrePulseStorageTime_Set"/>
+<para_double value="70.000000" permname="FocusPreTOF_Lens1_TransferTime_Set"/>
+<para_double value="20.000000" permname="MSMS_BBCIDEnergyCollision"/>
+<para_double value="0.000000" permname="MSMS_BBCIDEnergyISCID"/>
+<para_double value="1.000000" permname="MSMS_BBCIDFactorAcquisitionTime"/>
+<para_double value="5.000000" permname="MSMS_ISCIDEnergyISCID"/>
+<para_double value="1.000000" permname="MSMS_ISCIDFactorAcquisitionTime"/>
+<para_double value="3.000000" permname="Quadrupole_IonEnergy_Offset_Set"/>
+<para_double value="200.000000" permname="Transfer_Funnel1RF_Set"/>
+<para_double value="200.000000" permname="Transfer_Funnel2RF_Set"/>
+<para_double value="0.000000" permname="Transfer_ISCIDEnergy_Offset_Set"/>
+<para_double value="100.000000" permname="Transfer_MultipoleRF_Set"/>
+<para_string value="LiFormiate-edit-Pos" permname="Calibration_UsedReferenceMassList"/>
+<para_vec_int permname="MSMSManual_ListFragmentationMode">
+<entry_int value="0"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDAccuAnalyte">
+<entry_int value="300"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDAccuReagent">
+<entry_int value="5"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDReaction">
+<entry_int value="50"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListUseIsolationMass">
+<entry_int value="1"/>
+</para_vec_int>
+<para_vec_int permname="MSMS_ListChargeState">
+<entry_int value="1"/>
+<entry_int value="2"/>
+<entry_int value="3"/>
+<entry_int value="1"/>
+<entry_int value="2"/>
+<entry_int value="3"/>
+<entry_int value="1"/>
+<entry_int value="2"/>
+<entry_int value="3"/>
+</para_vec_int>
+<para_vec_int permname="MSMS_ListIsolationEntryType">
+<entry_int value="0"/>
+<entry_int value="0"/>
+<entry_int value="0"/>
+<entry_int value="0"/>
+<entry_int value="0"/>
+<entry_int value="0"/>
+<entry_int value="0"/>
+<entry_int value="0"/>
+<entry_int value="0"/>
+</para_vec_int>
+<para_vec_double permname="MSMSManual_ListCollisionEnergy">
+<entry_double value="50.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListISCIDEnergy">
+<entry_double value="0.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListIsolationMass">
+<entry_double value="922.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListIsolationWidth">
+<entry_double value="10.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListSummationFactor">
+<entry_double value="1.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDAccuAnalyte">
+<entry_double value="300.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDAccuReagent">
+<entry_double value="5.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDReaction">
+<entry_double value="50.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMS_ListCollisionEnergy">
+<entry_double value="35.000000"/>
+<entry_double value="25.000000"/>
+<entry_double value="20.000000"/>
+<entry_double value="50.000000"/>
+<entry_double value="40.000000"/>
+<entry_double value="35.000000"/>
+<entry_double value="70.000000"/>
+<entry_double value="50.000000"/>
+<entry_double value="45.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMS_ListIsolationMass">
+<entry_double value="500.000000"/>
+<entry_double value="500.000000"/>
+<entry_double value="500.000000"/>
+<entry_double value="1000.000000"/>
+<entry_double value="1000.000000"/>
+<entry_double value="1000.000000"/>
+<entry_double value="2000.000000"/>
+<entry_double value="2000.000000"/>
+<entry_double value="2000.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMS_ListIsolationWidth">
+<entry_double value="8.000000"/>
+<entry_double value="8.000000"/>
+<entry_double value="8.000000"/>
+<entry_double value="10.000000"/>
+<entry_double value="10.000000"/>
+<entry_double value="10.000000"/>
+<entry_double value="15.000000"/>
+<entry_double value="15.000000"/>
+<entry_double value="15.000000"/>
+</para_vec_double>
+</dependent>
+<dependent polarity="negative"><para_int value="0" permname="MSMS_BBCIDSwitchActive"/>
+<para_int value="1" permname="MSMS_DefaultChargeState"/>
+<para_int value="0" permname="MSMS_ISCIDSwitchActive"/>
+<para_int value="1" permname="TOF_EnableSwitchGeneralHV"/>
+<para_double value="-10.000000" permname="Collision_Energy_Offset_Set"/>
+<para_double value="200.000000" permname="Collision_RF_Set"/>
+<para_double value="5.000000" permname="Digitizer_ExtractPulsWidth"/>
+<para_double value="5.000000" permname="FocusPreTOF_Lens1_PrePulseStorageTime_Set"/>
+<para_double value="70.000000" permname="FocusPreTOF_Lens1_TransferTime_Set"/>
+<para_double value="-20.000000" permname="MSMS_BBCIDEnergyCollision"/>
+<para_double value="-0.000000" permname="MSMS_BBCIDEnergyISCID"/>
+<para_double value="1.000000" permname="MSMS_BBCIDFactorAcquisitionTime"/>
+<para_double value="-5.000000" permname="MSMS_ISCIDEnergyISCID"/>
+<para_double value="1.000000" permname="MSMS_ISCIDFactorAcquisitionTime"/>
+<para_double value="-5.000000" permname="Quadrupole_IonEnergy_Offset_Set"/>
+<para_double value="200.000000" permname="Transfer_Funnel1RF_Set"/>
+<para_double value="200.000000" permname="Transfer_Funnel2RF_Set"/>
+<para_double value="0.000000" permname="Transfer_ISCIDEnergy_Offset_Set"/>
+<para_double value="100.000000" permname="Transfer_MultipoleRF_Set"/>
+<para_string value="Tunemix (neg)" permname="Calibration_UsedReferenceMassList"/>
+<para_vec_int permname="MSMSManual_ListFragmentationMode">
+<entry_int value="0"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDAccuAnalyte">
+<entry_int value="300"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDAccuReagent">
+<entry_int value="5"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDReaction">
+<entry_int value="50"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListUseIsolationMass">
+<entry_int value="1"/>
+</para_vec_int>
+<para_vec_int permname="MSMS_ListChargeState">
+<entry_int value="1"/>
+<entry_int value="2"/>
+<entry_int value="3"/>
+<entry_int value="1"/>
+<entry_int value="2"/>
+<entry_int value="3"/>
+<entry_int value="1"/>
+<entry_int value="2"/>
+<entry_int value="3"/>
+</para_vec_int>
+<para_vec_int permname="MSMS_ListIsolationEntryType">
+<entry_int value="0"/>
+<entry_int value="0"/>
+<entry_int value="0"/>
+<entry_int value="0"/>
+<entry_int value="0"/>
+<entry_int value="0"/>
+<entry_int value="0"/>
+<entry_int value="0"/>
+<entry_int value="0"/>
+</para_vec_int>
+<para_vec_double permname="MSMSManual_ListCollisionEnergy">
+<entry_double value="0.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListISCIDEnergy">
+<entry_double value="0.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListIsolationMass">
+<entry_double value="1034.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListIsolationWidth">
+<entry_double value="10.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListSummationFactor">
+<entry_double value="1.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDAccuAnalyte">
+<entry_double value="300.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDAccuReagent">
+<entry_double value="5.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDReaction">
+<entry_double value="50.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMS_ListCollisionEnergy">
+<entry_double value="-35.000000"/>
+<entry_double value="-25.000000"/>
+<entry_double value="-20.000000"/>
+<entry_double value="-50.000000"/>
+<entry_double value="-40.000000"/>
+<entry_double value="-35.000000"/>
+<entry_double value="-70.000000"/>
+<entry_double value="-50.000000"/>
+<entry_double value="-45.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMS_ListIsolationMass">
+<entry_double value="500.000000"/>
+<entry_double value="500.000000"/>
+<entry_double value="500.000000"/>
+<entry_double value="1000.000000"/>
+<entry_double value="1000.000000"/>
+<entry_double value="1000.000000"/>
+<entry_double value="2000.000000"/>
+<entry_double value="2000.000000"/>
+<entry_double value="2000.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMS_ListIsolationWidth">
+<entry_double value="8.000000"/>
+<entry_double value="8.000000"/>
+<entry_double value="8.000000"/>
+<entry_double value="10.000000"/>
+<entry_double value="10.000000"/>
+<entry_double value="10.000000"/>
+<entry_double value="15.000000"/>
+<entry_double value="15.000000"/>
+<entry_double value="15.000000"/>
+</para_vec_double>
+</dependent>
+<dependent source="esi" polarity="positive"><para_int value="5000" permname="Source_CapillarySetValue"/>
+<para_int value="0" permname="Source_ChargingVoltage_Set"/>
+<para_int value="0" permname="Source_CoronaSetValue"/>
+<para_int value="-500" permname="Source_EndPlateOffsetSetValue"/>
+<para_int value="1" permname="Source_LastActive"/>
+<para_int value="0" permname="Source_OnVoltSetValue"/>
+<para_int value="0" permname="Source_SwitchNanoBooster"/>
+<para_double value="0.000000" permname="Source_APCIHeaterSetValue"/>
+<para_double value="6.000000" permname="Source_DryGasSetValue"/>
+<para_double value="190.000000" permname="Source_DryHeaterSetValue"/>
+<para_double value="0.200000" permname="Source_NanoBoosterSetValue"/>
+<para_double value="1.600000" permname="Source_NebulizerSetValue"/>
+</dependent>
+<dependent source="apci" polarity="positive"><para_int value="3000" permname="Source_CapillarySetValue"/>
+<para_int value="0" permname="Source_ChargingVoltage_Set"/>
+<para_int value="4000" permname="Source_CoronaSetValue"/>
+<para_int value="-500" permname="Source_EndPlateOffsetSetValue"/>
+<para_int value="1" permname="Source_LastActive"/>
+<para_int value="0" permname="Source_OnVoltSetValue"/>
+<para_int value="0" permname="Source_SwitchNanoBooster"/>
+<para_double value="400.000000" permname="Source_APCIHeaterSetValue"/>
+<para_double value="8.000000" permname="Source_DryGasSetValue"/>
+<para_double value="200.000000" permname="Source_DryHeaterSetValue"/>
+<para_double value="0.200000" permname="Source_NanoBoosterSetValue"/>
+<para_double value="1.600000" permname="Source_NebulizerSetValue"/>
+</dependent>
+<dependent source="nesioff" polarity="positive"><para_int value="800" permname="Source_CapillarySetValue"/>
+<para_int value="0" permname="Source_ChargingVoltage_Set"/>
+<para_int value="0" permname="Source_CoronaSetValue"/>
+<para_int value="0" permname="Source_EndPlateOffsetSetValue"/>
+<para_int value="1" permname="Source_LastActive"/>
+<para_int value="800" permname="Source_OnVoltSetValue"/>
+<para_int value="0" permname="Source_SwitchNanoBooster"/>
+<para_double value="0.000000" permname="Source_APCIHeaterSetValue"/>
+<para_double value="3.000000" permname="Source_DryGasSetValue"/>
+<para_double value="120.000000" permname="Source_DryHeaterSetValue"/>
+<para_double value="0.200000" permname="Source_NanoBoosterSetValue"/>
+<para_double value="0.000000" permname="Source_NebulizerSetValue"/>
+</dependent>
+<dependent source="nesion" polarity="positive"><para_int value="1500" permname="Source_CapillarySetValue"/>
+<para_int value="0" permname="Source_ChargingVoltage_Set"/>
+<para_int value="0" permname="Source_CoronaSetValue"/>
+<para_int value="0" permname="Source_EndPlateOffsetSetValue"/>
+<para_int value="1" permname="Source_LastActive"/>
+<para_int value="0" permname="Source_OnVoltSetValue"/>
+<para_int value="0" permname="Source_SwitchNanoBooster"/>
+<para_double value="0.000000" permname="Source_APCIHeaterSetValue"/>
+<para_double value="3.000000" permname="Source_DryGasSetValue"/>
+<para_double value="150.000000" permname="Source_DryHeaterSetValue"/>
+<para_double value="0.200000" permname="Source_NanoBoosterSetValue"/>
+<para_double value="0.000000" permname="Source_NebulizerSetValue"/>
+</dependent>
+<dependent source="appi" polarity="positive"><para_int value="4000" permname="Source_CapillarySetValue"/>
+<para_int value="0" permname="Source_ChargingVoltage_Set"/>
+<para_int value="0" permname="Source_CoronaSetValue"/>
+<para_int value="-500" permname="Source_EndPlateOffsetSetValue"/>
+<para_int value="1" permname="Source_LastActive"/>
+<para_int value="0" permname="Source_OnVoltSetValue"/>
+<para_int value="0" permname="Source_SwitchNanoBooster"/>
+<para_double value="450.000000" permname="Source_APCIHeaterSetValue"/>
+<para_double value="4.000000" permname="Source_DryGasSetValue"/>
+<para_double value="200.000000" permname="Source_DryHeaterSetValue"/>
+<para_double value="0.200000" permname="Source_NanoBoosterSetValue"/>
+<para_double value="2.000000" permname="Source_NebulizerSetValue"/>
+</dependent>
+<dependent source="multimode" polarity="positive"><para_int value="2500" permname="Source_CapillarySetValue"/>
+<para_int value="0" permname="Source_ChargingVoltage_Set"/>
+<para_int value="0" permname="Source_CoronaSetValue"/>
+<para_int value="-500" permname="Source_EndPlateOffsetSetValue"/>
+<para_int value="1" permname="Source_LastActive"/>
+<para_int value="0" permname="Source_MultiModeActiveMode_Set"/>
+<para_int value="0" permname="Source_OnVoltSetValue"/>
+<para_int value="0" permname="Source_SwitchNanoBooster"/>
+<para_double value="200.000000" permname="Source_APCIHeaterSetValue"/>
+<para_double value="5.000000" permname="Source_DryGasSetValue"/>
+<para_double value="200.000000" permname="Source_DryHeaterSetValue"/>
+<para_double value="0.200000" permname="Source_NanoBoosterSetValue"/>
+<para_double value="2.000000" permname="Source_NebulizerSetValue"/>
+<para_vec_int permname="Source_MultiModeCapillary_Set">
+<entry_int value="2500"/>
+<entry_int value="2500"/>
+<entry_int value="2500"/>
+</para_vec_int>
+<para_vec_int permname="Source_MultiModeCharging_Set">
+<entry_int value="2000"/>
+<entry_int value="0"/>
+<entry_int value="2000"/>
+</para_vec_int>
+<para_vec_int permname="Source_MultiModeCorona_Set">
+<entry_int value="0"/>
+<entry_int value="4000"/>
+<entry_int value="1000"/>
+</para_vec_int>
+<para_vec_int permname="Source_MultiModeEndPlateOffset_Set">
+<entry_int value="-500"/>
+<entry_int value="-500"/>
+<entry_int value="-500"/>
+</para_vec_int>
+<para_vec_double permname="Source_MultiModeDryGasFlow_Set">
+<entry_double value="5.000000"/>
+<entry_double value="5.000000"/>
+<entry_double value="5.000000"/>
+</para_vec_double>
+<para_vec_double permname="Source_MultiModeDryGasHeater_Set">
+<entry_double value="200.000000"/>
+<entry_double value="200.000000"/>
+<entry_double value="200.000000"/>
+</para_vec_double>
+<para_vec_double permname="Source_MultiModeNebulizerHeater_Set">
+<entry_double value="200.000000"/>
+<entry_double value="200.000000"/>
+<entry_double value="200.000000"/>
+</para_vec_double>
+<para_vec_double permname="Source_MultiModeNebulizerPressure_Set">
+<entry_double value="2.000000"/>
+<entry_double value="2.000000"/>
+<entry_double value="2.000000"/>
+</para_vec_double>
+</dependent>
+<dependent source="nanoflowesi" polarity="positive"><para_int value="0" permname="Source_ChargingVoltage_Set"/>
+<para_int value="1" permname="Source_LastActive"/>
+<para_int value="0" permname="Source_OnVoltSetValue"/>
+<para_int value="0" permname="Source_SwitchNanoBooster"/>
+<para_double value="0.200000" permname="Source_NanoBoosterSetValue"/>
+</dependent>
+<dependent source="ultraspray" polarity="positive"><para_int value="300" permname="Source_ChargingVoltage_Set"/>
+<para_int value="1" permname="Source_LastActive"/>
+<para_int value="0" permname="Source_OnVoltSetValue"/>
+<para_int value="0" permname="Source_SwitchNanoBooster"/>
+<para_double value="0.200000" permname="Source_NanoBoosterSetValue"/>
+</dependent>
+<dependent source="captivespray" polarity="positive"><para_int value="0" permname="Source_ChargingVoltage_Set"/>
+<para_int value="1" permname="Source_LastActive"/>
+<para_int value="0" permname="Source_OnVoltSetValue"/>
+<para_int value="0" permname="Source_SwitchNanoBooster"/>
+<para_double value="0.200000" permname="Source_NanoBoosterSetValue"/>
+</dependent>
+<dependent source="gc-apci" polarity="positive"><para_int value="2000" permname="Source_ChargingVoltage_Set"/>
+<para_int value="1" permname="Source_LastActive"/>
+<para_int value="800" permname="Source_OnVoltSetValue"/>
+<para_int value="0" permname="Source_SwitchNanoBooster"/>
+<para_double value="0.200000" permname="Source_NanoBoosterSetValue"/>
+</dependent>
+<dependent source="esi" polarity="negative"><para_int value="4000" permname="Source_CapillarySetValue"/>
+<para_int value="0" permname="Source_ChargingVoltage_Set"/>
+<para_int value="0" permname="Source_CoronaSetValue"/>
+<para_int value="-500" permname="Source_EndPlateOffsetSetValue"/>
+<para_int value="1" permname="Source_LastActive"/>
+<para_int value="0" permname="Source_OnVoltSetValue"/>
+<para_int value="0" permname="Source_SwitchNanoBooster"/>
+<para_double value="0.000000" permname="Source_APCIHeaterSetValue"/>
+<para_double value="6.000000" permname="Source_DryGasSetValue"/>
+<para_double value="190.000000" permname="Source_DryHeaterSetValue"/>
+<para_double value="0.200000" permname="Source_NanoBoosterSetValue"/>
+<para_double value="1.600000" permname="Source_NebulizerSetValue"/>
+</dependent>
+<dependent source="apci" polarity="negative"><para_int value="3500" permname="Source_CapillarySetValue"/>
+<para_int value="0" permname="Source_ChargingVoltage_Set"/>
+<para_int value="9000" permname="Source_CoronaSetValue"/>
+<para_int value="-500" permname="Source_EndPlateOffsetSetValue"/>
+<para_int value="1" permname="Source_LastActive"/>
+<para_int value="0" permname="Source_OnVoltSetValue"/>
+<para_int value="0" permname="Source_SwitchNanoBooster"/>
+<para_double value="400.000000" permname="Source_APCIHeaterSetValue"/>
+<para_double value="8.000000" permname="Source_DryGasSetValue"/>
+<para_double value="200.000000" permname="Source_DryHeaterSetValue"/>
+<para_double value="0.200000" permname="Source_NanoBoosterSetValue"/>
+<para_double value="1.600000" permname="Source_NebulizerSetValue"/>
+</dependent>
+<dependent source="nesioff" polarity="negative"><para_int value="800" permname="Source_CapillarySetValue"/>
+<para_int value="0" permname="Source_ChargingVoltage_Set"/>
+<para_int value="0" permname="Source_CoronaSetValue"/>
+<para_int value="0" permname="Source_EndPlateOffsetSetValue"/>
+<para_int value="1" permname="Source_LastActive"/>
+<para_int value="800" permname="Source_OnVoltSetValue"/>
+<para_int value="0" permname="Source_SwitchNanoBooster"/>
+<para_double value="0.000000" permname="Source_APCIHeaterSetValue"/>
+<para_double value="3.000000" permname="Source_DryGasSetValue"/>
+<para_double value="120.000000" permname="Source_DryHeaterSetValue"/>
+<para_double value="0.200000" permname="Source_NanoBoosterSetValue"/>
+<para_double value="0.000000" permname="Source_NebulizerSetValue"/>
+</dependent>
+<dependent source="nesion" polarity="negative"><para_int value="1500" permname="Source_CapillarySetValue"/>
+<para_int value="0" permname="Source_ChargingVoltage_Set"/>
+<para_int value="0" permname="Source_CoronaSetValue"/>
+<para_int value="0" permname="Source_EndPlateOffsetSetValue"/>
+<para_int value="1" permname="Source_LastActive"/>
+<para_int value="0" permname="Source_OnVoltSetValue"/>
+<para_int value="0" permname="Source_SwitchNanoBooster"/>
+<para_double value="0.000000" permname="Source_APCIHeaterSetValue"/>
+<para_double value="3.000000" permname="Source_DryGasSetValue"/>
+<para_double value="150.000000" permname="Source_DryHeaterSetValue"/>
+<para_double value="0.200000" permname="Source_NanoBoosterSetValue"/>
+<para_double value="0.000000" permname="Source_NebulizerSetValue"/>
+</dependent>
+<dependent source="appi" polarity="negative"><para_int value="4000" permname="Source_CapillarySetValue"/>
+<para_int value="0" permname="Source_ChargingVoltage_Set"/>
+<para_int value="0" permname="Source_CoronaSetValue"/>
+<para_int value="-500" permname="Source_EndPlateOffsetSetValue"/>
+<para_int value="1" permname="Source_LastActive"/>
+<para_int value="0" permname="Source_OnVoltSetValue"/>
+<para_int value="0" permname="Source_SwitchNanoBooster"/>
+<para_double value="450.000000" permname="Source_APCIHeaterSetValue"/>
+<para_double value="4.000000" permname="Source_DryGasSetValue"/>
+<para_double value="200.000000" permname="Source_DryHeaterSetValue"/>
+<para_double value="0.200000" permname="Source_NanoBoosterSetValue"/>
+<para_double value="2.000000" permname="Source_NebulizerSetValue"/>
+</dependent>
+<dependent source="multimode" polarity="negative"><para_int value="2500" permname="Source_CapillarySetValue"/>
+<para_int value="2000" permname="Source_ChargingVoltage_Set"/>
+<para_int value="0" permname="Source_CoronaSetValue"/>
+<para_int value="-500" permname="Source_EndPlateOffsetSetValue"/>
+<para_int value="1" permname="Source_LastActive"/>
+<para_int value="0" permname="Source_MultiModeActiveMode_Set"/>
+<para_int value="0" permname="Source_OnVoltSetValue"/>
+<para_int value="0" permname="Source_SwitchNanoBooster"/>
+<para_double value="200.000000" permname="Source_APCIHeaterSetValue"/>
+<para_double value="5.000000" permname="Source_DryGasSetValue"/>
+<para_double value="200.000000" permname="Source_DryHeaterSetValue"/>
+<para_double value="0.200000" permname="Source_NanoBoosterSetValue"/>
+<para_double value="2.000000" permname="Source_NebulizerSetValue"/>
+<para_vec_int permname="Source_MultiModeCapillary_Set">
+<entry_int value="2500"/>
+<entry_int value="2500"/>
+<entry_int value="2500"/>
+</para_vec_int>
+<para_vec_int permname="Source_MultiModeCharging_Set">
+<entry_int value="2000"/>
+<entry_int value="0"/>
+<entry_int value="2000"/>
+</para_vec_int>
+<para_vec_int permname="Source_MultiModeCorona_Set">
+<entry_int value="0"/>
+<entry_int value="4000"/>
+<entry_int value="1000"/>
+</para_vec_int>
+<para_vec_int permname="Source_MultiModeEndPlateOffset_Set">
+<entry_int value="-500"/>
+<entry_int value="-500"/>
+<entry_int value="-500"/>
+</para_vec_int>
+<para_vec_double permname="Source_MultiModeDryGasFlow_Set">
+<entry_double value="5.000000"/>
+<entry_double value="5.000000"/>
+<entry_double value="5.000000"/>
+</para_vec_double>
+<para_vec_double permname="Source_MultiModeDryGasHeater_Set">
+<entry_double value="200.000000"/>
+<entry_double value="200.000000"/>
+<entry_double value="200.000000"/>
+</para_vec_double>
+<para_vec_double permname="Source_MultiModeNebulizerHeater_Set">
+<entry_double value="200.000000"/>
+<entry_double value="200.000000"/>
+<entry_double value="200.000000"/>
+</para_vec_double>
+<para_vec_double permname="Source_MultiModeNebulizerPressure_Set">
+<entry_double value="2.000000"/>
+<entry_double value="2.000000"/>
+<entry_double value="2.000000"/>
+</para_vec_double>
+</dependent>
+<dependent source="nanoflowesi" polarity="negative"><para_int value="0" permname="Source_ChargingVoltage_Set"/>
+<para_int value="1" permname="Source_LastActive"/>
+<para_int value="0" permname="Source_OnVoltSetValue"/>
+<para_int value="0" permname="Source_SwitchNanoBooster"/>
+<para_double value="0.200000" permname="Source_NanoBoosterSetValue"/>
+</dependent>
+<dependent source="ultraspray" polarity="negative"><para_int value="300" permname="Source_ChargingVoltage_Set"/>
+<para_int value="1" permname="Source_LastActive"/>
+<para_int value="0" permname="Source_OnVoltSetValue"/>
+<para_int value="0" permname="Source_SwitchNanoBooster"/>
+<para_double value="0.200000" permname="Source_NanoBoosterSetValue"/>
+</dependent>
+<dependent source="captivespray" polarity="negative"><para_int value="0" permname="Source_ChargingVoltage_Set"/>
+<para_int value="1" permname="Source_LastActive"/>
+<para_int value="0" permname="Source_OnVoltSetValue"/>
+<para_int value="0" permname="Source_SwitchNanoBooster"/>
+<para_double value="0.200000" permname="Source_NanoBoosterSetValue"/>
+</dependent>
+<dependent source="gc-apci" polarity="negative"><para_int value="2000" permname="Source_ChargingVoltage_Set"/>
+<para_int value="1" permname="Source_LastActive"/>
+<para_int value="800" permname="Source_OnVoltSetValue"/>
+<para_int value="0" permname="Source_SwitchNanoBooster"/>
+<para_double value="0.200000" permname="Source_NanoBoosterSetValue"/>
+</dependent></segment>
+<segment endtime="2.30218"><para_int value="3" permname="Mode_ScanMode"/>
+
+<dependent polarity="positive"><para_double value="20.000000" permname="MSMS_BBCIDEnergyCollision"/>
+<para_double value="0.000000" permname="MSMS_BBCIDEnergyISCID"/>
+<para_double value="1.000000" permname="MSMS_BBCIDFactorAcquisitionTime"/>
+<para_vec_int permname="MSMSManual_ListFragmentationMode">
+<entry_int value="0"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDAccuAnalyte">
+<entry_int value="300"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDAccuReagent">
+<entry_int value="5"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDReaction">
+<entry_int value="50"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListUseIsolationMass">
+<entry_int value="1"/>
+</para_vec_int>
+<para_vec_double permname="MSMSManual_ListCollisionEnergy">
+<entry_double value="15.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListISCIDEnergy">
+<entry_double value="0.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListIsolationMass">
+<entry_double value="339.104487"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListIsolationWidth">
+<entry_double value="3.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListSummationFactor">
+<entry_double value="1.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDAccuAnalyte">
+<entry_double value="300.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDAccuReagent">
+<entry_double value="5.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDReaction">
+<entry_double value="50.000000"/>
+</para_vec_double>
+</dependent></segment>
+<segment endtime="3.04798"><para_int value="3" permname="Mode_ScanMode"/>
+
+<dependent polarity="positive"><para_double value="20.000000" permname="MSMS_BBCIDEnergyCollision"/>
+<para_double value="0.000000" permname="MSMS_BBCIDEnergyISCID"/>
+<para_double value="1.000000" permname="MSMS_BBCIDFactorAcquisitionTime"/>
+<para_vec_int permname="MSMSManual_ListFragmentationMode">
+<entry_int value="0"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDAccuAnalyte">
+<entry_int value="300"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDAccuReagent">
+<entry_int value="5"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDReaction">
+<entry_int value="50"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListUseIsolationMass">
+<entry_int value="1"/>
+</para_vec_int>
+<para_vec_double permname="MSMSManual_ListCollisionEnergy">
+<entry_double value="15.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListISCIDEnergy">
+<entry_double value="0.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListIsolationMass">
+<entry_double value="477.135598"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListIsolationWidth">
+<entry_double value="3.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListSummationFactor">
+<entry_double value="1.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDAccuAnalyte">
+<entry_double value="300.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDAccuReagent">
+<entry_double value="5.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDReaction">
+<entry_double value="50.000000"/>
+</para_vec_double>
+</dependent></segment>
+<segment endtime="3.41984"><para_int value="3" permname="Mode_ScanMode"/>
+
+<dependent polarity="positive"><para_double value="20.000000" permname="MSMS_BBCIDEnergyCollision"/>
+<para_double value="0.000000" permname="MSMS_BBCIDEnergyISCID"/>
+<para_double value="1.000000" permname="MSMS_BBCIDFactorAcquisitionTime"/>
+<para_vec_int permname="MSMSManual_ListFragmentationMode">
+<entry_int value="0"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDAccuAnalyte">
+<entry_int value="300"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDAccuReagent">
+<entry_int value="5"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDReaction">
+<entry_int value="50"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListUseIsolationMass">
+<entry_int value="1"/>
+</para_vec_int>
+<para_vec_double permname="MSMSManual_ListCollisionEnergy">
+<entry_double value="15.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListISCIDEnergy">
+<entry_double value="0.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListIsolationMass">
+<entry_double value="768.200342"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListIsolationWidth">
+<entry_double value="3.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListSummationFactor">
+<entry_double value="1.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDAccuAnalyte">
+<entry_double value="300.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDAccuReagent">
+<entry_double value="5.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDReaction">
+<entry_double value="50.000000"/>
+</para_vec_double>
+</dependent></segment>
+<segment endtime="3.69017"><para_int value="3" permname="Mode_ScanMode"/>
+
+<dependent polarity="positive"><para_double value="20.000000" permname="MSMS_BBCIDEnergyCollision"/>
+<para_double value="0.000000" permname="MSMS_BBCIDEnergyISCID"/>
+<para_double value="1.000000" permname="MSMS_BBCIDFactorAcquisitionTime"/>
+<para_vec_int permname="MSMSManual_ListFragmentationMode">
+<entry_int value="0"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDAccuAnalyte">
+<entry_int value="300"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDAccuReagent">
+<entry_int value="5"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDReaction">
+<entry_int value="50"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListUseIsolationMass">
+<entry_int value="1"/>
+</para_vec_int>
+<para_vec_double permname="MSMSManual_ListCollisionEnergy">
+<entry_double value="15.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListISCIDEnergy">
+<entry_double value="0.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListIsolationMass">
+<entry_double value="445.159801"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListIsolationWidth">
+<entry_double value="3.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListSummationFactor">
+<entry_double value="1.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDAccuAnalyte">
+<entry_double value="300.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDAccuReagent">
+<entry_double value="5.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDReaction">
+<entry_double value="50.000000"/>
+</para_vec_double>
+</dependent></segment>
+<segment endtime="3.88614"><para_int value="3" permname="Mode_ScanMode"/>
+
+<dependent polarity="positive"><para_double value="20.000000" permname="MSMS_BBCIDEnergyCollision"/>
+<para_double value="0.000000" permname="MSMS_BBCIDEnergyISCID"/>
+<para_double value="1.000000" permname="MSMS_BBCIDFactorAcquisitionTime"/>
+<para_vec_int permname="MSMSManual_ListFragmentationMode">
+<entry_int value="0"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDAccuAnalyte">
+<entry_int value="300"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDAccuReagent">
+<entry_int value="5"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDReaction">
+<entry_int value="50"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListUseIsolationMass">
+<entry_int value="1"/>
+</para_vec_int>
+<para_vec_double permname="MSMSManual_ListCollisionEnergy">
+<entry_double value="15.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListISCIDEnergy">
+<entry_double value="0.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListIsolationMass">
+<entry_double value="477.086112"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListIsolationWidth">
+<entry_double value="3.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListSummationFactor">
+<entry_double value="1.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDAccuAnalyte">
+<entry_double value="300.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDAccuReagent">
+<entry_double value="5.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDReaction">
+<entry_double value="50.000000"/>
+</para_vec_double>
+</dependent></segment>
+<segment endtime="4.20383"><para_int value="3" permname="Mode_ScanMode"/>
+
+<dependent polarity="positive"><para_double value="20.000000" permname="MSMS_BBCIDEnergyCollision"/>
+<para_double value="0.000000" permname="MSMS_BBCIDEnergyISCID"/>
+<para_double value="1.000000" permname="MSMS_BBCIDFactorAcquisitionTime"/>
+<para_vec_int permname="MSMSManual_ListFragmentationMode">
+<entry_int value="0"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDAccuAnalyte">
+<entry_int value="300"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDAccuReagent">
+<entry_int value="5"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDReaction">
+<entry_int value="50"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListUseIsolationMass">
+<entry_int value="1"/>
+</para_vec_int>
+<para_vec_double permname="MSMSManual_ListCollisionEnergy">
+<entry_double value="15.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListISCIDEnergy">
+<entry_double value="0.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListIsolationMass">
+<entry_double value="383.205486"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListIsolationWidth">
+<entry_double value="3.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListSummationFactor">
+<entry_double value="1.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDAccuAnalyte">
+<entry_double value="300.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDAccuReagent">
+<entry_double value="5.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDReaction">
+<entry_double value="50.000000"/>
+</para_vec_double>
+</dependent></segment>
+<segment endtime="4.57703"><para_int value="3" permname="Mode_ScanMode"/>
+
+<dependent polarity="positive"><para_double value="20.000000" permname="MSMS_BBCIDEnergyCollision"/>
+<para_double value="0.000000" permname="MSMS_BBCIDEnergyISCID"/>
+<para_double value="1.000000" permname="MSMS_BBCIDFactorAcquisitionTime"/>
+<para_vec_int permname="MSMSManual_ListFragmentationMode">
+<entry_int value="0"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDAccuAnalyte">
+<entry_int value="300"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDAccuReagent">
+<entry_int value="5"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDReaction">
+<entry_int value="50"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListUseIsolationMass">
+<entry_int value="1"/>
+</para_vec_int>
+<para_vec_double permname="MSMSManual_ListCollisionEnergy">
+<entry_double value="15.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListISCIDEnergy">
+<entry_double value="0.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListIsolationMass">
+<entry_double value="513.229459"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListIsolationWidth">
+<entry_double value="3.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListSummationFactor">
+<entry_double value="1.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDAccuAnalyte">
+<entry_double value="300.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDAccuReagent">
+<entry_double value="5.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDReaction">
+<entry_double value="50.000000"/>
+</para_vec_double>
+</dependent></segment>
+<segment endtime="4.85868"><para_int value="3" permname="Mode_ScanMode"/>
+
+<dependent polarity="positive"><para_double value="20.000000" permname="MSMS_BBCIDEnergyCollision"/>
+<para_double value="0.000000" permname="MSMS_BBCIDEnergyISCID"/>
+<para_double value="1.000000" permname="MSMS_BBCIDFactorAcquisitionTime"/>
+<para_vec_int permname="MSMSManual_ListFragmentationMode">
+<entry_int value="0"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDAccuAnalyte">
+<entry_int value="300"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDAccuReagent">
+<entry_int value="5"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDReaction">
+<entry_int value="50"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListUseIsolationMass">
+<entry_int value="1"/>
+</para_vec_int>
+<para_vec_double permname="MSMSManual_ListCollisionEnergy">
+<entry_double value="15.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListISCIDEnergy">
+<entry_double value="0.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListIsolationMass">
+<entry_double value="214.122360"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListIsolationWidth">
+<entry_double value="3.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListSummationFactor">
+<entry_double value="1.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDAccuAnalyte">
+<entry_double value="300.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDAccuReagent">
+<entry_double value="5.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDReaction">
+<entry_double value="50.000000"/>
+</para_vec_double>
+</dependent></segment>
+<segment endtime="5.06174"><para_int value="3" permname="Mode_ScanMode"/>
+
+<dependent polarity="positive"><para_double value="20.000000" permname="MSMS_BBCIDEnergyCollision"/>
+<para_double value="0.000000" permname="MSMS_BBCIDEnergyISCID"/>
+<para_double value="1.000000" permname="MSMS_BBCIDFactorAcquisitionTime"/>
+<para_vec_int permname="MSMSManual_ListFragmentationMode">
+<entry_int value="0"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDAccuAnalyte">
+<entry_int value="300"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDAccuReagent">
+<entry_int value="5"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDReaction">
+<entry_int value="50"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListUseIsolationMass">
+<entry_int value="1"/>
+</para_vec_int>
+<para_vec_double permname="MSMSManual_ListCollisionEnergy">
+<entry_double value="15.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListISCIDEnergy">
+<entry_double value="0.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListIsolationMass">
+<entry_double value="264.231956"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListIsolationWidth">
+<entry_double value="3.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListSummationFactor">
+<entry_double value="1.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDAccuAnalyte">
+<entry_double value="300.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDAccuReagent">
+<entry_double value="5.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDReaction">
+<entry_double value="50.000000"/>
+</para_vec_double>
+</dependent></segment>
+<segment endtime="5.23932"><para_int value="3" permname="Mode_ScanMode"/>
+
+<dependent polarity="positive"><para_double value="20.000000" permname="MSMS_BBCIDEnergyCollision"/>
+<para_double value="0.000000" permname="MSMS_BBCIDEnergyISCID"/>
+<para_double value="1.000000" permname="MSMS_BBCIDFactorAcquisitionTime"/>
+<para_vec_int permname="MSMSManual_ListFragmentationMode">
+<entry_int value="0"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDAccuAnalyte">
+<entry_int value="300"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDAccuReagent">
+<entry_int value="5"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDReaction">
+<entry_int value="50"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListUseIsolationMass">
+<entry_int value="1"/>
+</para_vec_int>
+<para_vec_double permname="MSMSManual_ListCollisionEnergy">
+<entry_double value="15.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListISCIDEnergy">
+<entry_double value="0.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListIsolationMass">
+<entry_double value="224.585736"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListIsolationWidth">
+<entry_double value="3.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListSummationFactor">
+<entry_double value="1.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDAccuAnalyte">
+<entry_double value="300.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDAccuReagent">
+<entry_double value="5.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDReaction">
+<entry_double value="50.000000"/>
+</para_vec_double>
+</dependent></segment>
+<segment endtime="5.46178"><para_int value="3" permname="Mode_ScanMode"/>
+
+<dependent polarity="positive"><para_double value="20.000000" permname="MSMS_BBCIDEnergyCollision"/>
+<para_double value="0.000000" permname="MSMS_BBCIDEnergyISCID"/>
+<para_double value="1.000000" permname="MSMS_BBCIDFactorAcquisitionTime"/>
+<para_vec_int permname="MSMSManual_ListFragmentationMode">
+<entry_int value="0"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDAccuAnalyte">
+<entry_int value="300"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDAccuReagent">
+<entry_int value="5"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDReaction">
+<entry_int value="50"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListUseIsolationMass">
+<entry_int value="1"/>
+</para_vec_int>
+<para_vec_double permname="MSMSManual_ListCollisionEnergy">
+<entry_double value="15.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListISCIDEnergy">
+<entry_double value="0.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListIsolationMass">
+<entry_double value="446.212668"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListIsolationWidth">
+<entry_double value="3.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListSummationFactor">
+<entry_double value="1.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDAccuAnalyte">
+<entry_double value="300.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDAccuReagent">
+<entry_double value="5.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDReaction">
+<entry_double value="50.000000"/>
+</para_vec_double>
+</dependent></segment>
+<segment endtime="5.7005"><para_int value="3" permname="Mode_ScanMode"/>
+
+<dependent polarity="positive"><para_double value="20.000000" permname="MSMS_BBCIDEnergyCollision"/>
+<para_double value="0.000000" permname="MSMS_BBCIDEnergyISCID"/>
+<para_double value="1.000000" permname="MSMS_BBCIDFactorAcquisitionTime"/>
+<para_vec_int permname="MSMSManual_ListFragmentationMode">
+<entry_int value="0"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDAccuAnalyte">
+<entry_int value="300"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDAccuReagent">
+<entry_int value="5"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDReaction">
+<entry_int value="50"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListUseIsolationMass">
+<entry_int value="1"/>
+</para_vec_int>
+<para_vec_double permname="MSMSManual_ListCollisionEnergy">
+<entry_double value="15.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListISCIDEnergy">
+<entry_double value="0.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListIsolationMass">
+<entry_double value="537.229397"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListIsolationWidth">
+<entry_double value="3.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListSummationFactor">
+<entry_double value="1.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDAccuAnalyte">
+<entry_double value="300.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDAccuReagent">
+<entry_double value="5.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDReaction">
+<entry_double value="50.000000"/>
+</para_vec_double>
+</dependent></segment>
+<segment endtime="5.92263"><para_int value="3" permname="Mode_ScanMode"/>
+
+<dependent polarity="positive"><para_double value="20.000000" permname="MSMS_BBCIDEnergyCollision"/>
+<para_double value="0.000000" permname="MSMS_BBCIDEnergyISCID"/>
+<para_double value="1.000000" permname="MSMS_BBCIDFactorAcquisitionTime"/>
+<para_vec_int permname="MSMSManual_ListFragmentationMode">
+<entry_int value="0"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDAccuAnalyte">
+<entry_int value="300"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDAccuReagent">
+<entry_int value="5"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDReaction">
+<entry_int value="50"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListUseIsolationMass">
+<entry_int value="1"/>
+</para_vec_int>
+<para_vec_double permname="MSMSManual_ListCollisionEnergy">
+<entry_double value="15.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListISCIDEnergy">
+<entry_double value="0.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListIsolationMass">
+<entry_double value="373.139012"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListIsolationWidth">
+<entry_double value="3.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListSummationFactor">
+<entry_double value="1.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDAccuAnalyte">
+<entry_double value="300.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDAccuReagent">
+<entry_double value="5.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDReaction">
+<entry_double value="50.000000"/>
+</para_vec_double>
+</dependent></segment>
+<segment endtime="6.12266"><para_int value="3" permname="Mode_ScanMode"/>
+
+<dependent polarity="positive"><para_double value="20.000000" permname="MSMS_BBCIDEnergyCollision"/>
+<para_double value="0.000000" permname="MSMS_BBCIDEnergyISCID"/>
+<para_double value="1.000000" permname="MSMS_BBCIDFactorAcquisitionTime"/>
+<para_vec_int permname="MSMSManual_ListFragmentationMode">
+<entry_int value="0"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDAccuAnalyte">
+<entry_int value="300"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDAccuReagent">
+<entry_int value="5"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDReaction">
+<entry_int value="50"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListUseIsolationMass">
+<entry_int value="1"/>
+</para_vec_int>
+<para_vec_double permname="MSMSManual_ListCollisionEnergy">
+<entry_double value="15.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListISCIDEnergy">
+<entry_double value="0.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListIsolationMass">
+<entry_double value="329.149316"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListIsolationWidth">
+<entry_double value="3.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListSummationFactor">
+<entry_double value="1.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDAccuAnalyte">
+<entry_double value="300.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDAccuReagent">
+<entry_double value="5.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDReaction">
+<entry_double value="50.000000"/>
+</para_vec_double>
+</dependent></segment>
+<segment endtime="6.31752"><para_int value="3" permname="Mode_ScanMode"/>
+
+<dependent polarity="positive"><para_double value="20.000000" permname="MSMS_BBCIDEnergyCollision"/>
+<para_double value="0.000000" permname="MSMS_BBCIDEnergyISCID"/>
+<para_double value="1.000000" permname="MSMS_BBCIDFactorAcquisitionTime"/>
+<para_vec_int permname="MSMSManual_ListFragmentationMode">
+<entry_int value="0"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDAccuAnalyte">
+<entry_int value="300"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDAccuReagent">
+<entry_int value="5"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDReaction">
+<entry_int value="50"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListUseIsolationMass">
+<entry_int value="1"/>
+</para_vec_int>
+<para_vec_double permname="MSMSManual_ListCollisionEnergy">
+<entry_double value="15.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListISCIDEnergy">
+<entry_double value="0.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListIsolationMass">
+<entry_double value="343.164151"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListIsolationWidth">
+<entry_double value="3.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListSummationFactor">
+<entry_double value="1.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDAccuAnalyte">
+<entry_double value="300.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDAccuReagent">
+<entry_double value="5.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDReaction">
+<entry_double value="50.000000"/>
+</para_vec_double>
+</dependent></segment>
+<segment endtime="6.6671"><para_int value="3" permname="Mode_ScanMode"/>
+
+<dependent polarity="positive"><para_double value="20.000000" permname="MSMS_BBCIDEnergyCollision"/>
+<para_double value="0.000000" permname="MSMS_BBCIDEnergyISCID"/>
+<para_double value="1.000000" permname="MSMS_BBCIDFactorAcquisitionTime"/>
+<para_vec_int permname="MSMSManual_ListFragmentationMode">
+<entry_int value="0"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDAccuAnalyte">
+<entry_int value="300"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDAccuReagent">
+<entry_int value="5"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDReaction">
+<entry_int value="50"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListUseIsolationMass">
+<entry_int value="1"/>
+</para_vec_int>
+<para_vec_double permname="MSMSManual_ListCollisionEnergy">
+<entry_double value="15.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListISCIDEnergy">
+<entry_double value="0.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListIsolationMass">
+<entry_double value="503.133608"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListIsolationWidth">
+<entry_double value="3.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListSummationFactor">
+<entry_double value="1.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDAccuAnalyte">
+<entry_double value="300.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDAccuReagent">
+<entry_double value="5.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDReaction">
+<entry_double value="50.000000"/>
+</para_vec_double>
+</dependent></segment>
+<segment endtime="7.05547"><para_int value="3" permname="Mode_ScanMode"/>
+
+<dependent polarity="positive"><para_double value="20.000000" permname="MSMS_BBCIDEnergyCollision"/>
+<para_double value="0.000000" permname="MSMS_BBCIDEnergyISCID"/>
+<para_double value="1.000000" permname="MSMS_BBCIDFactorAcquisitionTime"/>
+<para_vec_int permname="MSMSManual_ListFragmentationMode">
+<entry_int value="0"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDAccuAnalyte">
+<entry_int value="300"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDAccuReagent">
+<entry_int value="5"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDReaction">
+<entry_int value="50"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListUseIsolationMass">
+<entry_int value="1"/>
+</para_vec_int>
+<para_vec_double permname="MSMSManual_ListCollisionEnergy">
+<entry_double value="15.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListISCIDEnergy">
+<entry_double value="0.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListIsolationMass">
+<entry_double value="544.196795"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListIsolationWidth">
+<entry_double value="3.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListSummationFactor">
+<entry_double value="1.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDAccuAnalyte">
+<entry_double value="300.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDAccuReagent">
+<entry_double value="5.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDReaction">
+<entry_double value="50.000000"/>
+</para_vec_double>
+</dependent></segment>
+<segment endtime="7.3336"><para_int value="3" permname="Mode_ScanMode"/>
+
+<dependent polarity="positive"><para_double value="20.000000" permname="MSMS_BBCIDEnergyCollision"/>
+<para_double value="0.000000" permname="MSMS_BBCIDEnergyISCID"/>
+<para_double value="1.000000" permname="MSMS_BBCIDFactorAcquisitionTime"/>
+<para_vec_int permname="MSMSManual_ListFragmentationMode">
+<entry_int value="0"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDAccuAnalyte">
+<entry_int value="300"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDAccuReagent">
+<entry_int value="5"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDReaction">
+<entry_int value="50"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListUseIsolationMass">
+<entry_int value="1"/>
+</para_vec_int>
+<para_vec_double permname="MSMSManual_ListCollisionEnergy">
+<entry_double value="15.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListISCIDEnergy">
+<entry_double value="0.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListIsolationMass">
+<entry_double value="408.237289"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListIsolationWidth">
+<entry_double value="3.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListSummationFactor">
+<entry_double value="1.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDAccuAnalyte">
+<entry_double value="300.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDAccuReagent">
+<entry_double value="5.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDReaction">
+<entry_double value="50.000000"/>
+</para_vec_double>
+</dependent></segment>
+<segment endtime="7.59601"><para_int value="3" permname="Mode_ScanMode"/>
+
+<dependent polarity="positive"><para_double value="20.000000" permname="MSMS_BBCIDEnergyCollision"/>
+<para_double value="0.000000" permname="MSMS_BBCIDEnergyISCID"/>
+<para_double value="1.000000" permname="MSMS_BBCIDFactorAcquisitionTime"/>
+<para_vec_int permname="MSMSManual_ListFragmentationMode">
+<entry_int value="0"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDAccuAnalyte">
+<entry_int value="300"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDAccuReagent">
+<entry_int value="5"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDReaction">
+<entry_int value="50"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListUseIsolationMass">
+<entry_int value="1"/>
+</para_vec_int>
+<para_vec_double permname="MSMSManual_ListCollisionEnergy">
+<entry_double value="15.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListISCIDEnergy">
+<entry_double value="0.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListIsolationMass">
+<entry_double value="576.235513"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListIsolationWidth">
+<entry_double value="3.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListSummationFactor">
+<entry_double value="1.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDAccuAnalyte">
+<entry_double value="300.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDAccuReagent">
+<entry_double value="5.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDReaction">
+<entry_double value="50.000000"/>
+</para_vec_double>
+</dependent></segment>
+<segment endtime="7.89753"><para_int value="3" permname="Mode_ScanMode"/>
+
+<dependent polarity="positive"><para_double value="20.000000" permname="MSMS_BBCIDEnergyCollision"/>
+<para_double value="0.000000" permname="MSMS_BBCIDEnergyISCID"/>
+<para_double value="1.000000" permname="MSMS_BBCIDFactorAcquisitionTime"/>
+<para_vec_int permname="MSMSManual_ListFragmentationMode">
+<entry_int value="0"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDAccuAnalyte">
+<entry_int value="300"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDAccuReagent">
+<entry_int value="5"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDReaction">
+<entry_int value="50"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListUseIsolationMass">
+<entry_int value="1"/>
+</para_vec_int>
+<para_vec_double permname="MSMSManual_ListCollisionEnergy">
+<entry_double value="15.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListISCIDEnergy">
+<entry_double value="0.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListIsolationMass">
+<entry_double value="334.179937"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListIsolationWidth">
+<entry_double value="3.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListSummationFactor">
+<entry_double value="1.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDAccuAnalyte">
+<entry_double value="300.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDAccuReagent">
+<entry_double value="5.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDReaction">
+<entry_double value="50.000000"/>
+</para_vec_double>
+</dependent></segment>
+<segment endtime="8.24952"><para_int value="3" permname="Mode_ScanMode"/>
+
+<dependent polarity="positive"><para_double value="20.000000" permname="MSMS_BBCIDEnergyCollision"/>
+<para_double value="0.000000" permname="MSMS_BBCIDEnergyISCID"/>
+<para_double value="1.000000" permname="MSMS_BBCIDFactorAcquisitionTime"/>
+<para_vec_int permname="MSMSManual_ListFragmentationMode">
+<entry_int value="0"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDAccuAnalyte">
+<entry_int value="300"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDAccuReagent">
+<entry_int value="5"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDReaction">
+<entry_int value="50"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListUseIsolationMass">
+<entry_int value="1"/>
+</para_vec_int>
+<para_vec_double permname="MSMSManual_ListCollisionEnergy">
+<entry_double value="15.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListISCIDEnergy">
+<entry_double value="0.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListIsolationMass">
+<entry_double value="378.168751"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListIsolationWidth">
+<entry_double value="3.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListSummationFactor">
+<entry_double value="1.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDAccuAnalyte">
+<entry_double value="300.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDAccuReagent">
+<entry_double value="5.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDReaction">
+<entry_double value="50.000000"/>
+</para_vec_double>
+</dependent></segment>
+<segment endtime="8.47822"><para_int value="3" permname="Mode_ScanMode"/>
+
+<dependent polarity="positive"><para_double value="20.000000" permname="MSMS_BBCIDEnergyCollision"/>
+<para_double value="0.000000" permname="MSMS_BBCIDEnergyISCID"/>
+<para_double value="1.000000" permname="MSMS_BBCIDFactorAcquisitionTime"/>
+<para_vec_int permname="MSMSManual_ListFragmentationMode">
+<entry_int value="0"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDAccuAnalyte">
+<entry_int value="300"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDAccuReagent">
+<entry_int value="5"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDReaction">
+<entry_int value="50"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListUseIsolationMass">
+<entry_int value="1"/>
+</para_vec_int>
+<para_vec_double permname="MSMSManual_ListCollisionEnergy">
+<entry_double value="15.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListISCIDEnergy">
+<entry_double value="0.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListIsolationMass">
+<entry_double value="561.264972"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListIsolationWidth">
+<entry_double value="3.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListSummationFactor">
+<entry_double value="1.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDAccuAnalyte">
+<entry_double value="300.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDAccuReagent">
+<entry_double value="5.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDReaction">
+<entry_double value="50.000000"/>
+</para_vec_double>
+</dependent></segment>
+<segment endtime="8.76734"><para_int value="3" permname="Mode_ScanMode"/>
+
+<dependent polarity="positive"><para_double value="20.000000" permname="MSMS_BBCIDEnergyCollision"/>
+<para_double value="0.000000" permname="MSMS_BBCIDEnergyISCID"/>
+<para_double value="1.000000" permname="MSMS_BBCIDFactorAcquisitionTime"/>
+<para_vec_int permname="MSMSManual_ListFragmentationMode">
+<entry_int value="0"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDAccuAnalyte">
+<entry_int value="300"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDAccuReagent">
+<entry_int value="5"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDReaction">
+<entry_int value="50"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListUseIsolationMass">
+<entry_int value="1"/>
+</para_vec_int>
+<para_vec_double permname="MSMSManual_ListCollisionEnergy">
+<entry_double value="15.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListISCIDEnergy">
+<entry_double value="0.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListIsolationMass">
+<entry_double value="499.173448"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListIsolationWidth">
+<entry_double value="3.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListSummationFactor">
+<entry_double value="1.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDAccuAnalyte">
+<entry_double value="300.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDAccuReagent">
+<entry_double value="5.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDReaction">
+<entry_double value="50.000000"/>
+</para_vec_double>
+</dependent></segment>
+<segment endtime="9.06777"><para_int value="3" permname="Mode_ScanMode"/>
+
+<dependent polarity="positive"><para_double value="20.000000" permname="MSMS_BBCIDEnergyCollision"/>
+<para_double value="0.000000" permname="MSMS_BBCIDEnergyISCID"/>
+<para_double value="1.000000" permname="MSMS_BBCIDFactorAcquisitionTime"/>
+<para_vec_int permname="MSMSManual_ListFragmentationMode">
+<entry_int value="0"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDAccuAnalyte">
+<entry_int value="300"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDAccuReagent">
+<entry_int value="5"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDReaction">
+<entry_int value="50"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListUseIsolationMass">
+<entry_int value="1"/>
+</para_vec_int>
+<para_vec_double permname="MSMSManual_ListCollisionEnergy">
+<entry_double value="15.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListISCIDEnergy">
+<entry_double value="0.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListIsolationMass">
+<entry_double value="314.175152"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListIsolationWidth">
+<entry_double value="3.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListSummationFactor">
+<entry_double value="1.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDAccuAnalyte">
+<entry_double value="300.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDAccuReagent">
+<entry_double value="5.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDReaction">
+<entry_double value="50.000000"/>
+</para_vec_double>
+</dependent></segment>
+<segment endtime="9.26715"><para_int value="3" permname="Mode_ScanMode"/>
+
+<dependent polarity="positive"><para_double value="20.000000" permname="MSMS_BBCIDEnergyCollision"/>
+<para_double value="0.000000" permname="MSMS_BBCIDEnergyISCID"/>
+<para_double value="1.000000" permname="MSMS_BBCIDFactorAcquisitionTime"/>
+<para_vec_int permname="MSMSManual_ListFragmentationMode">
+<entry_int value="0"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDAccuAnalyte">
+<entry_int value="300"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDAccuReagent">
+<entry_int value="5"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDReaction">
+<entry_int value="50"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListUseIsolationMass">
+<entry_int value="1"/>
+</para_vec_int>
+<para_vec_double permname="MSMSManual_ListCollisionEnergy">
+<entry_double value="15.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListISCIDEnergy">
+<entry_double value="0.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListIsolationMass">
+<entry_double value="455.148389"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListIsolationWidth">
+<entry_double value="3.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListSummationFactor">
+<entry_double value="1.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDAccuAnalyte">
+<entry_double value="300.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDAccuReagent">
+<entry_double value="5.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDReaction">
+<entry_double value="50.000000"/>
+</para_vec_double>
+</dependent></segment>
+<segment endtime="9.49658"><para_int value="3" permname="Mode_ScanMode"/>
+
+<dependent polarity="positive"><para_double value="20.000000" permname="MSMS_BBCIDEnergyCollision"/>
+<para_double value="0.000000" permname="MSMS_BBCIDEnergyISCID"/>
+<para_double value="1.000000" permname="MSMS_BBCIDFactorAcquisitionTime"/>
+<para_vec_int permname="MSMSManual_ListFragmentationMode">
+<entry_int value="0"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDAccuAnalyte">
+<entry_int value="300"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDAccuReagent">
+<entry_int value="5"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDReaction">
+<entry_int value="50"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListUseIsolationMass">
+<entry_int value="1"/>
+</para_vec_int>
+<para_vec_double permname="MSMSManual_ListCollisionEnergy">
+<entry_double value="15.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListISCIDEnergy">
+<entry_double value="0.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListIsolationMass">
+<entry_double value="473.194754"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListIsolationWidth">
+<entry_double value="3.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListSummationFactor">
+<entry_double value="1.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDAccuAnalyte">
+<entry_double value="300.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDAccuReagent">
+<entry_double value="5.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDReaction">
+<entry_double value="50.000000"/>
+</para_vec_double>
+</dependent></segment>
+<segment endtime="9.78026"><para_int value="3" permname="Mode_ScanMode"/>
+
+<dependent polarity="positive"><para_double value="20.000000" permname="MSMS_BBCIDEnergyCollision"/>
+<para_double value="0.000000" permname="MSMS_BBCIDEnergyISCID"/>
+<para_double value="1.000000" permname="MSMS_BBCIDFactorAcquisitionTime"/>
+<para_vec_int permname="MSMSManual_ListFragmentationMode">
+<entry_int value="0"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDAccuAnalyte">
+<entry_int value="300"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDAccuReagent">
+<entry_int value="5"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDReaction">
+<entry_int value="50"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListUseIsolationMass">
+<entry_int value="1"/>
+</para_vec_int>
+<para_vec_double permname="MSMSManual_ListCollisionEnergy">
+<entry_double value="15.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListISCIDEnergy">
+<entry_double value="0.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListIsolationMass">
+<entry_double value="439.153821"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListIsolationWidth">
+<entry_double value="3.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListSummationFactor">
+<entry_double value="1.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDAccuAnalyte">
+<entry_double value="300.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDAccuReagent">
+<entry_double value="5.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDReaction">
+<entry_double value="50.000000"/>
+</para_vec_double>
+</dependent></segment>
+<segment endtime="10.1207"><para_int value="3" permname="Mode_ScanMode"/>
+
+<dependent polarity="positive"><para_double value="20.000000" permname="MSMS_BBCIDEnergyCollision"/>
+<para_double value="0.000000" permname="MSMS_BBCIDEnergyISCID"/>
+<para_double value="1.000000" permname="MSMS_BBCIDFactorAcquisitionTime"/>
+<para_vec_int permname="MSMSManual_ListFragmentationMode">
+<entry_int value="0"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDAccuAnalyte">
+<entry_int value="300"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDAccuReagent">
+<entry_int value="5"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDReaction">
+<entry_int value="50"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListUseIsolationMass">
+<entry_int value="1"/>
+</para_vec_int>
+<para_vec_double permname="MSMSManual_ListCollisionEnergy">
+<entry_double value="15.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListISCIDEnergy">
+<entry_double value="0.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListIsolationMass">
+<entry_double value="441.169776"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListIsolationWidth">
+<entry_double value="3.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListSummationFactor">
+<entry_double value="1.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDAccuAnalyte">
+<entry_double value="300.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDAccuReagent">
+<entry_double value="5.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDReaction">
+<entry_double value="50.000000"/>
+</para_vec_double>
+</dependent></segment>
+<segment endtime="10.4252"><para_int value="3" permname="Mode_ScanMode"/>
+
+<dependent polarity="positive"><para_double value="20.000000" permname="MSMS_BBCIDEnergyCollision"/>
+<para_double value="0.000000" permname="MSMS_BBCIDEnergyISCID"/>
+<para_double value="1.000000" permname="MSMS_BBCIDFactorAcquisitionTime"/>
+<para_vec_int permname="MSMSManual_ListFragmentationMode">
+<entry_int value="0"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDAccuAnalyte">
+<entry_int value="300"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDAccuReagent">
+<entry_int value="5"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDReaction">
+<entry_int value="50"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListUseIsolationMass">
+<entry_int value="1"/>
+</para_vec_int>
+<para_vec_double permname="MSMSManual_ListCollisionEnergy">
+<entry_double value="15.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListISCIDEnergy">
+<entry_double value="0.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListIsolationMass">
+<entry_double value="453.168773"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListIsolationWidth">
+<entry_double value="3.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListSummationFactor">
+<entry_double value="1.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDAccuAnalyte">
+<entry_double value="300.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDAccuReagent">
+<entry_double value="5.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDReaction">
+<entry_double value="50.000000"/>
+</para_vec_double>
+</dependent></segment>
+<segment endtime="10.649"><para_int value="3" permname="Mode_ScanMode"/>
+
+<dependent polarity="positive"><para_double value="20.000000" permname="MSMS_BBCIDEnergyCollision"/>
+<para_double value="0.000000" permname="MSMS_BBCIDEnergyISCID"/>
+<para_double value="1.000000" permname="MSMS_BBCIDFactorAcquisitionTime"/>
+<para_vec_int permname="MSMSManual_ListFragmentationMode">
+<entry_int value="0"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDAccuAnalyte">
+<entry_int value="300"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDAccuReagent">
+<entry_int value="5"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDReaction">
+<entry_int value="50"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListUseIsolationMass">
+<entry_int value="1"/>
+</para_vec_int>
+<para_vec_double permname="MSMSManual_ListCollisionEnergy">
+<entry_double value="15.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListISCIDEnergy">
+<entry_double value="0.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListIsolationMass">
+<entry_double value="427.189959"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListIsolationWidth">
+<entry_double value="3.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListSummationFactor">
+<entry_double value="1.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDAccuAnalyte">
+<entry_double value="300.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDAccuReagent">
+<entry_double value="5.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDReaction">
+<entry_double value="50.000000"/>
+</para_vec_double>
+</dependent></segment>
+<segment endtime="11.0694"><para_int value="3" permname="Mode_ScanMode"/>
+
+<dependent polarity="positive"><para_double value="20.000000" permname="MSMS_BBCIDEnergyCollision"/>
+<para_double value="0.000000" permname="MSMS_BBCIDEnergyISCID"/>
+<para_double value="1.000000" permname="MSMS_BBCIDFactorAcquisitionTime"/>
+<para_vec_int permname="MSMSManual_ListFragmentationMode">
+<entry_int value="0"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDAccuAnalyte">
+<entry_int value="300"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDAccuReagent">
+<entry_int value="5"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDReaction">
+<entry_int value="50"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListUseIsolationMass">
+<entry_int value="1"/>
+</para_vec_int>
+<para_vec_double permname="MSMSManual_ListCollisionEnergy">
+<entry_double value="15.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListISCIDEnergy">
+<entry_double value="0.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListIsolationMass">
+<entry_double value="439.317813"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListIsolationWidth">
+<entry_double value="3.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListSummationFactor">
+<entry_double value="1.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDAccuAnalyte">
+<entry_double value="300.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDAccuReagent">
+<entry_double value="5.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDReaction">
+<entry_double value="50.000000"/>
+</para_vec_double>
+</dependent></segment>
+<segment endtime="11.7553"><para_int value="3" permname="Mode_ScanMode"/>
+
+<dependent polarity="positive"><para_double value="20.000000" permname="MSMS_BBCIDEnergyCollision"/>
+<para_double value="0.000000" permname="MSMS_BBCIDEnergyISCID"/>
+<para_double value="1.000000" permname="MSMS_BBCIDFactorAcquisitionTime"/>
+<para_vec_int permname="MSMSManual_ListFragmentationMode">
+<entry_int value="0"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDAccuAnalyte">
+<entry_int value="300"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDAccuReagent">
+<entry_int value="5"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDReaction">
+<entry_int value="50"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListUseIsolationMass">
+<entry_int value="1"/>
+</para_vec_int>
+<para_vec_double permname="MSMSManual_ListCollisionEnergy">
+<entry_double value="15.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListISCIDEnergy">
+<entry_double value="0.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListIsolationMass">
+<entry_double value="246.190703"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListIsolationWidth">
+<entry_double value="3.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListSummationFactor">
+<entry_double value="1.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDAccuAnalyte">
+<entry_double value="300.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDAccuReagent">
+<entry_double value="5.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDReaction">
+<entry_double value="50.000000"/>
+</para_vec_double>
+</dependent></segment>
+<segment endtime="12.0083"><para_int value="3" permname="Mode_ScanMode"/>
+
+<dependent polarity="positive"><para_double value="20.000000" permname="MSMS_BBCIDEnergyCollision"/>
+<para_double value="0.000000" permname="MSMS_BBCIDEnergyISCID"/>
+<para_double value="1.000000" permname="MSMS_BBCIDFactorAcquisitionTime"/>
+<para_vec_int permname="MSMSManual_ListFragmentationMode">
+<entry_int value="0"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDAccuAnalyte">
+<entry_int value="300"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDAccuReagent">
+<entry_int value="5"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDReaction">
+<entry_int value="50"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListUseIsolationMass">
+<entry_int value="1"/>
+</para_vec_int>
+<para_vec_double permname="MSMSManual_ListCollisionEnergy">
+<entry_double value="15.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListISCIDEnergy">
+<entry_double value="0.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListIsolationMass">
+<entry_double value="219.174059"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListIsolationWidth">
+<entry_double value="3.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListSummationFactor">
+<entry_double value="1.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDAccuAnalyte">
+<entry_double value="300.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDAccuReagent">
+<entry_double value="5.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDReaction">
+<entry_double value="50.000000"/>
+</para_vec_double>
+</dependent></segment>
+<segment endtime="12.2968"><para_int value="3" permname="Mode_ScanMode"/>
+
+<dependent polarity="positive"><para_double value="20.000000" permname="MSMS_BBCIDEnergyCollision"/>
+<para_double value="0.000000" permname="MSMS_BBCIDEnergyISCID"/>
+<para_double value="1.000000" permname="MSMS_BBCIDFactorAcquisitionTime"/>
+<para_vec_int permname="MSMSManual_ListFragmentationMode">
+<entry_int value="0"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDAccuAnalyte">
+<entry_int value="300"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDAccuReagent">
+<entry_int value="5"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDReaction">
+<entry_int value="50"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListUseIsolationMass">
+<entry_int value="1"/>
+</para_vec_int>
+<para_vec_double permname="MSMSManual_ListCollisionEnergy">
+<entry_double value="15.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListISCIDEnergy">
+<entry_double value="0.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListIsolationMass">
+<entry_double value="203.179183"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListIsolationWidth">
+<entry_double value="3.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListSummationFactor">
+<entry_double value="1.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDAccuAnalyte">
+<entry_double value="300.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDAccuReagent">
+<entry_double value="5.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDReaction">
+<entry_double value="50.000000"/>
+</para_vec_double>
+</dependent></segment>
+<segment endtime="12.5912"><para_int value="3" permname="Mode_ScanMode"/>
+
+<dependent polarity="positive"><para_double value="20.000000" permname="MSMS_BBCIDEnergyCollision"/>
+<para_double value="0.000000" permname="MSMS_BBCIDEnergyISCID"/>
+<para_double value="1.000000" permname="MSMS_BBCIDFactorAcquisitionTime"/>
+<para_vec_int permname="MSMSManual_ListFragmentationMode">
+<entry_int value="0"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDAccuAnalyte">
+<entry_int value="300"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDAccuReagent">
+<entry_int value="5"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDReaction">
+<entry_int value="50"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListUseIsolationMass">
+<entry_int value="1"/>
+</para_vec_int>
+<para_vec_double permname="MSMSManual_ListCollisionEnergy">
+<entry_double value="15.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListISCIDEnergy">
+<entry_double value="0.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListIsolationMass">
+<entry_double value="465.366153"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListIsolationWidth">
+<entry_double value="3.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListSummationFactor">
+<entry_double value="1.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDAccuAnalyte">
+<entry_double value="300.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDAccuReagent">
+<entry_double value="5.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDReaction">
+<entry_double value="50.000000"/>
+</para_vec_double>
+</dependent></segment>
+<segment endtime="13.058"><para_int value="3" permname="Mode_ScanMode"/>
+
+<dependent polarity="positive"><para_double value="20.000000" permname="MSMS_BBCIDEnergyCollision"/>
+<para_double value="0.000000" permname="MSMS_BBCIDEnergyISCID"/>
+<para_double value="1.000000" permname="MSMS_BBCIDFactorAcquisitionTime"/>
+<para_vec_int permname="MSMSManual_ListFragmentationMode">
+<entry_int value="0"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDAccuAnalyte">
+<entry_int value="300"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDAccuReagent">
+<entry_int value="5"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDReaction">
+<entry_int value="50"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListUseIsolationMass">
+<entry_int value="1"/>
+</para_vec_int>
+<para_vec_double permname="MSMSManual_ListCollisionEnergy">
+<entry_double value="15.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListISCIDEnergy">
+<entry_double value="0.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListIsolationMass">
+<entry_double value="245.187304"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListIsolationWidth">
+<entry_double value="3.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListSummationFactor">
+<entry_double value="1.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDAccuAnalyte">
+<entry_double value="300.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDAccuReagent">
+<entry_double value="5.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDReaction">
+<entry_double value="50.000000"/>
+</para_vec_double>
+</dependent></segment>
+<segment endtime="13.6407"><para_int value="3" permname="Mode_ScanMode"/>
+
+<dependent polarity="positive"><para_double value="20.000000" permname="MSMS_BBCIDEnergyCollision"/>
+<para_double value="0.000000" permname="MSMS_BBCIDEnergyISCID"/>
+<para_double value="1.000000" permname="MSMS_BBCIDFactorAcquisitionTime"/>
+<para_vec_int permname="MSMSManual_ListFragmentationMode">
+<entry_int value="0"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDAccuAnalyte">
+<entry_int value="300"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDAccuReagent">
+<entry_int value="5"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDReaction">
+<entry_int value="50"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListUseIsolationMass">
+<entry_int value="1"/>
+</para_vec_int>
+<para_vec_double permname="MSMSManual_ListCollisionEnergy">
+<entry_double value="15.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListISCIDEnergy">
+<entry_double value="0.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListIsolationMass">
+<entry_double value="205.194897"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListIsolationWidth">
+<entry_double value="3.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListSummationFactor">
+<entry_double value="1.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDAccuAnalyte">
+<entry_double value="300.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDAccuReagent">
+<entry_double value="5.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDReaction">
+<entry_double value="50.000000"/>
+</para_vec_double>
+</dependent></segment>
+<segment endtime="14.3133"><para_int value="3" permname="Mode_ScanMode"/>
+
+<dependent polarity="positive"><para_double value="20.000000" permname="MSMS_BBCIDEnergyCollision"/>
+<para_double value="0.000000" permname="MSMS_BBCIDEnergyISCID"/>
+<para_double value="1.000000" permname="MSMS_BBCIDFactorAcquisitionTime"/>
+<para_vec_int permname="MSMSManual_ListFragmentationMode">
+<entry_int value="0"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDAccuAnalyte">
+<entry_int value="300"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDAccuReagent">
+<entry_int value="5"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDReaction">
+<entry_int value="50"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListUseIsolationMass">
+<entry_int value="1"/>
+</para_vec_int>
+<para_vec_double permname="MSMSManual_ListCollisionEnergy">
+<entry_double value="15.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListISCIDEnergy">
+<entry_double value="0.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListIsolationMass">
+<entry_double value="293.172036"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListIsolationWidth">
+<entry_double value="3.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListSummationFactor">
+<entry_double value="1.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDAccuAnalyte">
+<entry_double value="300.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDAccuReagent">
+<entry_double value="5.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDReaction">
+<entry_double value="50.000000"/>
+</para_vec_double>
+</dependent></segment>
+<segment endtime="18"><para_int value="3" permname="Mode_ScanMode"/>
+
+<dependent polarity="positive"><para_double value="20.000000" permname="MSMS_BBCIDEnergyCollision"/>
+<para_double value="0.000000" permname="MSMS_BBCIDEnergyISCID"/>
+<para_double value="1.000000" permname="MSMS_BBCIDFactorAcquisitionTime"/>
+<para_vec_int permname="MSMSManual_ListFragmentationMode">
+<entry_int value="0"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDAccuAnalyte">
+<entry_int value="300"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDAccuReagent">
+<entry_int value="5"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDReaction">
+<entry_int value="50"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListUseIsolationMass">
+<entry_int value="1"/>
+</para_vec_int>
+<para_vec_double permname="MSMSManual_ListCollisionEnergy">
+<entry_double value="15.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListISCIDEnergy">
+<entry_double value="0.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListIsolationMass">
+<entry_double value="205.194747"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListIsolationWidth">
+<entry_double value="3.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListSummationFactor">
+<entry_double value="1.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDAccuAnalyte">
+<entry_double value="300.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDAccuReagent">
+<entry_double value="5.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDReaction">
+<entry_double value="50.000000"/>
+</para_vec_double>
+</dependent></segment>
+<segment endtime="18.5"><para_int value="0" permname="Mode_ScanMode"/>
+<para_int value="0" permname="Source_DivertValve"/>
+<para_double value="50.000000" permname="Mode_ScanBegin"/>
+<para_double value="100.000000" permname="Mode_TargetMassStart"/>
+<para_vec_double permname="CollisionSweep_CollisionEnergy_Factor_Set">
+<entry_double value="1.000000"/>
+<entry_double value="1.000000"/>
+</para_vec_double>
+<para_vec_double permname="CollisionSweep_CollisionRF_Factor_Set">
+<entry_double value="1.000000"/>
+<entry_double value="2.000000"/>
+</para_vec_double>
+<para_vec_double permname="CollisionSweep_Time_Set">
+<entry_double value="0.000000"/>
+<entry_double value="50.000000"/>
+</para_vec_double>
+<para_vec_double permname="CollisionSweep_TransferTime_Factor_Set">
+<entry_double value="0.833333"/>
+<entry_double value="0.833333"/>
+</para_vec_double>
+
+<dependent polarity="positive"><para_double value="20.000000" permname="MSMS_BBCIDEnergyCollision"/>
+<para_double value="0.000000" permname="MSMS_BBCIDEnergyISCID"/>
+<para_double value="1.000000" permname="MSMS_BBCIDFactorAcquisitionTime"/>
+<para_vec_int permname="MSMSManual_ListFragmentationMode">
+<entry_int value="0"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDAccuAnalyte">
+<entry_int value="300"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDAccuReagent">
+<entry_int value="5"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListTimeETDReaction">
+<entry_int value="50"/>
+</para_vec_int>
+<para_vec_int permname="MSMSManual_ListUseIsolationMass">
+<entry_int value="1"/>
+</para_vec_int>
+<para_vec_double permname="MSMSManual_ListCollisionEnergy">
+<entry_double value="50.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListISCIDEnergy">
+<entry_double value="0.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListIsolationMass">
+<entry_double value="922.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListIsolationWidth">
+<entry_double value="10.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListSummationFactor">
+<entry_double value="1.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDAccuAnalyte">
+<entry_double value="300.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDAccuReagent">
+<entry_double value="5.000000"/>
+</para_vec_double>
+<para_vec_double permname="MSMSManual_ListTimeETDReaction">
+<entry_double value="50.000000"/>
+</para_vec_double>
+</dependent></segment>
+<segment endtime="19.9867"><para_int value="1" permname="Source_DivertValve"/>
+</segment>
+</timetable>
+</qtofacq>
+</method>
+</root>

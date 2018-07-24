@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<method>
+<submethods>
+<submethod program="microTOFQControl" revision="86">
+<name>20minKalibpos_Startermethod_MSMS.m</name>
+<files>
+<file name="microTOFQAcquisition.method"/>
+</files>
+</submethod>
+</submethods>
+<locked>false</locked>
+<readonly>false</readonly>
+<comment></comment>
+</method>

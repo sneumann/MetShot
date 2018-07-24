@@ -34,6 +34,7 @@
 \SweaveOpts{keep.source=TRUE,eps=FALSE}
 
 \begin{document}
+\SweaveOpts{concordance=TRUE}
 
 \title{High throughput acquisition and processing of tandem mass spectra}
 
@@ -115,8 +116,9 @@ colnames(reporttab) <- sub("^mz$", "mzmed", colnames(reporttab))
 ## method generation
 ##
 
-templateFile <- system.file("20minKalibpos_Startermethod_MSMS.m/microTOFQAcquisition.method",
+templateFile <- system.file("Marpol_1-15eV.m/microTOFQAcquisition.method",
                             package = "MetShot")
+
 
 collisionEnergy <- c(20)
 
